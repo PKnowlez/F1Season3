@@ -1,4 +1,3 @@
-# test update
 import pandas as pd
 import streamlit as st
 import plotly.graph_objects as go
@@ -14,6 +13,14 @@ race_place = ['SuzukaPlace','SilverstonePlace','AustraliaPlace',
                 'SpaPlace','SpainPlace','ChinaSprintPlace','ChinaPlace', 
                 'BakuPlace','CanadaPlace','MonzaPlace','Abu DhabiPlace', 
                 'AustriaSprintPlace','AustriaPlace','COTASprintPlace','COTAPlace']
+fastest_lap = ['SuzukaFastestLap','SilverstoneFastestLap','AustraliaFastestLap', 
+                'SpaFastestLap','SpainFastestLap','ChinaSprintFastestLap','ChinaFastestLap', 
+                'BakuFastestLap','CanadaFastestLap','MonzaFastestLap','Abu DhabiFastestLap', 
+                'AustriaSprintFastestLap','AustriaFastestLap','COTASprintFastestLap','COTAFastestLap']
+qualifiying = ['SuzukaQualifying','SilverstoneQualifying','AustraliaQualifying', 
+                'SpaQualifying','SpainQualifying','ChinaSprintQualifying','ChinaQualifying', 
+                'BakuQualifying','CanadaQualifying','MonzaQualifying','Abu DhabiQualifying', 
+                'AustriaSprintQualifying','AustriaQualifying','COTASprintQualifying','COTAQualifying']
 races = ['Suzuka','Silverstone','Australia', 
                 'Spa','Spain','China (S)','China', 
                 'Baku','Canada','Monza','Abu Dhabi', 

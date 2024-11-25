@@ -132,20 +132,9 @@ with tabs[0]:
     
     st.subheader('Suzuka & Pre-Season Recap')
     st.markdown('''
-                With a lovely pre-season in Miami complete where 8 of the league's 12 drivers and all 6 constructors took to the streets 
-                around Hard Rock Statium, the lights went out in Suzuka to an aborted start. With a multiple car incident that sent the 
-                whole grid into turmoil,the race director determined it was best to have a full restart. One of our top qualifiers, VCARB's 
-                Patrick, fell back two positions at the start and near the end of the first lap attempted to make up those positions going 
-                into the Hitachi Astemo Chicane. This manuever failed and ended with a slow down into the chicane allowing many of our drivers 
-                to make up spots against the AI and other drivers. The remainder of the race saw only a few spins, beachings, and other minor 
-                mishaps that affected a few of the final standings. Big winners from this race include VCARB's Brentuar as well as Aston Martin's 
-                Del. Alpine's Joshua took home the win and the fastest lap with McLaren's reigning champion Nick coming in second and Del 
-                rounding out the podium.
+                With a lovely pre-season in Miami complete where 8 of the league's 12 drivers and all 6 constructors took to the streets around Hard Rock Stadium, the lights went out in Suzuka to an aborted start. With a multiple car incident that sent the whole grid into turmoil,the race director determined it was best to have a full restart. One of our top qualifiers, VCARB's Patrick, fell back two positions at the start and near the end of the first lap attempted to make up those positions going into the Hitachi Astemo Chicane. This maneuver failed and ended with a slow down into the chicane allowing many of our drivers to make up spots against the AI and other drivers. The remainder of the race saw only a few spins, beachings, and other minor mishaps that affected a few of the final standings. Big winners from this race include VCARB's Brentuar as well as Aston Martin's Del. Alpine's Joshua took home the win and the fastest lap with McLaren's reigning champion Nick coming in second and Del rounding out the podium.
                 ''' + '''
-                With the results final, Alpine takes an early lead in the Constructor's Championship. Alpine's Joshua is also leading the
-                Driver's Championship. Reigning champion Nick finds himself in second place in the Driver's Championship with his team,
-                McLaren, also slotting into second overall in the Constructor's Championship. Ferrari, Aston Martin, VCARB, and Red Bull
-                respectively make up the rest of the Constructor's Championship standings.
+                With the results final, Alpine takes an early lead in the Constructors’ Championship. Alpine's Joshua is also leading the Driver's Championship. Reigning champion Nick finds himself in second place in the Driver's Championship with his team, McLaren, also slotting into second overall in the Constructors’ Championship. Ferrari, Aston Martin, VCARB, and Red Bull respectively make up the rest of the Constructors’ Championship standings.
                 ''')
 
 # Standings

@@ -1,6 +1,7 @@
 import pandas as pd
 import streamlit as st
 import plotly.graph_objects as go
+import plotly.express as px
 from PIL import Image
 
 # Load the data
@@ -125,8 +126,8 @@ st.image(logo)
 
 tabs = st.tabs(["League News", "Standings", "Race Results", "Constructor Statistics", "Driver Statistics","Race Schedule"])
 
+# League News
 with tabs[0]:
-    st.subheader("League News")
     # Author and add news articles for each race with headlines and such
     
     st.subheader('Suzuka & Pre-Season Recap')
@@ -147,9 +148,8 @@ with tabs[0]:
                 respectively make up the rest of the Constructor's Championship standings.
                 ''')
 
+# Standings
 with tabs[1]:
-    st.subheader("Standings")
-    
     col1, col2 = st.columns(2)
     with col1:
         with st.popover("Full Constructor's Championship Standings"):
@@ -181,10 +181,10 @@ with tabs[1]:
     # Display the Driver Plot in Streamlit
     st.plotly_chart(fig2)
 
+# Race Results
 with tabs[2]:
-    st.subheader("Race Results")
-    # Add expands for each race
-    # - Report race results like post race screen
+    # Expands for each race
+    # - Reports race results like post race screen
     with st.expander("Pre-Season: Miami"):
         st.subheader("Winner: Joshua")
         MiamiResults = pd.DataFrame({
@@ -218,29 +218,62 @@ with tabs[2]:
                 #'Fastest Lap': df_sorted[races[i]+'FastestLap']
                 })
                 st.table(race_results_df)
-    
+
+# Constructor Statistics    
 with tabs[3]:
-    st.subheader("Constructor Statistics")
     # Add expands for each constructor with:
     # - Bar graph showing result at each race (stacked if possible)
     # - Best finish of the season callout
     # - Number of fastest laps callout
     # - Number of wins callout
     # - Total points callout
+    # - Driver/Team Bios
     st.image('https://i.imgflip.com/2mxizj.jpg?a480720')
 
+# Driver Statistics
 with tabs[4]:
-    st.subheader("Driver Statistics")
     # Add expands for each driver with:
     # - Bar graph showing result at each race
     # - Highest finish of the season callout
     # - Number of fastest laps callout
     # - Number of wins callout
     # - Total points callout
-    st.image('https://i.imgflip.com/2mxizj.jpg?a480720')
-    
+    # - Qualification vs. finish statistic
+    points_columns = [col for col in df.columns if col.endswith(('Points', 'SprintPoints'))] 
+
+    # Explicitly define the desired race order
+    races_points_only = [
+        'Suzuka', 'Silverstone', 'Australia', 'Spa', 'Spain', 'ChinaSprint', 'China', 
+        'Baku', 'Canada', 'Monza', 'Abu Dhabi', 'AustriaSprint', 'Austria', 'COTASprint', 'COTA'
+    ]
+
+    new_df = df.set_index('Driver')[points_columns]
+    new_df = new_df.reset_index()
+
+    for i in range(len(new_df['Driver'])):
+        with st.expander(new_df['Driver'][i]):
+            driver_name = new_df['Driver'][i]  # Get the driver's name
+            driver_points = new_df.iloc[i, 1:].tolist()
+
+            # Create the figure name using the driver's name
+            fig_name = f"{driver_name} Points Per Race"
+
+            # Use globals() to dynamically create the variable
+            globals()[fig_name] = px.bar(x=races_points_only, y=driver_points, title=fig_name)
+            globals()[fig_name].update_xaxes(categoryorder='array', categoryarray=races_points_only)
+
+            # Update x-axis title
+            globals()[fig_name].update_xaxes(title_text="Race", categoryorder='array', categoryarray=races_points_only)
+
+            # Update y-axis title
+            globals()[fig_name].update_yaxes(title_text="Points") 
+
+            # Access the figure using the dynamic variable name
+            st.plotly_chart(globals()[fig_name])  
+            st.write('test')
+
+# Race Schedule  
 with tabs[5]:
-    st.subheader("Race Schedule")
     schedule = pd.DataFrame({
     'Race': ['Pre-Season: Miami', 'Suzuka','Silverstone','Australia','Spa','Spain','China', 
                 'Baku','Canada','Monza','Abu Dhabi', 'Austria','COTA'],
@@ -249,7 +282,7 @@ with tabs[5]:
     'Status': ['Final', 'Final', 'Upcoming', 'Upcoming', 'Upcoming', 'Upcoming', 'Upcoming',
                'Upcoming', 'Upcoming', 'Upcoming', 'Upcoming', 'Upcoming', 'Upcoming']
     })
-    
+
     # CSS to inject contained in a string
     hide_table_row_index = """
     <style>
@@ -257,7 +290,6 @@ with tabs[5]:
     tbody th {display:none}
     </style>
     """
-
     # Inject CSS with Markdown
     st.markdown(hide_table_row_index, unsafe_allow_html=True)
 

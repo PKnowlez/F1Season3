@@ -172,22 +172,20 @@ with tabs[1]:
 
 # Race Results
 with tabs[2]:
-    # Expands for each race
-    # - Reports race results like post race screen
+    # Expands for each race: Reports race results like post race screen
     with st.expander("Pre-Season: Miami"):
         st.subheader("Winner: Joshua")
         MiamiResults = pd.DataFrame({
             'Driver': ['Joshua','Nick**','Patrick','Erick','Yeti','Boz','Del','Gary'],
             'Place': ['1','2','3','4','16','17','18','19'],
         })
-        # CSS to inject contained in a string
+        # Removes the index column from the markdown st.table
         hide_table_row_index = """
         <style>
         thead tr th:first-child {display:none}
         tbody th {display:none}
         </style>
         """
-        # Inject CSS with Markdown
         st.markdown(hide_table_row_index, unsafe_allow_html=True)
         st.table(MiamiResults)
     for i in range(len(races)):
@@ -204,12 +202,14 @@ with tabs[2]:
                 'Team': df_sorted['Team'],
                 'Place': df_sorted[race_place[i-1]],
                 'Points': df_sorted[race_points[i-1]],
+                #'Qualifying': df_sorted[races[i]+'Qualifying']
                 #'Fastest Lap': df_sorted[races[i]+'FastestLap']
                 })
                 st.table(race_results_df)
 
 # Constructor Statistics    
 with tabs[3]:
+    # Expands for each constructor:
     # Add expands for each constructor with:
     # - Bar graph showing result at each race (stacked if possible)
     # - Best finish of the season callout
@@ -221,24 +221,24 @@ with tabs[3]:
 
 # Driver Statistics
 with tabs[4]:
+    # Expands for each driver: Race results bar graph, highest finish, number of wins, 
+    #   number of podiums, total points
     # Add expands for each driver with:
-    # - Bar graph showing result at each race
-    # - Highest finish of the season callout
     # - Number of fastest laps callout
-    # - Number of wins callout
-    # - Total points callout
     # - Qualification vs. finish statistic
+
+    # Creates a list of all the points columns in the excel sheet
     points_columns = [col for col in df.columns if col.endswith(('Points', 'SprintPoints'))] 
 
-    # Explicitly define the desired race order
-    races_points_only = [
-        'Suzuka', 'Silverstone', 'Australia', 'Spa', 'Spain', 'ChinaSprint', 'China', 
-        'Baku', 'Canada', 'Monza', 'Abu Dhabi', 'AustriaSprint', 'Austria', 'COTASprint', 'COTA'
-    ]
+    # Creates the order of the races to be graphed along the x-axis
+    races_points_only = races
+    del races_points_only[0]
 
+    # Creates a new dataframe with only the drivers and points columns
     new_df = df.set_index('Driver')[points_columns]
     new_df = new_df.reset_index()
 
+    # Loops through each driver to create an expand with their information only
     for i in range(len(new_df['Driver'])):
         with st.expander(new_df['Driver'][i]):
             driver_name = new_df['Driver'][i]  # Get the driver's name
@@ -257,9 +257,103 @@ with tabs[4]:
             # Update y-axis title
             globals()[fig_name].update_yaxes(title_text="Points") 
 
-            # Access the figure using the dynamic variable name
-            st.plotly_chart(globals()[fig_name])  
-            st.write('test')
+            # Calculates the highest placement a driver has achieved
+            highest_score = max(driver_points)
+            index = driver_points.index(highest_score)
+            if highest_score >= 25:
+                place = '1st'
+            elif highest_score >= 18:
+                place = '2nd'
+            elif highest_score >= 15:
+                place = '3rd'
+            elif highest_score >= 12:
+                place = '4th'
+            elif highest_score >= 10:
+                place = '5th'
+            elif highest_score >= 8:
+                place = '6th'
+            elif highest_score >= 6:
+                place = '7th'
+            elif highest_score >= 4:
+                place = '8th'
+            elif highest_score >= 2:
+                place = '9th'
+            else:
+                place = '10th or lower'
+            best_finish = 'Best Finish: ' + place + ' at ' + races_points_only[index] + ' (' + str(highest_score) + ' points)'
+            button_key = 'Button'+str(i)
+
+            # Calculates the number of wins a driver has
+            specific_value = 25
+            count = 0
+            for value in driver_points:
+                if value >= specific_value:
+                    count += 1
+            button_key2 = button_key + str(i)
+            countW = 'Wins: ' + str(count)
+
+            # Calculates the number of podiums a driver has
+            specific_value = 15
+            count = 0
+            for value in driver_points:
+                if value >= specific_value:
+                    count += 1
+            button_key3 = button_key2 + str(i)
+            countP = 'Podiums: ' + str(count)
+
+            # Calculates the total points for a driver
+            button_key4 = button_key3 + str(i)
+            total_points = sum(driver_points)
+            total_points = 'Total Points: ' + str(total_points)
+
+            # Creates placement graph
+            placements = [0,0,0,0,0,0,0,0,0,0]
+            places = ['1st','2nd','3rd','4th','5th','6th','7th','8th','9th','10th+']
+            for value in driver_points:
+                if value >= 25:
+                    placements[0] += 1
+                elif value >= 18:
+                    placements[1] += 1
+                elif value >= 15:
+                    placements[2] += 1
+                elif value >= 12:
+                    placements[3] += 1
+                elif value >= 10:
+                    placements[4] += 1
+                elif value >= 8:
+                    placements[5] += 1
+                elif value >= 6:
+                    placements[6] += 1
+                elif value >= 4:
+                    placements[7] += 1
+                elif value >= 2:
+                    placements[8] += 1
+                elif value >= 1:
+                    placements[9] += 1
+            # Create the figure name using the driver's name
+            fig_name2 = f"{driver_name} Placements Summary"
+
+            # Use globals() to dynamically create the variable
+            globals()[fig_name2] = px.bar(x=places, y=placements, title=fig_name2)
+            globals()[fig_name2].update_xaxes(categoryorder='array', categoryarray=races_points_only)
+
+            # Update x-axis title
+            globals()[fig_name2].update_xaxes(title_text="Placement", categoryorder='array', categoryarray=races_points_only)
+
+            # Update y-axis title
+            globals()[fig_name2].update_yaxes(title_text="Count") 
+
+            # Creates the layout for each expand
+            col1, col2, col3 = st.columns(3)
+            with col1:
+                st.button(total_points,key=button_key4)
+            with col2:
+                st.button(countW,key=button_key2)
+            with col3:
+                st.button(countP,key=button_key3)
+            st.button(best_finish,key=button_key)
+            st.plotly_chart(globals()[fig_name])
+            st.plotly_chart(globals()[fig_name2])
 
 # Race Schedule  
 with tabs[5]:

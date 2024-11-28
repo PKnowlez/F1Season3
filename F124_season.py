@@ -209,15 +209,53 @@ with tabs[2]:
 
 # Constructor Statistics    
 with tabs[3]:
-    # Expands for each constructor:
+    # Expands for each constructor: race results bar graph
     # Add expands for each constructor with:
-    # - Bar graph showing result at each race (stacked if possible)
     # - Best finish of the season callout
     # - Number of fastest laps callout
     # - Number of wins callout
     # - Total points callout
     # - Driver/Team Bios
-    st.image('https://i.imgflip.com/2mxizj.jpg?a480720')
+
+    # Creates a list of all the points columns in the excel sheet
+    team_points_columns = [col for col in df.columns if col.endswith(('Points', 'SprintPoints'))] 
+
+    # Creates the order of the races to be graphed along the x-axis
+    team_races_points_only = races.copy()
+    del team_races_points_only[0]
+
+    # Create team_df
+    team_df = df.groupby('Team')[team_points_columns].sum()
+    team_df = team_df.reset_index()
+
+    # Loops through each driver to create an expand with their information only
+    for i in range(len(team_df['Team'])):
+        with st.expander(team_df['Team'][i]):
+            team_name = team_df['Team'][i]  # Get the team's name
+            team_points = team_df.iloc[i, 1:].tolist()
+
+            # Create the figure name using the driver's name
+            fig_name = f"{team_name} Points Per Race"
+
+            # Use globals() to dynamically create the variable
+            globals()[fig_name] = px.bar(x=team_races_points_only, y=team_points, title=fig_name)
+            globals()[fig_name].update_xaxes(categoryorder='array', categoryarray=team_races_points_only)
+
+            # Update x-axis title
+            globals()[fig_name].update_xaxes(title_text="Race", categoryorder='array', categoryarray=team_races_points_only)
+
+            # Update y-axis title
+            globals()[fig_name].update_yaxes(title_text="Points")
+
+            # Calculates the highest placement a driver has achieved
+            highest_score = max(team_points)
+            index = team_points.index(highest_score)
+            best_result = 'Best Result: ' + team_races_points_only[index] + ' (' + str(highest_score) + ' points)'
+            button_key = 'TeamButton' + "_" + str(i)
+
+            # Creates the layout for each expand
+            st.button(best_result,key=button_key)
+            st.plotly_chart(globals()[fig_name])
 
 # Driver Statistics
 with tabs[4]:
@@ -231,7 +269,7 @@ with tabs[4]:
     points_columns = [col for col in df.columns if col.endswith(('Points', 'SprintPoints'))] 
 
     # Creates the order of the races to be graphed along the x-axis
-    races_points_only = races
+    races_points_only = races.copy()
     del races_points_only[0]
 
     # Creates a new dataframe with only the drivers and points columns
@@ -281,7 +319,7 @@ with tabs[4]:
             else:
                 place = '10th or lower'
             best_finish = 'Best Finish: ' + place + ' at ' + races_points_only[index] + ' (' + str(highest_score) + ' points)'
-            button_key = 'Button'+str(i)
+            button_key = 'Button' + "_" + str(i)
 
             # Calculates the number of wins a driver has
             specific_value = 25
@@ -289,7 +327,7 @@ with tabs[4]:
             for value in driver_points:
                 if value >= specific_value:
                     count += 1
-            button_key2 = button_key + str(i)
+            button_key2 = button_key + "_" + str(i)
             countW = 'Wins: ' + str(count)
 
             # Calculates the number of podiums a driver has
@@ -298,11 +336,11 @@ with tabs[4]:
             for value in driver_points:
                 if value >= specific_value:
                     count += 1
-            button_key3 = button_key2 + str(i)
+            button_key3 = button_key2 + "_" + str(i)
             countP = 'Podiums: ' + str(count)
 
             # Calculates the total points for a driver
-            button_key4 = button_key3 + str(i)
+            button_key4 = button_key3 + "_" + str(i)
             total_points = sum(driver_points)
             total_points = 'Total Points: ' + str(total_points)
 

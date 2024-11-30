@@ -266,7 +266,8 @@ with tabs[4]:
     # - Qualification vs. finish statistic
 
     # Creates a list of all the points columns in the excel sheet
-    points_columns = [col for col in df.columns if col.endswith(('Points', 'SprintPoints'))] 
+    points_columns = [col for col in df.columns if col.endswith(('Points', 'SprintPoints'))]
+    fastest_lap_columns = [col for col in df.columns if col.endswith(('FastestLap'))]
 
     # Creates the order of the races to be graphed along the x-axis
     races_points_only = races.copy()
@@ -275,6 +276,10 @@ with tabs[4]:
     # Creates a new dataframe with only the drivers and points columns
     new_df = df.set_index('Driver')[points_columns]
     new_df = new_df.reset_index()
+
+    # Creates a new dataframe with only the drivers and fastest laps columns
+    new_df_FL = df.set_index('Driver')[fastest_lap_columns]
+    new_df_FL = new_df_FL.reset_index()
 
     # Loops through each driver to create an expand with their information only
     for i in range(len(new_df['Driver'])):
@@ -381,14 +386,29 @@ with tabs[4]:
             # Update y-axis title
             globals()[fig_name2].update_yaxes(title_text="Count") 
 
+            # Calculates the number of fastest laps a driver has earned
+            driver_fastest_laps = new_df_FL.iloc[i, 1:].tolist()
+            count_fastest_laps = 0
+            for value in driver_fastest_laps:
+                if value == 'Y':
+                    count_fastest_laps =+ 1
+                elif value == 'y':
+                    count_fastest_laps =+ 1
+            
+            # Sets the value to be displayed for Driver Fastest Lap
+            button_key5 = button_key4 + "_" + str(i)
+            fastest_lap_count = 'Fastest Laps: ' + str(count_fastest_laps)
+            
             # Creates the layout for each expand
-            col1, col2, col3 = st.columns(3)
+            col1, col2, col3, col4 = st.columns(4)
             with col1:
                 st.button(total_points,key=button_key4)
             with col2:
                 st.button(countW,key=button_key2)
             with col3:
                 st.button(countP,key=button_key3)
+            with col4:
+                st.button(fastest_lap_count,key=button_key5)
             st.button(best_finish,key=button_key)
             st.plotly_chart(globals()[fig_name])
             st.plotly_chart(globals()[fig_name2])
@@ -400,8 +420,8 @@ with tabs[5]:
                 'Baku','Canada','Monza','Abu Dhabi', 'Austria','COTA'],
     'Date': ['11/13/2024','11/20/2024','12/4/2024','12/18/2024','12/25/2024','1/1/2025','1/8/2025',
              '1/15/2025','1/22/2025','1/29/2025','2/5/2025','2/12/2025','2/26/2025'],
-    'Status': ['Final', 'Final', 'Upcoming', 'Upcoming', 'Upcoming', 'Upcoming', 'Upcoming',
-               'Upcoming', 'Upcoming', 'Upcoming', 'Upcoming', 'Upcoming', 'Upcoming']
+    'Status': ['Final', 'Final', 'Upcoming', 'Upcoming', 'Tentative', 'Tentative', 'Tentative',
+               'Tentative', 'Tentative', 'Tentative', 'Tentative', 'Tentative', 'Tentative']
     })
 
     # CSS to inject contained in a string

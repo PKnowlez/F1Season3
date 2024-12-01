@@ -2,6 +2,7 @@ import pandas as pd
 import streamlit as st
 import plotly.graph_objects as go
 import plotly.express as px
+import math
 from PIL import Image
 
 # Load the data
@@ -129,7 +130,15 @@ tabs = st.tabs(["League News", "Standings", "Race Results", "Constructor Statist
 # League News
 with tabs[0]:
     # Author and add news articles for each race with headlines and such
-    
+    trophy = Image.open("Trophy.png")
+    st.subheader('Race Week - Silverstone')
+    st.markdown('''
+                Rise and shine gamers, its race week! This week The Alternative will take to the famed and hallowed pavement of Silverstone. With a week off for the Thanksgiving holiday, the drivers should not be worried about meeting the minimum weight limit at the end of the race. With the season still young, all drivers are still hopeful they can make a meaningful impact on both championship races.
+                '''+'''
+                Additionally, the league’s president, Mr. Erick Tavera, is proud to unveil the crown jewel of this year’s competition, the champion’s trophy. Derived from F1’s cancelled COTA trophies, The Alternative’s World Driver’s Champion and Constructor’s Champions will receive a commemorative trophy marking their achievement from throughout the season. The Pirelli tire the champion stands upon has each of this season’s tracks encircling the perimeter of the tire. The races won by each driver or constructor will be highlighted in gold. Additionally, the bottom of the base will include the driver’s and constructor’s records and accomplishments from throughout the season.
+                ''')
+    st.image(trophy)
+
     st.subheader('Suzuka & Pre-Season Recap')
     st.markdown('''
                 With a lovely pre-season in Miami complete where 8 of the league's 12 drivers and all 6 constructors took to the streets around Hard Rock Stadium, the lights went out in Suzuka to an aborted start. With a multiple car incident that sent the whole grid into turmoil,the race director determined it was best to have a full restart. One of our top qualifiers, VCARB's Patrick, fell back two positions at the start and near the end of the first lap attempted to make up those positions going into the Hitachi Astemo Chicane. This maneuver failed and ended with a slow down into the chicane allowing many of our drivers to make up spots against the AI and other drivers. The remainder of the race saw only a few spins, beachings, and other minor mishaps that affected a few of the final standings. Big winners from this race include VCARB's Brentuar as well as Aston Martin's Del. Alpine's Joshua took home the win and the fastest lap with McLaren's reigning champion Nick coming in second and Del rounding out the podium.
@@ -197,13 +206,23 @@ with tabs[2]:
                 winner = df_sorted['Driver'].iloc[0]
                 constructor = df_sorted['Team'].iloc[0]
                 st.subheader("Winner: " + winner + " - " + constructor)
+                
+                # Construct the correct column name
+                qualifying_col = races[i] + 'Qualifying' 
+                if '(S)' in races[i]:  # Adjust for Sprint races
+                    qualifying_col = races[i].replace(' (S)', '') + 'SprintQualifying'
+
+                fastestlap_col = races[i] + 'FastestLap'
+                if '(S)' in races[i]:
+                    fastestlap_col = races[i].replace(' (S)','') + 'SprintFastestLap'
+
                 race_results_df = pd.DataFrame({
                 'Driver': df_sorted['Driver'],
                 'Team': df_sorted['Team'],
+                'Qualifying': df_sorted[qualifying_col],
                 'Place': df_sorted[race_place[i-1]],
                 'Points': df_sorted[race_points[i-1]],
-                #'Qualifying': df_sorted[races[i]+'Qualifying']
-                #'Fastest Lap': df_sorted[races[i]+'FastestLap']
+                'Fastest Lap': df_sorted[fastestlap_col]
                 })
                 st.table(race_results_df)
 
@@ -260,14 +279,15 @@ with tabs[3]:
 # Driver Statistics
 with tabs[4]:
     # Expands for each driver: Race results bar graph, highest finish, number of wins, 
-    #   number of podiums, total points
+    #   number of podiums, total points, fastest laps total
     # Add expands for each driver with:
-    # - Number of fastest laps callout
     # - Qualification vs. finish statistic
 
     # Creates a list of all the points columns in the excel sheet
     points_columns = [col for col in df.columns if col.endswith(('Points', 'SprintPoints'))]
     fastest_lap_columns = [col for col in df.columns if col.endswith(('FastestLap'))]
+    qualifying_columns = [col for col in df.columns if col.endswith(('Qualifying'))]
+    place_columns = [col for col in df.columns if col.endswith(('Place'))]
 
     # Creates the order of the races to be graphed along the x-axis
     races_points_only = races.copy()
@@ -280,6 +300,17 @@ with tabs[4]:
     # Creates a new dataframe with only the drivers and fastest laps columns
     new_df_FL = df.set_index('Driver')[fastest_lap_columns]
     new_df_FL = new_df_FL.reset_index()
+
+    # Creates a new dataframe with only the drivers and qualifying columns
+    new_df_Q = df.set_index('Driver')[qualifying_columns]
+    new_df_Q = new_df_Q.reset_index()
+
+    # Creates a new dataframe with only the drivers and placement columns
+    new_df_Place = df.set_index('Driver')[place_columns]
+    new_df_Place = new_df_Place.reset_index()
+
+    print(new_df_Q)
+    print(new_df_Place)
 
     # Loops through each driver to create an expand with their information only
     for i in range(len(new_df['Driver'])):
@@ -398,18 +429,40 @@ with tabs[4]:
             # Sets the value to be displayed for Driver Fastest Lap
             button_key5 = button_key4 + "_" + str(i)
             fastest_lap_count = 'Fastest Laps: ' + str(count_fastest_laps)
-            
+
+            # Calculates the difference in qualifying and race placement per driver
+            driver_qualifying = new_df_Q.iloc[i, 1:].tolist()
+            driver_place = new_df_Place.iloc[i,1:].tolist()
+            qualifying_place = [x - y for x, y in zip(driver_qualifying, driver_place)]
+
+            # Still need to create a graph that shows +/- for each driver's qualifying vs.
+            # finishing positions. Unsure how to handle all the nan values when plotting
+            # the results.
+
+            # Calculate Average Qualifying Position
+            driver_qualifying_average = []
+            driver_qualifying_average = [item for item in driver_qualifying if not math.isnan(item)]
+            driver_qualifying_average = sum(driver_qualifying_average) / len(driver_qualifying_average)
+            driver_qualifying_average = 'Average Qualifying: ' + str(driver_qualifying_average)
+
+            # Sets the value to be displayed for Driver Fastest Lap
+            button_key6 = button_key5 + "_" + str(i)
+
             # Creates the layout for each expand
-            col1, col2, col3, col4 = st.columns(4)
+            col1, col2, col3 = st.columns(3)
             with col1:
                 st.button(total_points,key=button_key4)
             with col2:
                 st.button(countW,key=button_key2)
             with col3:
                 st.button(countP,key=button_key3)
+            col4, col5, col6 = st.columns(3)
             with col4:
                 st.button(fastest_lap_count,key=button_key5)
-            st.button(best_finish,key=button_key)
+            with col5:
+                st.button(driver_qualifying_average,key=button_key6)
+            with col6:
+                st.button(best_finish,key=button_key)
             st.plotly_chart(globals()[fig_name])
             st.plotly_chart(globals()[fig_name2])
 

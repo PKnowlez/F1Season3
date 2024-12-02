@@ -279,7 +279,8 @@ with tabs[3]:
 # Driver Statistics
 with tabs[4]:
     # Expands for each driver: Race results bar graph, highest finish, number of wins, 
-    #   number of podiums, total points, fastest laps total
+    #   number of podiums, total points, fastest laps total, average qualifying,
+    #   average place
     # Add expands for each driver with:
     # - Qualification vs. finish statistic
 
@@ -448,6 +449,16 @@ with tabs[4]:
             # Sets the value to be displayed for Driver Fastest Lap
             button_key6 = button_key5 + "_" + str(i)
 
+            # Calculates Finishing Place
+            # Calculate Average Qualifying Position
+            driver_place_average = []
+            driver_place_average = [item for item in driver_place if not math.isnan(item)]
+            driver_place_average = sum(driver_place_average) / len(driver_place_average)
+            driver_place_average = 'Average Place: ' + str(driver_place_average)
+
+            # Sets the value to be displayed for Driver Fastest Lap
+            button_key7 = button_key6 + "_" + str(i)
+
             # Creates the layout for each expand
             col1, col2, col3 = st.columns(3)
             with col1:
@@ -462,7 +473,8 @@ with tabs[4]:
             with col5:
                 st.button(driver_qualifying_average,key=button_key6)
             with col6:
-                st.button(best_finish,key=button_key)
+                st.button(driver_place_average,key=button_key7)
+            st.button(best_finish,key=button_key)
             st.plotly_chart(globals()[fig_name])
             st.plotly_chart(globals()[fig_name2])
 

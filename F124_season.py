@@ -8,7 +8,6 @@ from PIL import Image
 # Load the data
 df = pd.read_excel('F124_season.xlsx', sheet_name='PythonReadyData')
 
-
 race_points = ['SuzukaPoints','SilverstonePoints','AustraliaPoints', 
                 'SpaPoints','SpainPoints','ChinaSprintPoints','ChinaPoints', 
                 'BakuPoints','CanadaPoints','MonzaPoints','Abu DhabiPoints', 
@@ -486,7 +485,7 @@ with tabs[5]:
                 'Baku','Canada','Monza','Abu Dhabi', 'Austria','COTA'],
     'Date': ['11/13/2024','11/20/2024','12/4/2024','12/11/2024','12/18/2024','12/25/2024','1/1/2025','1/8/2025',
              '1/15/2025','1/22/2025','1/29/2025','2/5/2025','2/12/2025'],
-    'Status': ['Final', 'Final', 'Upcoming', 'Upcoming', 'Tentative', 'Tentative', 'Tentative',
+    'Status': ['Final', 'Final', 'Final', 'Upcoming', 'Tentative', 'Tentative', 'Tentative',
                'Tentative', 'Tentative', 'Tentative', 'Tentative', 'Tentative', 'Tentative']
     })
 

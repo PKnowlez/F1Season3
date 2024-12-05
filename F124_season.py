@@ -241,6 +241,17 @@ with tabs[2]:
                 'Points': df_sorted[race_points[i-1]],
                 'Fastest Lap': df_sorted[fastestlap_col]
                 })
+
+                race_results_df['Place'] = race_results_df['Place'].replace({
+                    21: 'DNF', 
+                    22: 'DNS'
+                })
+
+                race_results_df['Qualifying'] = race_results_df['Qualifying'].replace({
+                    21: 'DNF', 
+                    22: 'DNS'
+                })
+
                 st.table(race_results_df)
 
 # Constructor Statistics    

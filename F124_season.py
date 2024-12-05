@@ -130,15 +130,18 @@ tabs = st.tabs(["League News", "Standings", "Race Results", "Constructor Statist
 # League News
 with tabs[0]:
     # Author and add news articles for each race with headlines and such
-    silverstone = Image.open("./Images/Silverstone_Final_Turn.png")
+    silverstone1 = Image.open("./Images/Silverstone_Final_Turn.png")
+    silverstone2 = Image.open("./Images/Silverstone_PK_Zane.png")
     st.subheader('Silverstone Recap: “007 You Only Win Twice”')
     st.markdown('''
                 Another week, another race. The sun mercifully shone down on the British Isles and provided the perfect weather for an eventful race. Reigning WDC Nick, and Alpine’s top driver Joshua, battled it out for 26 laps straight. Joshua took the win after a little bit of questionable contact and a helpful dose of backmarker blocking. This is Alpine and Joshua’s second win of the season. Alpine also had some 007 magic from their second seat, Eddie, who had 0 intention of racing, 0 practice, and placed 7th. Coincidentally this was also his second time placing 7th this season. Let’s see if this pattern continues for the French outfit.
                 ''')
-    st.image(silverstone)
+    st.image(silverstone1)
     st.markdown('''
                 The podium was rounded out by Ferrari ace, Erick, who raced a lonely set of laps around the hallowed airfield. Ferrari’s other driver Zane battled with VCARB’s Patrick in a tightly contested tango where the drivers had opposite tire strategies (softs to mediums and mediums to softs respectively). However, in the end, a bit of contact left Zane just out of reach on the final lap.
-                '''+'''
+                ''')
+    st.image(silverstone2)
+    st.markdown('''
                 Further down the field the two Red Bull drivers Yeti and Boz sparred for the entire race, ending in 6th and 11th after a late error by Boz. Which allowed VCARB’s Brently to make up a place after a muddled start, and end in 8th. Finally, rounding out our grid this week were the Aston Martins with Gary finishing in 19th and Del MIA for this week’s bout.
                 '''+'''
                 Alpine’s Joshua takes an early strong lead in the WDC with his back-to-back wins. His efforts, along with Jr.'s, have propelled the team into the lead for the WCC as well. As it stands today Alpine leads the way, followed by Ferrari and McLaren who are separated by mere points. The WDC currently stands with Joshua, Nick, and Zane in the top three with Erick just one point behind his Ferrari teammate in 4th. See you all down under where the league takes to the converted streets of Albert Park.

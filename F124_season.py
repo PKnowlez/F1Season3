@@ -8,6 +8,8 @@ from PIL import Image
 # Load the data
 df = pd.read_excel('F124_season.xlsx', sheet_name='PythonReadyData')
 
+print(df.loc[0,'SuzukaPoints'])
+
 race_points = ['SuzukaPoints','SilverstonePoints','AustraliaPoints', 
                 'SpaPoints','SpainPoints','ChinaSprintPoints','ChinaPoints', 
                 'BakuPoints','CanadaPoints','MonzaPoints','Abu DhabiPoints', 
@@ -20,7 +22,7 @@ fastest_lap = ['SuzukaFastestLap','SilverstoneFastestLap','AustraliaFastestLap',
                 'SpaFastestLap','SpainFastestLap','ChinaSprintFastestLap','ChinaFastestLap', 
                 'BakuFastestLap','CanadaFastestLap','MonzaFastestLap','Abu DhabiFastestLap', 
                 'AustriaSprintFastestLap','AustriaFastestLap','COTASprintFastestLap','COTAFastestLap']
-qualifiying = ['SuzukaQualifying','SilverstoneQualifying','AustraliaQualifying', 
+qualifying = ['SuzukaQualifying','SilverstoneQualifying','AustraliaQualifying', 
                 'SpaQualifying','SpainQualifying','ChinaSprintQualifying','ChinaQualifying', 
                 'BakuQualifying','CanadaQualifying','MonzaQualifying','Abu DhabiQualifying', 
                 'AustriaSprintQualifying','AustriaQualifying','COTASprintQualifying','COTAQualifying']
@@ -130,6 +132,18 @@ tabs = st.tabs(["League News", "Standings", "Race Results", "Constructor Statist
 # League News
 with tabs[0]:
     # Author and add news articles for each race with headlines and such
+    australia_circuit = Image.open("./Images/Australia_Circuit.png")
+    st.subheader('Race Week - Australia')
+    st.markdown('''
+                This week the drivers will be “defying gravity” while racing upside down in Melbourne. The real question is whether or not the league continues to let Alpine and Joshua cook? Or maybe more fittingly, will the league let Joshua put another shrimp on the barbie? Only the streets of Albert Park will be able to answer these questions.
+                '''+'''
+                Albert Park Circuit provides the first street circuit of the year, which without a doubt is set to create some sparks. With the first heavy braking Turn 1 of the calendar, the start of this race will likely turn into an abbreviated game of Survivor. From there the drivers will be challenged by tight walls coming out of Turn 2 and Turn 5 as they queue up into the highspeed Sector 2. Sector 3’s heavy braking zones will provide tantalizing opportunities for the drivers to throw dummies, lick it and send it, and hopefully keep all the carbon fiber on their cars
+                ''')
+    st.image(australia_circuit)
+    st.markdown('''
+                The league took a short pause from running downunder last season. Which means the most recent winner here is current Ferrari driver and previous Mercedes driver Erick, who took home a commanding win with a lead of 18 seconds over McLaren’s Nick. Rounding out the podium was  retired Mercedes driver turned steward Marcus. If Silverstone’s race is any evidence of how close the drivers plan to race this week, we will certainly see an exciting race in the capital of Victoria. With nearly no room for run off, mistakes will be magnified, and incidents are sure to become heated.
+                ''')
+
     silverstone1 = Image.open("./Images/Silverstone_Final_Turn.png")
     silverstone2 = Image.open("./Images/Silverstone_PK_Zane.png")
     st.subheader('Silverstone Recap: “007 You Only Win Twice”')
@@ -218,41 +232,44 @@ with tabs[2]:
         if i == 0:
             x = 0
         else:
-            with st.expander(races[i]):
-                df_sorted = df.sort_values(race_place[i-1], ascending=True)
-                winner = df_sorted['Driver'].iloc[0]
-                constructor = df_sorted['Team'].iloc[0]
-                st.subheader("Winner: " + winner + " - " + constructor)
-                
-                # Construct the correct column name
-                qualifying_col = races[i] + 'Qualifying' 
-                if '(S)' in races[i]:  # Adjust for Sprint races
-                    qualifying_col = races[i].replace(' (S)', '') + 'SprintQualifying'
+            if not pd.isnull(df.loc[1,race_place[i-1]]):
+                with st.expander(races[i]):
+                    df_sorted = df.sort_values(race_place[i-1], ascending=True)
+                    winner = df_sorted['Driver'].iloc[0]
+                    constructor = df_sorted['Team'].iloc[0]
+                    st.subheader("Winner: " + winner + " - " + constructor)
+                    
+                    # Construct the correct column name
+                    qualifying_col = races[i] + 'Qualifying' 
+                    if '(S)' in races[i]:  # Adjust for Sprint races
+                        qualifying_col = races[i].replace(' (S)', '') + 'SprintQualifying'
 
-                fastestlap_col = races[i] + 'FastestLap'
-                if '(S)' in races[i]:
-                    fastestlap_col = races[i].replace(' (S)','') + 'SprintFastestLap'
+                    fastestlap_col = races[i] + 'FastestLap'
+                    if '(S)' in races[i]:
+                        fastestlap_col = races[i].replace(' (S)','') + 'SprintFastestLap'
 
-                race_results_df = pd.DataFrame({
-                'Driver': df_sorted['Driver'],
-                'Team': df_sorted['Team'],
-                'Qualifying': df_sorted[qualifying_col],
-                'Place': df_sorted[race_place[i-1]],
-                'Points': df_sorted[race_points[i-1]],
-                'Fastest Lap': df_sorted[fastestlap_col]
-                })
+                    race_results_df = pd.DataFrame({
+                    'Driver': df_sorted['Driver'],
+                    'Team': df_sorted['Team'],
+                    'Qualifying': df_sorted[qualifying_col],
+                    'Place': df_sorted[race_place[i-1]],
+                    'Points': df_sorted[race_points[i-1]],
+                    'Fastest Lap': df_sorted[fastestlap_col]
+                    })
 
-                race_results_df['Place'] = race_results_df['Place'].replace({
-                    21: 'DNF', 
-                    22: 'DNS'
-                })
+                    race_results_df['Place'] = race_results_df['Place'].replace({
+                        21: 'DNF', 
+                        22: 'DNS'
+                    })
 
-                race_results_df['Qualifying'] = race_results_df['Qualifying'].replace({
-                    21: 'DNF', 
-                    22: 'DNS'
-                })
+                    race_results_df['Qualifying'] = race_results_df['Qualifying'].replace({
+                        21: 'DNF', 
+                        22: 'DNS'
+                    })
 
-                st.table(race_results_df)
+                    st.table(race_results_df)
+            else:
+                x = 0
 
 # Constructor Statistics    
 with tabs[3]:

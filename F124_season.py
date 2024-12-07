@@ -73,6 +73,13 @@ driver_colors = {}  # Initialize an empty dictionary
 for i, driver in enumerate(drivers.unique()):
     driver_colors[driver] = color_list[i % len(color_list)]
 
+for i in range(len(race_place)):
+    if not pd.isnull(df.loc[1,race_place[i-1]]):
+        index = i+1
+        break
+    else:
+        x = 0
+
 # --- Team Plot ---
 
 # Add a new column of zeros at the beginning
@@ -92,6 +99,7 @@ for team in team_race_totals.columns:
                              line=dict(color=team_colors.get(team))))
 
 fig1.update_layout(
+    xaxis_range=[0,index],
     xaxis_title="Race",
     yaxis_title="Total Points",
     title="Constructor's Championship",
@@ -115,6 +123,7 @@ for driver in driver_race_totals.columns:
                              line=dict(color=driver_colors.get(driver))))
 
 fig2.update_layout(
+    xaxis_range=[0,index],
     xaxis_title="Race",
     yaxis_title="Total Points",
     title="Driver's Championship",
@@ -274,9 +283,8 @@ with tabs[2]:
 
 # Constructor Statistics    
 with tabs[3]:
-    # Expands for each constructor: race results bar graph
+    # Expands for each constructor: race results bar graph, best finish callout
     # Add expands for each constructor with:
-    # - Best finish of the season callout
     # - Number of fastest laps callout
     # - Number of wins callout
     # - Total points callout

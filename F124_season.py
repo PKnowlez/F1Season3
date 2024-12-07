@@ -8,8 +8,6 @@ from PIL import Image
 # Load the data
 df = pd.read_excel('F124_season.xlsx', sheet_name='PythonReadyData')
 
-print(df.loc[0,'SuzukaPoints'])
-
 race_points = ['SuzukaPoints','SilverstonePoints','AustraliaPoints', 
                 'SpaPoints','SpainPoints','ChinaSprintPoints','ChinaPoints', 
                 'BakuPoints','CanadaPoints','MonzaPoints','Abu DhabiPoints', 

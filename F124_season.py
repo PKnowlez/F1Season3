@@ -148,7 +148,7 @@ with tabs[0]:
                 ''')
     st.image(australia_circuit)
     st.markdown('''
-                The league took a short pause from running downunder last season. Which means the most recent winner here is current Ferrari driver and previous Mercedes driver Erick, who took home a commanding win with a lead of 18 seconds over McLaren’s Nick. Rounding out the podium was  retired Mercedes driver turned steward Marcus. If Silverstone’s race is any evidence of how close the drivers plan to race this week, we will certainly see an exciting race in the capital of Victoria. With nearly no room for run off, mistakes will be magnified, and incidents are sure to become heated.
+                The league took a short pause from running down under last season. Which means the most recent winner here is current Ferrari driver and previous Mercedes driver Erick, who took home a commanding win with a lead of 18 seconds over McLaren’s Nick. Rounding out the podium was  retired Mercedes driver turned steward Marcus. If Silverstone’s race is any evidence of how close the drivers plan to race this week, we will certainly see an exciting race in the capital of Victoria. With nearly no room for run off, mistakes will be magnified, and incidents are sure to become heated.
                 ''')
 
     st.divider()
@@ -326,8 +326,17 @@ with tabs[3]:
             best_result = 'Best Result: ' + team_races_points_only[index] + ' (' + str(highest_score) + ' points)'
             button_key = 'TeamButton' + "_" + str(i)
 
+            # Calculates the total points for a driver
+            button_key1 = button_key + "_" + str(i)
+            total_points = sum(team_points)
+            total_points = 'Total Points: ' + str(total_points)
+
             # Creates the layout for each expand
-            st.button(best_result,key=button_key)
+            col1, col2 = st.columns(2)
+            with col1:
+                st.button(total_points,key=button_key1)
+            with col2:
+                st.button(best_result,key=button_key)
             st.plotly_chart(globals()[fig_name])
 
 # Driver Statistics

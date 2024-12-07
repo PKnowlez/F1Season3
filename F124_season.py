@@ -142,6 +142,7 @@ with tabs[0]:
                 The league took a short pause from running downunder last season. Which means the most recent winner here is current Ferrari driver and previous Mercedes driver Erick, who took home a commanding win with a lead of 18 seconds over McLaren’s Nick. Rounding out the podium was  retired Mercedes driver turned steward Marcus. If Silverstone’s race is any evidence of how close the drivers plan to race this week, we will certainly see an exciting race in the capital of Victoria. With nearly no room for run off, mistakes will be magnified, and incidents are sure to become heated.
                 ''')
 
+    st.divider()
     silverstone1 = Image.open("./Images/Silverstone_Final_Turn.png")
     silverstone2 = Image.open("./Images/Silverstone_PK_Zane.png")
     st.subheader('Silverstone Recap: “007 You Only Win Twice”')
@@ -159,6 +160,7 @@ with tabs[0]:
                 Alpine’s Joshua takes an early strong lead in the WDC with his back-to-back wins. His efforts, along with Jr.'s, have propelled the team into the lead for the WCC as well. As it stands today Alpine leads the way, followed by Ferrari and McLaren who are separated by mere points. The WDC currently stands with Joshua, Nick, and Zane in the top three with Erick just one point behind his Ferrari teammate in 4th. See you all down under where the league takes to the converted streets of Albert Park.
                 ''')
 
+    st.divider()
     trophy = Image.open("./Images/Trophy.png")
     st.subheader('Race Week - Silverstone')
     st.markdown('''
@@ -168,6 +170,7 @@ with tabs[0]:
                 ''')
     st.image(trophy)
 
+    st.divider()
     st.subheader('Suzuka & Pre-Season Recap')
     st.markdown('''
                 With a lovely pre-season in Miami complete where 8 of the league's 12 drivers and all 6 constructors took to the streets around Hard Rock Stadium, the lights went out in Suzuka to an aborted start. With a multiple car incident that sent the whole grid into turmoil,the race director determined it was best to have a full restart. One of our top qualifiers, VCARB's Patrick, fell back two positions at the start and near the end of the first lap attempted to make up those positions going into the Hitachi Astemo Chicane. This maneuver failed and ended with a slow down into the chicane allowing many of our drivers to make up spots against the AI and other drivers. The remainder of the race saw only a few spins, beachings, and other minor mishaps that affected a few of the final standings. Big winners from this race include VCARB's Brentuar as well as Aston Martin's Del. Alpine's Joshua took home the win and the fastest lap with McLaren's reigning champion Nick coming in second and Del rounding out the podium.

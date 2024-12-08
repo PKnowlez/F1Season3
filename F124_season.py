@@ -149,7 +149,11 @@ with tabs[0]:
     st.image(australia_circuit)
     st.markdown('''
                 The league took a short pause from running down under last season. Which means the most recent winner here is current Ferrari driver and previous Mercedes driver Erick, who took home a commanding win with a lead of 18 seconds over McLaren’s Nick. Rounding out the podium was  retired Mercedes driver turned steward Marcus. If Silverstone’s race is any evidence of how close the drivers plan to race this week, we will certainly see an exciting race in the capital of Victoria. With nearly no room for run off, mistakes will be magnified, and incidents are sure to become heated.
-                ''')
+                '''+'''
+                <p style="color:lightgray;">Saturday 12/7/2024 - Patrick Knowles</p>
+                ''',
+                unsafe_allow_html=True,
+                )
 
     st.divider()
     silverstone1 = Image.open("./Images/Silverstone_Final_Turn.png")
@@ -167,7 +171,10 @@ with tabs[0]:
                 Further down the field the two Red Bull drivers Yeti and Boz sparred for the entire race, ending in 6th and 11th after a late error by Boz. Which allowed VCARB’s Brently to make up a place after a muddled start, and end in 8th. Finally, rounding out our grid this week were the Aston Martins with Gary finishing in 19th and Del MIA for this week’s bout.
                 '''+'''
                 Alpine’s Joshua takes an early strong lead in the WDC with his back-to-back wins. His efforts, along with Jr.'s, have propelled the team into the lead for the WCC as well. As it stands today Alpine leads the way, followed by Ferrari and McLaren who are separated by mere points. The WDC currently stands with Joshua, Nick, and Zane in the top three with Erick just one point behind his Ferrari teammate in 4th. See you all down under where the league takes to the converted streets of Albert Park.
-                ''')
+                '''+'''
+                <p style="color:lightgray;">Wednesday 12/4/2024 - Patrick Knowle with credit Eddie Tavera</p>
+                ''',
+                unsafe_allow_html=True,)
 
     st.divider()
     trophy = Image.open("./Images/Trophy.png")
@@ -178,6 +185,10 @@ with tabs[0]:
                 Additionally, the league’s president, Mr. Erick Tavera, is proud to unveil the crown jewel of this year’s competition, the champion’s trophy. Derived from F1’s cancelled COTA trophies, The Alternative’s World Driver’s Champion and Constructor’s Champions will receive a commemorative trophy marking their achievement from throughout the season. The Pirelli tire the champion stands upon has each of this season’s tracks encircling the perimeter of the tire. The races won by each driver or constructor will be highlighted in gold. Additionally, the bottom of the base will include the driver’s and constructor’s records and accomplishments from throughout the season.
                 ''')
     st.image(trophy)
+    st.markdown('''
+                <p style="color:lightgray;">Sunday 12/1/2024 - Patrick Knowles</p>
+                ''',
+                unsafe_allow_html=True,)
 
     st.divider()
     st.subheader('Suzuka & Pre-Season Recap')
@@ -185,7 +196,10 @@ with tabs[0]:
                 With a lovely pre-season in Miami complete where 8 of the league's 12 drivers and all 6 constructors took to the streets around Hard Rock Stadium, the lights went out in Suzuka to an aborted start. With a multiple car incident that sent the whole grid into turmoil,the race director determined it was best to have a full restart. One of our top qualifiers, VCARB's Patrick, fell back two positions at the start and near the end of the first lap attempted to make up those positions going into the Hitachi Astemo Chicane. This maneuver failed and ended with a slow down into the chicane allowing many of our drivers to make up spots against the AI and other drivers. The remainder of the race saw only a few spins, beachings, and other minor mishaps that affected a few of the final standings. Big winners from this race include VCARB's Brentuar as well as Aston Martin's Del. Alpine's Joshua took home the win and the fastest lap with McLaren's reigning champion Nick coming in second and Del rounding out the podium.
                 ''' + '''
                 With the results final, Alpine takes an early lead in the Constructors’ Championship. Alpine's Joshua is also leading the Driver's Championship. Reigning champion Nick finds himself in second place in the Driver's Championship with his team, McLaren, also slotting into second overall in the Constructors’ Championship. Ferrari, Aston Martin, VCARB, and Red Bull respectively make up the rest of the Constructors’ Championship standings.
-                ''')
+                '''+'''
+                <p style="color:lightgray;">Thursday 11/21/2024 - Patrick Knowles</p>
+                ''',
+                unsafe_allow_html=True,)
 
 # Standings
 with tabs[1]:

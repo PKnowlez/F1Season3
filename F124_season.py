@@ -5,7 +5,7 @@ import plotly.express as px
 import math
 from PIL import Image
 
-# Load the data
+# Read in excel sheet
 df = pd.read_excel('F124_season.xlsx', sheet_name='PythonReadyData')
 
 race_points = ['SuzukaPoints','SilverstonePoints','AustraliaPoints', 

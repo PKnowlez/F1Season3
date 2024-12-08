@@ -76,6 +76,7 @@ for i, driver in enumerate(drivers.unique()):
 for i in range(len(race_place)):
     if not pd.isnull(df.loc[1,race_place[i-1]]):
         index = i+1
+        index_x = index-0.5
         break
     else:
         x = 0
@@ -334,6 +335,9 @@ with tabs[3]:
             # Update y-axis title
             globals()[fig_name].update_yaxes(title_text="Points")
 
+            # Update layout
+            globals()[fig_name].update_layout(xaxis_range=[-0.5,index_x])
+
             # Calculates the highest placement a driver has achieved
             highest_score = max(team_points)
             index = team_points.index(highest_score)
@@ -407,7 +411,10 @@ with tabs[4]:
             globals()[fig_name].update_xaxes(title_text="Race", categoryorder='array', categoryarray=races_points_only)
 
             # Update y-axis title
-            globals()[fig_name].update_yaxes(title_text="Points") 
+            globals()[fig_name].update_yaxes(title_text="Points")
+
+            # Update layout
+            globals()[fig_name].update_layout(xaxis_range=[-0.5,index_x])
 
             # Calculates the highest placement a driver has achieved
             highest_score = max(driver_points)

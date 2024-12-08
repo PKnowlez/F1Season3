@@ -173,7 +173,7 @@ with tabs[0]:
                 '''+'''
                 Alpine’s Joshua takes an early strong lead in the WDC with his back-to-back wins. His efforts, along with Jr.'s, have propelled the team into the lead for the WCC as well. As it stands today Alpine leads the way, followed by Ferrari and McLaren who are separated by mere points. The WDC currently stands with Joshua, Nick, and Zane in the top three with Erick just one point behind his Ferrari teammate in 4th. See you all down under where the league takes to the converted streets of Albert Park.
                 '''+'''
-                <p style="color:lightgray;">Wednesday 12/4/2024 - Patrick Knowles with credit Eddie Tavera</p>
+                <p style="color:lightgray;">Wednesday 12/4/2024 - Patrick Knowles with credit Eddie & Nick</p>
                 ''',
                 unsafe_allow_html=True,)
 

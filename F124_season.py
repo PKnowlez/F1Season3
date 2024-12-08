@@ -243,8 +243,8 @@ with tabs[2]:
     with st.expander("Pre-Season: Miami"):
         st.subheader("Winner: Joshua")
         MiamiResults = pd.DataFrame({
-            'Driver': ['Joshua','Nick**','Patrick','Erick','Yeti','Boz','Del','Gary'],
             'Place': ['1','2','3','4','16','17','18','19'],
+            'Driver': ['Joshua','Nick**','Patrick','Erick','Yeti','Boz','Del','Gary'],
         })
         # Removes the index column from the markdown st.table
         hide_table_row_index = """
@@ -276,10 +276,10 @@ with tabs[2]:
                         fastestlap_col = races[i].replace(' (S)','') + 'SprintFastestLap'
 
                     race_results_df = pd.DataFrame({
+                    'Place': df_sorted[race_place[i-1]],
                     'Driver': df_sorted['Driver'],
                     'Team': df_sorted['Team'],
                     'Qualifying': df_sorted[qualifying_col],
-                    'Place': df_sorted[race_place[i-1]],
                     'Points': df_sorted[race_points[i-1]],
                     'Fastest Lap': df_sorted[fastestlap_col]
                     })

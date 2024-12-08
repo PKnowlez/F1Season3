@@ -5,6 +5,8 @@ import plotly.express as px
 import math
 from PIL import Image
 
+st.set_page_config(layout="wide") 
+
 # Read in excel sheet
 df = pd.read_excel('F124_season.xlsx', sheet_name='PythonReadyData')
 

@@ -163,7 +163,7 @@ with tabs[0]:
     st.markdown('''
                 Track limits were heavily enforced across the field as drivers tested the race director’s new regulations. Prior to the start of the race the league was informed that, due to sloppiness and abuse of the rules by Alpine’s Joshua at Silverstone, any corner cutting would be strictly recorded and penalties would be awarded for drivers who broke the rules three or more times throughout the race. For most these penalties were minor and did not end up changing the outcome of the race. However in the post race driver’s meeting there was a minor uproar that the regulations were too strict. Only time will tell if these regulations will remain or if the race director will renege their stance.
                 '''+'''
-                With just nine laps to go a late safety car bunched up the drivers and allowed some to take advantage of less impactful pitstop. With Joshua still in first, Nick tailing him, and Erick following in third, the queue of cars cautiously took the final few corners of Lap 22 waiting for Joshua to throttle up. Waiting on bated breath, Nick and Erick pounced as Joshua launched only to find Joshua jump off the throttle for a short moment causing a multitude of front wings to be damaged. Regardless, no penalties were called and the drivers mustered what they could with their damaged vehicles. A tight battle ensued up front which ultimately saw McLaren’s Nick take home his first win of the season with Alpine’s Joshua right behind. 
+                With just nine laps to go a late safety car bunched up the drivers and allowed some to take advantage of a less impactful pitstop. With Joshua still in first, Nick tailing him, and Erick following in third, the queue of cars cautiously took the final few corners of Lap 22 waiting for Joshua to throttle up. Waiting on bated breath, Nick and Erick pounced as Joshua launched only to find Joshua jump off the throttle for a short moment causing a multitude of front wings to be damaged. Regardless, no penalties were called and the drivers mustered what they could with their damaged vehicles. A tight battle ensued up front which ultimately saw McLaren’s Nick take home his first win of the season with Alpine’s Joshua right behind. 
                 ''')
     st.image(australia3)
     st.markdown('''
@@ -171,6 +171,10 @@ with tabs[0]:
                 '''+'''
                 After all the engines were turned off and points totalled, battles for rank in both the World Driver’s and Constructor’s Championships have begun to heat up. McLaren begins to close the gap to Alpine and leap frogs Ferrari into second. In the Driver’s Championship, we saw both of the VCARB drivers overtake Ferrari’s Zane, but the leaders Joshua, Nick, and Erick remain the same. Next our drivers take to the Belgian forest in Spa where they will test their mettle against the highspeed Eau Rouge and longest track on the calendar.
                 ''')
+    st.markdown('''
+                <p style="color:lightgray;">Thursday 12/11/2024 - Patrick Knowles with credit Erick & Nick</p>
+                ''',
+                unsafe_allow_html=True,)
     
     st.divider()
     australia_circuit = Image.open("./Images/Australia_Circuit.png")
@@ -207,7 +211,8 @@ with tabs[0]:
                 Further down the field the two Red Bull drivers Yeti and Boz sparred for the entire race, ending in 6th and 11th after a late error by Boz. Which allowed VCARB’s Brently to make up a place after a muddled start, and end in 8th. Finally, rounding out our grid this week were the Aston Martins with Gary finishing in 19th and Del MIA for this week’s bout.
                 '''+'''
                 Alpine’s Joshua takes an early strong lead in the WDC with his back-to-back wins. His efforts, along with Jr.'s, have propelled the team into the lead for the WCC as well. As it stands today Alpine leads the way, followed by Ferrari and McLaren who are separated by mere points. The WDC currently stands with Joshua, Nick, and Zane in the top three with Erick just one point behind his Ferrari teammate in 4th. See you all down under where the league takes to the converted streets of Albert Park.
-                '''+'''
+                ''')
+    st.markdown('''
                 <p style="color:lightgray;">Wednesday 12/4/2024 - Patrick Knowles with credit Eddie & Nick</p>
                 ''',
                 unsafe_allow_html=True,)

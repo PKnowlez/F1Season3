@@ -76,12 +76,14 @@ for i, driver in enumerate(drivers.unique()):
     driver_colors[driver] = color_list[i % len(color_list)]
 
 for i in range(len(race_place)):
-    if not pd.isnull(df.loc[1,race_place[i-1]]):
-        index = i+1
+    if df.loc[0,fastest_lap[i]] == 'Z':
+        index = i
         index_x = index-0.5
         break
     else:
         x = 0
+
+print(index)
 
 # --- Team Plot ---
 
@@ -142,6 +144,31 @@ tabs = st.tabs(["League News", "Standings", "Race Results", "Constructor Statist
 # League News
 with tabs[0]:
     # Author and add news articles for each race with headlines and such
+    australia1 = Image.open("./Images/Australia_Start.png")
+    australia2 = Image.open("./Images/Australia_Collage.png")
+    australia3 = Image.open("./Images/Australia_Side_Shot.png")
+    st.subheader('Australia Recap: A Rumble Down Under')
+    st.markdown('''
+                tldr; Australia did not disappoint. Safety cars, front wings destroyed, questionable restarts, engines blown, drivers fuming, DNFs, a DNS, and a new race winner. 
+                '''+'''
+                With race hype at an all time high the drivers jumped into discord and silently sat waiting for the race to begin. Nerves were frayed, but when the lights went green in qualifying the drivers took to the streets of Albert Park without much trouble. The Red Bull pairing failed to make it out of Q1 and Alpine’s #2 driver Eddie totaled his car beyond repair, making it impossible for him to set a lap time during Q2. The final results of Q3 saw Alpine’s Joshua take home another pole position, with McLaren’s Nick, Aston Martin’s Del, and VCARB’s Patrick completing the first two rows. The Ferrari pairing occupied the third row and McLaren’s Travis and VCARB’s Brently rounded out the top eight on the fourth row of the grid. The rest of the field found themselves starting near the back, which to some strategists was the right move to ensure their drivers survived the first corner.
+                ''')
+    st.image(australia1)
+    st.markdown('''
+                When the five lights went out, the drivers quickly proceeded down the straight into Turn 1 where the top few drivers made it through fairly clean. However, Zane’s Ferrari was caught up in an incident on his way through Turn 2. This ended up proving to be a detrimental loss for Zane early in the race. Erick was able to make up a place into fourth passing Del and avoiding contact through the first few corners. 
+                '''+'''
+                As the race continued Alpine’s dominant driver Joshua took an early lead but was unable to break free from McLaren’s top contender Nick. As the front of the pack continued, Erick miraculously avoided contact with both Patrick and Nick in Turn 3 as he found himself in the gravel. This maneuver would have normally left him high and dry, but an early VSC and safety car allowed Erick to get right back into the groove. 
+                ''')
+    st.image(australia2)
+    st.markdown('''
+                Track limits were heavily enforced across the field as drivers tested the race director’s new regulations. Prior to the start of the race the league was informed that, due to sloppiness and abuse of the rules by Alpine’s Joshua at Silverstone, any corner cutting would be strictly recorded and penalties would be awarded for drivers who broke the rules three or more times throughout the race. For most these penalties were minor and did not end up changing the outcome of the race. However in the post race driver’s meeting there was a minor uproar that the regulations were too strict. Only time will tell if these regulations will remain or if the race director will renege their stance.
+                '''+'''
+                With just nine laps to go a late safety car bunched up the drivers and allowed some to take advantage of less impactful pitstop. With Joshua still in first, Nick tailing him, and Erick following in third, the queue of cars cautiously took the final few corners of Lap 22 waiting for Joshua to throttle up. Waiting on bated breath, Nick and Erick pounced as Joshua launched only to find Joshua jump off the throttle for a short moment causing a multitude of front wings to be damaged. Regardless, no penalties were called and the drivers mustered what they could with their damaged vehicles. A tight battle ensued up front which ultimately saw McLaren’s Nick take home his first win of the season with Alpine’s Joshua right behind. 
+                ''')
+    st.image(australia3)
+    st.markdown('''
+                Rounding out the podium was Ferrari's Erick, who moved up from 5th to 3rd. Just behind him the two VCARB drivers had their best team finish of the season with Patrick finishing 4th, and driver of the day Brently moving up from 8th to 5th. Del was unable to fully recover from the early setbacks and ended in 11th with McLaren’s Travis just behind in 12th, and Alpine’s 7th place wunderkind Eddie falling all the way back to 13th. Rounding out our finishers today was Ferrari’s Zane in 15th. For Red Bull, this will be a qualifying and race to take notes from and improve upon as both drivers ended up unable to cross the finish line. Aston Martin again ran with just a single driver today as Gary was sadly watching the Knicks fall to the Hawks.
+                ''')
     
     st.divider()
     australia_circuit = Image.open("./Images/Australia_Circuit.png")
@@ -575,7 +602,7 @@ with tabs[5]:
                 'Baku','Canada','Monza','Abu Dhabi', 'Austria','COTA'],
     'Date': ['11/13/2024','11/20/2024','12/4/2024','12/11/2024','12/18/2024','12/25/2024','1/1/2025','1/8/2025',
              '1/15/2025','1/22/2025','1/29/2025','2/5/2025','2/12/2025'],
-    'Status': ['Final', 'Final', 'Final', 'Upcoming', 'Tentative', 'Tentative', 'Tentative',
+    'Status': ['Final', 'Final', 'Final', 'Final', 'Upcoming', 'Tentative', 'Tentative',
                'Tentative', 'Tentative', 'Tentative', 'Tentative', 'Tentative', 'Tentative']
     })
 

@@ -168,6 +168,8 @@ with tabs[0]:
     st.image(australia3)
     st.markdown('''
                 Rounding out the podium was Ferrari's Erick, who moved up from 5th to 3rd. Just behind him the two VCARB drivers had their best team finish of the season with Patrick finishing 4th, and driver of the day Brently moving up from 8th to 5th. Del was unable to fully recover from the early setbacks and ended in 11th with McLaren’s Travis just behind in 12th, and Alpine’s 7th place wunderkind Eddie falling all the way back to 13th. Rounding out our finishers today was Ferrari’s Zane in 15th. For Red Bull, this will be a qualifying and race to take notes from and improve upon as both drivers ended up unable to cross the finish line. Aston Martin again ran with just a single driver today as Gary was sadly watching the Knicks fall to the Hawks.
+                '''+'''
+                After all the engines were turned off and points totalled, battles for rank in both the World Driver’s and Constructor’s Championships have begun to heat up. McLaren begins to close the gap to Alpine and leap frogs Ferrari into second. In the Driver’s Championship, we saw both of the VCARB drivers overtake Ferrari’s Zane, but the leaders Joshua, Nick, and Erick remain the same. Next our drivers take to the Belgian forest in Spa where they will test their metal against the highspeed Eau Rouge and longest track on the calendar.
                 ''')
     
     st.divider()

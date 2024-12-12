@@ -142,6 +142,8 @@ tabs = st.tabs(["League News", "Standings", "Race Results", "Constructor Statist
 # League News
 with tabs[0]:
     # Author and add news articles for each race with headlines and such
+    
+    st.divider()
     australia_circuit = Image.open("./Images/Australia_Circuit.png")
     st.subheader('Race Week - Australia')
     st.markdown('''
@@ -159,9 +161,11 @@ with tabs[0]:
                 )
 
     st.divider()
+    silverstone0 = Image.open("./Images/Silverstone_Start.png")
     silverstone1 = Image.open("./Images/Silverstone_Final_Turn.png")
     silverstone2 = Image.open("./Images/Silverstone_PK_Zane.png")
     st.subheader('Silverstone Recap: “007 You Only Win Twice”')
+    st.image(silverstone0)
     st.markdown('''
                 Another week, another race. The sun mercifully shone down on the British Isles and provided the perfect weather for an eventful race. Reigning WDC Nick, and Alpine’s top driver Joshua, battled it out for 26 laps straight. Joshua took the win after a little bit of questionable contact and a helpful dose of backmarker blocking. This is Alpine and Joshua’s second win of the season. Alpine also had some 007 magic from their second seat, Eddie, who had 0 intention of racing, 0 practice, and placed 7th. Coincidentally this was also his second time placing 7th this season. Let’s see if this pattern continues for the French outfit.
                 ''')

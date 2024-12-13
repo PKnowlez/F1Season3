@@ -636,8 +636,8 @@ with tabs[5]:
     schedule = pd.DataFrame({
     'Race': ['Pre-Season: Miami', 'Suzuka','Silverstone','Australia','Spa','Spain','China', 
                 'Baku','Canada','Monza','Abu Dhabi', 'Austria','COTA'],
-    'Date': ['11/13/2024','11/20/2024','12/4/2024','12/11/2024','12/18/2024','12/25/2024','1/1/2025','1/8/2025',
-             '1/15/2025','1/22/2025','1/29/2025','2/5/2025','2/12/2025'],
+    'Date': ['11/13/2024','11/20/2024','12/4/2024','12/11/2024','12/18/2024','1/1/2025','1/8/2025','1/15/2025',
+             '1/16/2025','1/22/2025','1/29/2025','2/5/2025','2/12/2025'],
     'Status': ['Final', 'Final', 'Final', 'Final', 'Upcoming', 'Tentative', 'Tentative',
                'Tentative', 'Tentative', 'Tentative', 'Tentative', 'Tentative', 'Tentative']
     })

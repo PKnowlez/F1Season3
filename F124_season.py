@@ -83,8 +83,6 @@ for i in range(len(race_place)):
     else:
         x = 0
 
-print(index)
-
 # --- Team Plot ---
 
 # Add a new column of zeros at the beginning
@@ -401,9 +399,7 @@ with tabs[3]:
 with tabs[4]:
     # Expands for each driver: Race results bar graph, highest finish, number of wins, 
     #   number of podiums, total points, fastest laps total, average qualifying,
-    #   average place
-    # Add expands for each driver with:
-    # - Qualification vs. finish statistic
+    #   average place, qualifying vs finsih graph, qualyfing vs finish average
 
     # Creates a list of all the points columns in the excel sheet
     points_columns = [col for col in df.columns if col.endswith(('Points', 'SprintPoints'))]
@@ -431,9 +427,6 @@ with tabs[4]:
     new_df_Place = df.set_index('Driver')[place_columns]
     new_df_Place = new_df_Place.reset_index()
 
-    print(new_df_Q)
-    print(new_df_Place)
-
     # Loops through each driver to create an expand with their information only
     for i in range(len(new_df['Driver'])):
         with st.expander(new_df['Driver'][i]):
@@ -443,8 +436,18 @@ with tabs[4]:
             # Create the figure name using the driver's name
             fig_name = f"{driver_name} Points Per Race"
 
+            # 15 unique colors
+            colors = [
+                '#e6194b', '#3cb44b', '#ffe119', '#4363d8', '#f58231', '#911eb4', '#46f0f0', 
+                '#f032e6', '#bcf60c', '#fabebe', '#008080', '#e6beff', '#9a6324', '#fffac8', 
+                '#800000'
+            ]
+
             # Use globals() to dynamically create the variable
-            globals()[fig_name] = px.bar(x=races_points_only, y=driver_points, title=fig_name)
+            globals()[fig_name] = px.bar(x=races_points_only, y=driver_points, 
+                                        title=fig_name, color=races_points_only,
+                                        color_discrete_sequence=colors) 
+
             globals()[fig_name].update_xaxes(categoryorder='array', categoryarray=races_points_only)
 
             # Update x-axis title
@@ -454,7 +457,7 @@ with tabs[4]:
             globals()[fig_name].update_yaxes(title_text="Points")
 
             # Update layout
-            globals()[fig_name].update_layout(xaxis_range=[-0.5,index_x])
+            globals()[fig_name].update_layout(xaxis_range=[-0.5,index_x], showlegend=False)  # Hide the legend
 
             # Calculates the highest placement a driver has achieved
             highest_score = max(driver_points)
@@ -560,47 +563,73 @@ with tabs[4]:
             driver_place = new_df_Place.iloc[i,1:].tolist()
             qualifying_place = [x - y for x, y in zip(driver_qualifying, driver_place)]
 
-            # Still need to create a graph that shows +/- for each driver's qualifying vs.
-            # finishing positions. Unsure how to handle all the nan values when plotting
-            # the results.
+            # Create the figure name using the driver's name
+            fig_name3 = f"{driver_name} Positions Gained or Lost Per Race"
+
+            # Create a list of colors based on the values in qualifying_place
+            colors = ['green' if val >= 0 else 'red' for val in qualifying_place]
+
+            # Use globals() to dynamically create the variable with the color list
+            globals()[fig_name3] = px.bar(x=races_points_only, y=qualifying_place, 
+                                        title=fig_name3, color=colors,
+                                        color_discrete_map="identity")  # Use the provided colors
+
+            globals()[fig_name3].update_xaxes(categoryorder='array', categoryarray=races_points_only)
+
+            # Update x-axis title
+            globals()[fig_name3].update_xaxes(title_text="Race", categoryorder='array', categoryarray=races_points_only)
+
+            # Update y-axis title
+            globals()[fig_name3].update_yaxes(title_text="Positions Changed")
+
+            # Update layout
+            globals()[fig_name3].update_layout(xaxis_range=[-0.5,index_x]) 
 
             # Calculate Average Qualifying Position
             driver_qualifying_average = []
             driver_qualifying_average = [item for item in driver_qualifying if not math.isnan(item)]
-            driver_qualifying_average = sum(driver_qualifying_average) / len(driver_qualifying_average)
-            driver_qualifying_average = 'Average Qualifying: ' + str(driver_qualifying_average)
-
-            # Sets the value to be displayed for Driver Fastest Lap
+            driver_qualifying_averageN = sum(driver_qualifying_average) / len(driver_qualifying_average)
+            driver_qualifying_average = 'Average Qualifying: ' + str(round(driver_qualifying_averageN,1))
             button_key6 = button_key5 + "_" + str(i)
 
-            # Calculates Finishing Place
-            # Calculate Average Qualifying Position
+            # Calculate Average Finishing Position
             driver_place_average = []
             driver_place_average = [item for item in driver_place if not math.isnan(item)]
-            driver_place_average = sum(driver_place_average) / len(driver_place_average)
-            driver_place_average = 'Average Place: ' + str(driver_place_average)
-
-            # Sets the value to be displayed for Driver Fastest Lap
+            driver_place_averageN = sum(driver_place_average) / len(driver_place_average)
+            driver_place_average = 'Average Place: ' + str(round(driver_place_averageN,1))
             button_key7 = button_key6 + "_" + str(i)
 
+            # Calculates Average Positions Gained/Lost
+            driver_changedN = driver_qualifying_averageN - driver_place_averageN
+            driver_changed = 'Average Position Change: ' + str(round(driver_changedN))
+            button_key8 = button_key7 + "_" + str(i)
+
             # Creates the layout for each expand
-            col1, col2, col3 = st.columns(3)
+            col1, col2, col3, col4 = st.columns(4)
             with col1:
                 st.button(total_points,key=button_key4)
             with col2:
                 st.button(countW,key=button_key2)
             with col3:
                 st.button(countP,key=button_key3)
-            col4, col5, col6 = st.columns(3)
             with col4:
                 st.button(fastest_lap_count,key=button_key5)
+            col5, col6, col7, col8 = st.columns(4)
             with col5:
                 st.button(driver_qualifying_average,key=button_key6)
             with col6:
                 st.button(driver_place_average,key=button_key7)
-            st.button(best_finish,key=button_key)
-            st.plotly_chart(globals()[fig_name])
-            st.plotly_chart(globals()[fig_name2])
+            with col7:
+                st.button(driver_changed,key=button_key8)
+            with col8:
+                st.button(best_finish,key=button_key)
+            col9, col10, col11 = st.columns(3)
+            with col9:
+                st.plotly_chart(globals()[fig_name])
+            with col10:
+                st.plotly_chart(globals()[fig_name2])
+            with col11:
+                st.plotly_chart(globals()[fig_name3])
 
 # Race Schedule  
 with tabs[5]:

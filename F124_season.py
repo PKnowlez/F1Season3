@@ -150,7 +150,7 @@ with tabs[0]:
                 ''')
     st.image(spa_circuit)
     st.markdown('''
-                Famous early corners like La Source and Raidillon’s Eau Rogue will provide exhilarating braking and high-speeds moments. Followed by the twisting turns of Le Combes, Pouhon, and Campus among others, the drivers are sure to provide incredible wheel-to-wheel action. Finally drivers will have the opportunity for late sends or strategic tailgating going into the chicane before the start-finish straight.
+                Famous early corners like La Source and Raidillon’s Eau Rogue will provide exhilarating braking and high-speed moments. Followed by the twisting turns of Le Combes, Pouhon, and Campus among others, the drivers are sure to provide incredible wheel-to-wheel action. Finally drivers will have the opportunity for late sends or strategic tailgating going into the chicane before the start-finish straight.
                 ''')
     st.image(spa_collage)
     st.markdown('''

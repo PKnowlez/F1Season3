@@ -70,7 +70,7 @@ team_colors = {
 }
 
 # Driver colors
-color_list = ['darkorange','orange','blue','skyblue','red','#ff6060','hotpink','pink','darkblue','#8888c9','teal','#84c1c1']
+color_list = ['darkorange','orange','blue','skyblue','red','#ff6060','hotpink','pink','darkblue','#8888c9','#84c1c1','teal']
 driver_colors = {}  # Initialize an empty dictionary
 for i, driver in enumerate(drivers.unique()):
     driver_colors[driver] = color_list[i % len(color_list)]

@@ -302,13 +302,11 @@ with tabs[1]:
             st.table(driver_totals)
     col3, col4 = st.columns(2)
     with col3:
-        st.divider()
         # Display the Team Plot in Streamlit
         st.plotly_chart(fig1)
         # Display the Team Bar plot
         st.plotly_chart(globals()[fig_name0])
     with col4:
-        st.divider()
         # Display the Driver Plot in Streamlit
         st.plotly_chart(fig2)
 

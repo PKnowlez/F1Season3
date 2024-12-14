@@ -336,11 +336,11 @@ with tabs[2]:
 
 # Constructor Statistics    
 with tabs[3]:
-    # Expands for each constructor: race results bar graph, best finish callout
+    # Expands for each constructor: race results bar graph, best finish callout, total points callout,
+    # Total points bar graph for all constructors
     # Add expands for each constructor with:
     # - Number of fastest laps callout
     # - Number of wins callout
-    # - Total points callout
     # - Driver/Team Bios
 
     # Creates a list of all the points columns in the excel sheet
@@ -353,6 +353,30 @@ with tabs[3]:
     # Create team_df
     team_df = df.groupby('Team')[team_points_columns].sum()
     team_df = team_df.reset_index()
+    
+    # --------------------- #
+    # Create the figure name
+    fig_name0 = "Constructor Points"
+
+    # Create a list of colors corresponding to the teams in constructor_totals['Team']
+    colors = [team_colors.get(team) for team in constructor_totals['Team']]
+    
+    # Use globals() to dynamically create the variable with the color list
+    globals()[fig_name0] = px.bar(
+        x=constructor_totals['Team'], 
+        y=constructor_totals['Points'], 
+        title=fig_name0,
+        color=colors,
+        color_discrete_map="identity"
+    )
+
+    # Update x-axis title
+    globals()[fig_name0].update_xaxes(title_text="Constructor")
+
+    # Update y-axis title
+    globals()[fig_name0].update_yaxes(title_text="Points")
+
+    st.plotly_chart(globals()[fig_name0])
 
     # Loops through each driver to create an expand with their information only
     for i in range(len(team_df['Team'])):

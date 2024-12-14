@@ -137,7 +137,7 @@ fig2.update_layout(
 logo = Image.open("./Images/TheAlternativeLogo.png")
 st.image(logo)
 
-tabs = st.tabs(["League News", "Standings", "Race Results", "Constructor Statistics", "Driver Statistics","Race Schedule"])
+tabs = st.tabs(["League News", "Standings", "Race Results", "Constructor Statistics", "Driver Statistics","Driver Comparisons","Race Schedule"])
 
 # League News
 with tabs[0]:
@@ -382,10 +382,13 @@ with tabs[3]:
             best_result = 'Best Result: ' + team_races_points_only[index] + ' (' + str(highest_score) + ' points)'
             button_key = 'TeamButton' + "_" + str(i)
 
-            # Calculates the total points for a driver
+            # Calculates the total points for a team
             button_key1 = button_key + "_" + str(i)
-            total_points = sum(team_points)
-            total_points = 'Total Points: ' + str(total_points)
+            total_pointsN = sum(team_points)
+            total_points = 'Total Points: ' + str(total_pointsN)
+            # Create full list of team total points
+            team_total_points = []
+            team_total_points.append(total_pointsN)
 
             # Creates the layout for each expand
             col1, col2 = st.columns(2)
@@ -426,6 +429,12 @@ with tabs[4]:
     # Creates a new dataframe with only the drivers and placement columns
     new_df_Place = df.set_index('Driver')[place_columns]
     new_df_Place = new_df_Place.reset_index()
+
+    # Variables for loop
+    drivers_total_points = []
+    average_changed = []
+    average_qualifying = []
+    average_place = []
 
     # Loops through each driver to create an expand with their information only
     for i in range(len(new_df['Driver'])):
@@ -505,8 +514,10 @@ with tabs[4]:
 
             # Calculates the total points for a driver
             button_key4 = button_key3 + "_" + str(i)
-            total_points = sum(driver_points)
-            total_points = 'Total Points: ' + str(total_points)
+            total_pointsN = sum(driver_points)
+            total_points = 'Total Points: ' + str(total_pointsN)
+            # Create driver total points list
+            drivers_total_points.append(total_pointsN)
 
             # Creates placement graph
             placements = [0,0,0,0,0,0,0,0,0,0]
@@ -591,6 +602,8 @@ with tabs[4]:
             driver_qualifying_averageN = sum(driver_qualifying_average) / len(driver_qualifying_average)
             driver_qualifying_average = 'Average Qualifying: ' + str(round(driver_qualifying_averageN,1))
             button_key6 = button_key5 + "_" + str(i)
+            # Create full average qualifying list
+            average_qualifying.append(driver_qualifying_averageN)
 
             # Calculate Average Finishing Position
             driver_place_average = []
@@ -598,11 +611,15 @@ with tabs[4]:
             driver_place_averageN = sum(driver_place_average) / len(driver_place_average)
             driver_place_average = 'Average Place: ' + str(round(driver_place_averageN,1))
             button_key7 = button_key6 + "_" + str(i)
+            # Create full average finishing list
+            average_place.append(driver_place_averageN)
 
             # Calculates Average Positions Gained/Lost
             driver_changedN = driver_qualifying_averageN - driver_place_averageN
             driver_changed = 'Average Position Change: ' + str(round(driver_changedN))
             button_key8 = button_key7 + "_" + str(i)
+            # Create full average positions gained/lost list
+            average_changed.append(driver_changedN)
 
             # Creates the layout for each expand
             col1, col2, col3, col4 = st.columns(4)
@@ -631,8 +648,139 @@ with tabs[4]:
             with col11:
                 st.plotly_chart(globals()[fig_name3])
 
-# Race Schedule  
+# Driver Comparisons
 with tabs[5]:
+    # Y variables average_changed, average_place, average_qualifying, drivers_total_points
+    # X variable is new_df['Driver']
+
+    # --------------------- #
+    # Create the figure name
+    fig_name4 = "Average Positions Gained or Lost Per Race"
+
+    avg_changed_df = pd.DataFrame({
+        'Driver': new_df['Driver'].copy(),
+        'Average Changed': average_changed
+        })
+    avg_changed_df = avg_changed_df.sort_values(by='Average Changed', ascending=False)
+
+    # Create a list of colors based on the values in average_changed
+    colors = ['green' if val >= 0 else 'red' for val in avg_changed_df['Average Changed']]
+    
+    # Use globals() to dynamically create the variable with the color list
+    globals()[fig_name4] = px.bar(x=avg_changed_df['Driver'], y=avg_changed_df['Average Changed'], 
+                                title=fig_name4, color=colors,
+                                color_discrete_map="identity")
+
+    # Update x-axis title
+    globals()[fig_name4].update_xaxes(title_text="Driver")
+
+    # Update y-axis title
+    globals()[fig_name4].update_yaxes(title_text="Positions Changed")
+
+    # --------------------- #
+    # Create the figure name
+    fig_name5 = "Points Per Driver"
+
+    drivers_points_df = pd.DataFrame({
+        'Driver': new_df['Driver'].copy(),
+        'Points': drivers_total_points
+        })
+    drivers_points_df = drivers_points_df.sort_values(by='Points', ascending=False)
+
+    # 15 unique colors
+    colors = [
+        '#FFD700', '#C0C0C0', '#CD7F32', '#0068c9', '#0068c9', '#0068c9', '#0068c9', 
+        '#0068c9', '#0068c9', '#0068c9', '#0068c9', '#0068c9'
+    ]
+    
+    # Use globals() to dynamically create the variable with the color list
+    globals()[fig_name5] = px.bar(x=drivers_points_df['Driver'], y=drivers_points_df['Points'], 
+                                title=fig_name5, color=colors,
+                                color_discrete_map="identity")
+
+    # Update x-axis title
+    globals()[fig_name5].update_xaxes(title_text="Driver")
+
+    # Update y-axis title
+    globals()[fig_name5].update_yaxes(title_text="Points")
+
+    # --------------------- #
+    # Create the figure name
+    fig_name6 = "Average Qualifying Position"
+
+    avg_qualifying_df = pd.DataFrame({
+        'Driver': new_df['Driver'].copy(),
+        'Qualifying': average_qualifying
+        })
+    avg_qualifying_df = avg_qualifying_df.sort_values(by='Qualifying', ascending=True)
+
+    # 15 unique colors
+    colors = [
+        '#FFD700', '#C0C0C0', '#CD7F32', '#0068c9', '#0068c9', '#0068c9', '#0068c9', 
+        '#0068c9', '#0068c9', '#0068c9', '#0068c9', '#0068c9'
+    ]
+    
+    # Use globals() to dynamically create the variable with the color list
+    globals()[fig_name6] = px.bar(x=avg_qualifying_df['Driver'], y=avg_qualifying_df['Qualifying'], 
+                                title=fig_name6, color=colors,
+                                color_discrete_map="identity")
+
+    # Update x-axis title
+    globals()[fig_name6].update_xaxes(title_text="Driver")
+
+    # Update y-axis title
+    globals()[fig_name6].update_yaxes(title_text="Qualifying Place")
+
+    # --------------------- #
+    # Create the figure name
+    fig_name7 = "Average Place"
+
+    avg_place_df = pd.DataFrame({
+        'Driver': new_df['Driver'].copy(),
+        'Place': average_place
+        })
+    avg_place_df = avg_place_df.sort_values(by='Place', ascending=True)
+
+    # 15 unique colors
+    colors = [
+        '#FFD700', '#C0C0C0', '#CD7F32', '#0068c9', '#0068c9', '#0068c9', '#0068c9', 
+        '#0068c9', '#0068c9', '#0068c9', '#0068c9', '#0068c9'
+    ]
+    
+    # Use globals() to dynamically create the variable with the color list
+    globals()[fig_name7] = px.bar(x=avg_place_df['Driver'], y=avg_place_df['Place'], 
+                                title=fig_name7, color=colors,
+                                color_discrete_map="identity")
+
+    # Update x-axis title
+    globals()[fig_name7].update_xaxes(title_text="Driver")
+
+    # Update y-axis title
+    globals()[fig_name7].update_yaxes(title_text="Place")
+
+    col1, col2, col3, col4 = st.columns(4)
+    with col1:
+        button_text = "Points Leader: " + drivers_points_df.loc[drivers_points_df['Points'].idxmax(), 'Driver']
+        st.button(button_text,key='Points Leader')
+    with col2:
+        button_text = "Positions Gained Leader: " + avg_changed_df.loc[avg_changed_df['Average Changed'].idxmax(), 'Driver']
+        st.button(button_text,key='Positions Gained Leader')
+    with col3:
+        button_text = "Qualifying Leader: " + avg_qualifying_df.loc[avg_qualifying_df['Qualifying'].idxmin(), 'Driver']
+        st.button(button_text,key='Qualifying Leader')
+    with col4:
+        button_text = "Place Leader: " + avg_place_df.loc[avg_place_df['Place'].idxmin(), 'Driver']
+        st.button(button_text,key='Place Leader')
+    col5, col6 = st.columns(2)
+    with col5:
+        st.plotly_chart(globals()[fig_name5])
+        st.plotly_chart(globals()[fig_name6])
+    with col6:
+        st.plotly_chart(globals()[fig_name4])
+        st.plotly_chart(globals()[fig_name7])
+
+# Race Schedule  
+with tabs[6]:
     schedule = pd.DataFrame({
     'Race': ['Pre-Season: Miami', 'Suzuka','Silverstone','Australia','Spa','Spain','China & Sprint', 
                 'Baku','Canada','Monza','Abu Dhabi', 'Austria & Sprint','COTA & Sprint'],

@@ -76,7 +76,7 @@ for i, driver in enumerate(drivers.unique()):
     driver_colors[driver] = color_list[i % len(color_list)]
 
 for i in range(len(race_place)):
-    if df.loc[0,fastest_lap[i]] == 'Z':
+    if df.loc[0,race_points[i]] == 0:
         index = i
         index_x = index-0.5
         break
@@ -408,9 +408,18 @@ with tabs[3]:
 
             # Create the figure name using the driver's name
             fig_name = f"{team_name} Points Per Race"
+            
+            # 15 unique colors
+            colors = [
+                '#e6194b', '#3cb44b', '#ffe119', '#4363d8', '#f58231', '#911eb4', '#46f0f0', 
+                '#f032e6', '#bcf60c', '#fabebe', '#008080', '#e6beff', '#9a6324', '#fffac8', 
+                '#800000'
+            ]
 
             # Use globals() to dynamically create the variable
-            globals()[fig_name] = px.bar(x=team_races_points_only, y=team_points, title=fig_name)
+            globals()[fig_name] = px.bar(x=team_races_points_only, y=team_points, title=fig_name,
+                                        color=team_races_points_only,
+                                        color_discrete_sequence=colors)
             globals()[fig_name].update_xaxes(categoryorder='array', categoryarray=team_races_points_only)
 
             # Update x-axis title
@@ -490,13 +499,6 @@ with tabs[4]:
 
             # Create the figure name using the driver's name
             fig_name = f"{driver_name} Points Per Race"
-
-            # 15 unique colors
-            colors = [
-                '#e6194b', '#3cb44b', '#ffe119', '#4363d8', '#f58231', '#911eb4', '#46f0f0', 
-                '#f032e6', '#bcf60c', '#fabebe', '#008080', '#e6beff', '#9a6324', '#fffac8', 
-                '#800000'
-            ]
 
             # Use globals() to dynamically create the variable
             globals()[fig_name] = px.bar(x=races_points_only, y=driver_points, 
@@ -733,7 +735,7 @@ with tabs[5]:
         })
     drivers_points_df = drivers_points_df.sort_values(by='Points', ascending=False)
 
-    # 15 unique colors
+    # Unique colors
     colors = [
         '#FFD700', '#C0C0C0', '#CD7F32', '#0068c9', '#0068c9', '#0068c9', '#0068c9', 
         '#0068c9', '#0068c9', '#0068c9', '#0068c9', '#0068c9'
@@ -760,12 +762,6 @@ with tabs[5]:
         })
     avg_qualifying_df = avg_qualifying_df.sort_values(by='Qualifying', ascending=True)
 
-    # 15 unique colors
-    colors = [
-        '#FFD700', '#C0C0C0', '#CD7F32', '#0068c9', '#0068c9', '#0068c9', '#0068c9', 
-        '#0068c9', '#0068c9', '#0068c9', '#0068c9', '#0068c9'
-    ]
-    
     # Use globals() to dynamically create the variable with the color list
     globals()[fig_name6] = px.bar(x=avg_qualifying_df['Driver'], y=avg_qualifying_df['Qualifying'], 
                                 title=fig_name6, color=colors,
@@ -786,12 +782,6 @@ with tabs[5]:
         'Place': average_place
         })
     avg_place_df = avg_place_df.sort_values(by='Place', ascending=True)
-
-    # 15 unique colors
-    colors = [
-        '#FFD700', '#C0C0C0', '#CD7F32', '#0068c9', '#0068c9', '#0068c9', '#0068c9', 
-        '#0068c9', '#0068c9', '#0068c9', '#0068c9', '#0068c9'
-    ]
     
     # Use globals() to dynamically create the variable with the color list
     globals()[fig_name7] = px.bar(x=avg_place_df['Driver'], y=avg_place_df['Place'], 

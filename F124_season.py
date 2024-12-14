@@ -157,7 +157,7 @@ with tabs[0]:
                 Previously when the league navigated a day at Spa, McLaren’s Nick took home the win. He finished just seconds before the then Mercedes driver, now Aston Martin driver Del. While Ferrari’s Erick rounded out the podium. Current league leader, and Alpine driver, Joshua was unable to start the race along with three other drivers. In fact, Joshua has not run a race at Spa in the last two seasons, and reigning champion Nick has not lost at Spa in recent memory. Ferrari’s pairing of Erick and Zane have also had historically good races, with Erick boasting a second and third place finish, and Zane placing fourth on his last two outings. With the addition of last week’s regulation changes and the thrilling nature of the Circuit of Spa-Francorchamps, this week is aimed at being another piece of absolute cinema. Hopefully none of the drivers end up just a few tire marbles short of a win.
                 ''')
     st.markdown('''
-                <p style="color:lightgray;">Friday 12/13/2024 - Patrick Knowles</p>
+                <p style="color:lightgray;">Saturday 12/14/2024 - Patrick Knowles</p>
                 ''',
                 unsafe_allow_html=True,)
     

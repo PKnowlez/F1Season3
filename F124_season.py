@@ -160,7 +160,8 @@ with tabs[0]:
                 <p style="color:lightgray;">Friday 12/13/2024 - Patrick Knowles</p>
                 ''',
                 unsafe_allow_html=True,)
-
+    
+    st.divider()
     australia1 = Image.open("./Images/Australia_Start.png")
     australia2 = Image.open("./Images/Australia_Collage.png")
     australia3 = Image.open("./Images/Australia_Side_Shot.png")

@@ -142,6 +142,25 @@ tabs = st.tabs(["League News", "Standings", "Race Results", "Constructor Statist
 # League News
 with tabs[0]:
     # Author and add news articles for each race with headlines and such
+    spa_circuit = Image.open("./Images/Spa_Circuit.png")
+    spa_collage = Image.open("./Images/Spa_Race_Week_Collage2")
+    st.subheader('Race Week - Spa')
+    st.markdown('''
+                The league heads out for a Spa day this week. However, this one probably won’t be all that relaxing. With the Constructor’s and Driver’s championships heating up, Spa will prove to be a place where everyone has the opportunity to make up ground. Historically known as a track favorable for overtaking, Spa’s sacred pavement is also known for being one of the most treacherous high-speed circuits on the calendar. Nestled deep in the Ardennes forest, Spa is riddled with corners, straights, and stories that have filled the racing history books.
+                ''')
+    st.image(spa_circuit)
+    st.markdown('''
+                Famous early corners like La Source and Raidillon’s Eau Rogue will provide exhilarating braking and high-speeds moments. Followed by the twisting turns of Le Combes, Pouhon, and Campus among others, the drivers are sure to provide incredible wheel-to-wheel action. Finally drivers will have the opportunity for late sends or strategic tailgating going into the chicane before the start-finish straight.
+                ''')
+    st.image(spa_collage)
+    st.markdown('''
+                Previously when the league navigated a day at Spa, McLaren’s Nick took home the win. He finished just seconds before the then Mercedes driver, now Aston Martin driver Del. While Ferrari’s Erick rounded out the podium. Current league leader, and Alpine driver, Joshua was unable to start the race along with three other drivers. In fact, Joshua has not run a race at Spa in the last two seasons, and reigning champion Nick has not lost at Spa in recent memory. Ferrari’s pairing of Erick and Zane have also had historically good races, with Erick boasting a second and third place finish, and Zane placing fourth on his last two outings. With the addition of last week’s regulation changes and the thrilling nature of the Circuit of Spa-Francorchamps, this week is aimed at being another piece of absolute cinema. Hopefully none of the drivers end up just a few tire marbles short of a win.
+                ''')
+    st.markdown('''
+                <p style="color:lightgray;">Friday 12/13/2024 - Patrick Knowles</p>
+                ''',
+                unsafe_allow_html=True,)
+
     australia1 = Image.open("./Images/Australia_Start.png")
     australia2 = Image.open("./Images/Australia_Collage.png")
     australia3 = Image.open("./Images/Australia_Side_Shot.png")

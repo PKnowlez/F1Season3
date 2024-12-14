@@ -143,7 +143,7 @@ tabs = st.tabs(["League News", "Standings", "Race Results", "Constructor Statist
 with tabs[0]:
     # Author and add news articles for each race with headlines and such
     spa_circuit = Image.open("./Images/Spa_Circuit.png")
-    spa_collage = Image.open("./Images/Spa_Race_Week_Collage2")
+    spa_collage = Image.open("./Images/Spa_Race_Week_Collage2.png")
     st.subheader('Race Week - Spa')
     st.markdown('''
                 The league heads out for a Spa day this week. However, this one probably won’t be all that relaxing. With the Constructor’s and Driver’s championships heating up, Spa will prove to be a place where everyone has the opportunity to make up ground. Historically known as a track favorable for overtaking, Spa’s sacred pavement is also known for being one of the most treacherous high-speed circuits on the calendar. Nestled deep in the Ardennes forest, Spa is riddled with corners, straights, and stories that have filled the racing history books.

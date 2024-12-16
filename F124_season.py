@@ -25,14 +25,8 @@ with tabs[0]:
 
 # Standings
 with tabs[1]:
-    team_df, team_races_points_only = Tab1.Tab1(
-        team_race_totals,
-        driver_race_totals,
-        df,races,
-        team_colors,
-        fig1,
-        fig2
-        )
+    team_df, team_races_points_only \
+        = Tab1.Tab1(team_race_totals,driver_race_totals,df,races,team_colors,fig1,fig2)
 
 # Race Results
 with tabs[2]:
@@ -54,7 +48,8 @@ with tabs[4]:
     # Expands for each driver: Race results bar graph, highest finish, number of wins, 
     #   number of podiums, total points, fastest laps total, average qualifying,
     #   average place, qualifying vs finsih graph, qualyfing vs finish average
-    new_df,average_changed,drivers_total_points,average_qualifying,average_place = Tab4.Tab4(df,races,colors,index_x)
+    new_df,average_changed,drivers_total_points,average_qualifying,average_place \
+        = Tab4.Tab4(df,races,colors,index_x)
 
 # Driver Comparisons
 with tabs[5]:

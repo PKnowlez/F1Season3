@@ -5,7 +5,7 @@ import plotly.express as px
 import math
 from PIL import Image
 
-def Tab5(new_df,average_changed,drivers_total_points,average_qualifying,average_place,):
+def Tab5(new_df,average_changed,drivers_total_points,average_qualifying,average_place):
     # --------------------- #
     # Create the figure name
     fig_name4 = "Average Positions Gained or Lost Per Race"
@@ -76,7 +76,7 @@ def Tab5(new_df,average_changed,drivers_total_points,average_qualifying,average_
     globals()[fig_name6].update_xaxes(title_text="Driver")
 
     # Update y-axis title
-    globals()[fig_name6].update_yaxes(title_text="Qualifying Place")
+    globals()[fig_name6].update_yaxes(title_text="Qualifying Place",autorange="reversed")
 
     # --------------------- #
     # Create the figure name
@@ -97,7 +97,7 @@ def Tab5(new_df,average_changed,drivers_total_points,average_qualifying,average_
     globals()[fig_name7].update_xaxes(title_text="Driver")
 
     # Update y-axis title
-    globals()[fig_name7].update_yaxes(title_text="Place")
+    globals()[fig_name7].update_yaxes(title_text="Place",autorange="reversed")
 
     col1, col2, col3, col4 = st.columns(4)
     with col1:

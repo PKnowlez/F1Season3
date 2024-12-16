@@ -525,7 +525,7 @@ with tabs[4]:
 with tabs[5]:
     # Y variables average_changed, average_place, average_qualifying, drivers_total_points
     # X variable is new_df['Driver']
-    Tab5.Tab5()
+    Tab5.Tab5(new_df,average_changed,drivers_total_points,average_qualifying,average_place)
 
 # Race Schedule  
 with tabs[6]:

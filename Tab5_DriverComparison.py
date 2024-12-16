@@ -70,15 +70,15 @@ def Tab5(new_df,average_changed,drivers_total_points,average_qualifying,average_
     avg_qualifying_df = avg_qualifying_df.sort_values(by='Qualifying', ascending=True)
 
     # Use globals() to dynamically create the variable with the color list
-    globals()[fig_name6] = px.bar(x=avg_qualifying_df['Driver'], y=avg_qualifying_df['Qualifying'], 
+    globals()[fig_name6] = px.bar(x=avg_qualifying_df['Qualifying'],y=avg_qualifying_df['Driver'], 
                                 title=fig_name6, color=colors,
-                                color_discrete_map="identity")
+                                color_discrete_map="identity",orientation='h')
 
     # Update x-axis title
-    globals()[fig_name6].update_xaxes(title_text="Driver")
+    globals()[fig_name6].update_xaxes(title_text="Qualifying Place")
 
     # Update y-axis title
-    globals()[fig_name6].update_yaxes(title_text="Qualifying Place",autorange="reversed")
+    globals()[fig_name6].update_yaxes(title_text="Driver",autorange="reversed")
 
     # --------------------- #
     # Create the figure name
@@ -91,15 +91,15 @@ def Tab5(new_df,average_changed,drivers_total_points,average_qualifying,average_
     avg_place_df = avg_place_df.sort_values(by='Place', ascending=True)
     
     # Use globals() to dynamically create the variable with the color list
-    globals()[fig_name7] = px.bar(x=avg_place_df['Driver'], y=avg_place_df['Place'], 
+    globals()[fig_name7] = px.bar(x=avg_place_df['Place'],y=avg_place_df['Driver'], 
                                 title=fig_name7, color=colors,
-                                color_discrete_map="identity")
+                                color_discrete_map="identity",orientation='h')
 
     # Update x-axis title
-    globals()[fig_name7].update_xaxes(title_text="Driver")
+    globals()[fig_name7].update_xaxes(title_text="Place")
 
     # Update y-axis title
-    globals()[fig_name7].update_yaxes(title_text="Place",autorange="reversed")
+    globals()[fig_name7].update_yaxes(title_text="Driver",autorange="reversed")
 
     col1, col2, col3, col4 = st.columns(4)
     with col1:

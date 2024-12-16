@@ -4,7 +4,7 @@ import plotly.graph_objects as go
 import plotly.express as px
 import math
 from PIL import Image
-import Tab0, Tab1, Tab2, Tab3, Tab4, Tab5, Tab6, Calculations
+import Tab0_LeagueNews, Tab1_Standings, Tab2_RaceResults, Tab3_ConstructorStatistics, Tab4_DriverStatistics, Tab5_DriverComparison, Tab6_RaceSchedule, Calculations
 
 # Calculations
 team_race_totals,driver_race_totals,df,races,team_colors,fig1,fig2,race_place,race_points,index_x \
@@ -30,30 +30,30 @@ tabs = st.tabs([
 
 # League News
 with tabs[0]:
-    Tab0.Tab0()
+    Tab0_LeagueNews.Tab0()
 
 # Standings
 with tabs[1]:
     team_df, team_races_points_only \
-        = Tab1.Tab1(team_race_totals,driver_race_totals,df,races,team_colors,fig1,fig2)
+        = Tab1_Standings.Tab1(team_race_totals,driver_race_totals,df,races,team_colors,fig1,fig2)
 
 # Race Results
 with tabs[2]:
-    Tab2.Tab2(races,df,race_place,race_points)
+    Tab2_RaceResults.Tab2(races,df,race_place,race_points)
 
 # Constructor Statistics    
 with tabs[3]:
-    colors = Tab3.Tab3(team_df,team_races_points_only,index_x)
+    colors = Tab3_ConstructorStatistics.Tab3(team_df,team_races_points_only,index_x)
 
 # Driver Statistics
 with tabs[4]:
     new_df,average_changed,drivers_total_points,average_qualifying,average_place \
-        = Tab4.Tab4(df,races,colors,index_x)
+        = Tab4_DriverStatistics.Tab4(df,races,colors,index_x)
 
 # Driver Comparisons
 with tabs[5]:
-    Tab5.Tab5(new_df,average_changed,drivers_total_points,average_qualifying,average_place)
+    Tab5_DriverComparison.Tab5(new_df,average_changed,drivers_total_points,average_qualifying,average_place)
 
 # Race Schedule  
 with tabs[6]:
-    Tab6.Tab6()
+    Tab6_RaceSchedule.Tab6()

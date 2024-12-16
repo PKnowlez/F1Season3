@@ -8,35 +8,8 @@ from PIL import Image
 # Expands for each driver: Race results bar graph, highest finish, number of wins, 
 #   number of podiums, total points, fastest laps total, average qualifying,
 #   average place, qualifying vs finsih graph, qualyfing vs finish average
-def Tab4(df,races,colors,index_x):
-    # Creates a list of all the points columns in the excel sheet
-    points_columns = [col for col in df.columns if col.endswith(('Points', 'SprintPoints'))]
-    fastest_lap_columns = [col for col in df.columns if col.endswith(('FastestLap'))]
-    qualifying_columns = [col for col in df.columns if col.endswith(('Qualifying'))]
-    place_columns = [col for col in df.columns if col.endswith(('Place'))]
-
-    # Creates the order of the races to be graphed along the x-axis
-    races_points_only = races.copy()
-    del races_points_only[0]
-
-    # Creates a new dataframe with only the drivers and points columns
-    new_df = df.set_index('Driver')[points_columns]
-    new_df = new_df.reset_index()
-
-    # Creates a new dataframe with only the drivers and fastest laps columns
-    new_df_FL = df.set_index('Driver')[fastest_lap_columns]
-    new_df_FL = new_df_FL.reset_index()
-
-    # Creates a new dataframe with only the drivers and qualifying columns
-    new_df_Q = df.set_index('Driver')[qualifying_columns]
-    new_df_Q = new_df_Q.reset_index()
-
-    # Creates a new dataframe with only the drivers and placement columns
-    new_df_Place = df.set_index('Driver')[place_columns]
-    new_df_Place = new_df_Place.reset_index()
-
+def Tab4(colors,index_x,new_df,new_df_FL,new_df_Q,new_df_Place,races_points_only,driver_points):
     # Variables for loop
-    drivers_total_points = []
     average_changed = []
     average_qualifying = []
     average_place = []
@@ -45,7 +18,6 @@ def Tab4(df,races,colors,index_x):
     for i in range(len(new_df['Driver'])):
         with st.expander(new_df['Driver'][i]):
             driver_name = new_df['Driver'][i]  # Get the driver's name
-            driver_points = new_df.iloc[i, 1:].tolist()
 
             # Create the figure name using the driver's name
             fig_name = f"{driver_name} Points Per Race"
@@ -114,8 +86,6 @@ def Tab4(df,races,colors,index_x):
             button_key4 = button_key3 + "_" + str(i)
             total_pointsN = sum(driver_points)
             total_points = 'Total Points: ' + str(total_pointsN)
-            # Create driver total points list
-            drivers_total_points.append(total_pointsN)
 
             # Creates placement graph
             placements = [0,0,0,0,0,0,0,0,0,0]
@@ -246,4 +216,4 @@ def Tab4(df,races,colors,index_x):
             with col11:
                 st.plotly_chart(globals()[fig_name3])
     
-    return new_df,average_changed,drivers_total_points,average_qualifying,average_place
+    return new_df,average_changed,average_qualifying,average_place

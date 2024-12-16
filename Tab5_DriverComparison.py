@@ -75,10 +75,10 @@ def Tab5(new_df,average_changed,drivers_total_points,average_qualifying,average_
                                 color_discrete_map="identity",orientation='h')
 
     # Update x-axis title
-    globals()[fig_name6].update_xaxes(title_text="Qualifying Place")
+    globals()[fig_name6].update_xaxes(title_text="Qualifying Position")
 
     # Update y-axis title
-    globals()[fig_name6].update_yaxes(title_text="Driver",autorange="reversed")
+    globals()[fig_name6].update_yaxes(title_text="",autorange="reversed")
 
     # --------------------- #
     # Create the figure name
@@ -99,7 +99,7 @@ def Tab5(new_df,average_changed,drivers_total_points,average_qualifying,average_
     globals()[fig_name7].update_xaxes(title_text="Place")
 
     # Update y-axis title
-    globals()[fig_name7].update_yaxes(title_text="Driver",autorange="reversed")
+    globals()[fig_name7].update_yaxes(title_text="",autorange="reversed")
 
     col1, col2, col3, col4 = st.columns(4)
     with col1:

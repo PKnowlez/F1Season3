@@ -5,7 +5,8 @@ import plotly.express as px
 import math
 from PIL import Image
 
-def Tab1(team_race_totals,driver_race_totals,df,races,team_colors,fig1,fig2):
+def Tab1(team_race_totals,driver_race_totals,df,races,team_colors,fig1,fig2,new_df,drivers_total_points,
+         driver_colors):
     totals = team_race_totals.T
     constructor_sorted = totals.sort_values('COTAPoints', ascending=False)
     constructor_sorted = constructor_sorted.reset_index() 
@@ -55,6 +56,35 @@ def Tab1(team_race_totals,driver_race_totals,df,races,team_colors,fig1,fig2):
     # Update y-axis title
     globals()[fig_name0].update_yaxes(title_text="Points")
 
+    # --------------------- #
+    # Create the figure name
+    fig_name00 = "Driver Points"
+
+    drivers_points_df = pd.DataFrame({
+        'Driver': new_df['Driver'].copy(),
+        'Team': df['Team'].copy(),
+        'Points': drivers_total_points
+        })
+    drivers_points_df = drivers_points_df.sort_values(by='Points', ascending=False)
+
+    # Create a list of colors corresponding to the drivers in drivers_points_df['Driver']
+    colors_driver_team = [driver_colors.get(driver) for driver in drivers_points_df['Driver']]
+
+    # Use globals() to dynamically create the variable with the color list
+    globals()[fig_name00] = px.bar(
+        x=drivers_points_df['Driver'], 
+        y=drivers_points_df['Points'], 
+        title=fig_name00,
+        color=colors_driver_team,  # Assign the color list here
+        color_discrete_map="identity"  # Use the provided colors directly
+    )
+
+    # Update x-axis title
+    globals()[fig_name00].update_xaxes(title_text="Driver")
+
+    # Update y-axis title
+    globals()[fig_name00].update_yaxes(title_text="Points")
+
     # ----------------------- #
     # Layout for tab
     col1, col2 = st.columns(2)
@@ -73,5 +103,7 @@ def Tab1(team_race_totals,driver_race_totals,df,races,team_colors,fig1,fig2):
     with col4:
         # Display the Driver Plot in Streamlit
         st.plotly_chart(fig2)
+        # Display the Driver Bar plot
+        st.plotly_chart(globals()[fig_name00])
 
-    return team_df, team_races_points_only
+    return team_df,team_races_points_only,drivers_points_df,colors_driver_team

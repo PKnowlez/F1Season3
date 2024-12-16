@@ -69,7 +69,8 @@ def Calculations():
     }
 
     # Driver colors
-    color_list = ['darkorange','orange','blue','skyblue','red','#ff6060','pink','hotpink','darkblue','#8888c9','#84c1c1','teal']
+    color_list = ['darkorange','orange','blue','skyblue','red','#ff6060','pink','hotpink','darkblue',
+                  '#8888c9','#84c1c1','teal']
     driver_colors = {}  # Initialize an empty dictionary
     for i, driver in enumerate(drivers.unique()):
         driver_colors[driver] = color_list[i % len(color_list)]
@@ -132,4 +133,37 @@ def Calculations():
         hovermode="x unified"  # Enhanced hover mode for better readability
     )
 
-    return team_race_totals,driver_race_totals,df,races,team_colors,fig1,fig2,race_place,race_points,index_x
+    # Creates a list of all the points columns in the excel sheet
+    points_columns = [col for col in df.columns if col.endswith(('Points', 'SprintPoints'))]
+    fastest_lap_columns = [col for col in df.columns if col.endswith(('FastestLap'))]
+    qualifying_columns = [col for col in df.columns if col.endswith(('Qualifying'))]
+    place_columns = [col for col in df.columns if col.endswith(('Place'))]
+
+    # Creates the order of the races to be graphed along the x-axis
+    races_points_only = races.copy()
+    del races_points_only[0]
+
+    # Creates a new dataframe with only the drivers and points columns
+    new_df = df.set_index('Driver')[points_columns]
+    new_df = new_df.reset_index()
+
+    # Creates a new dataframe with only the drivers and fastest laps columns
+    new_df_FL = df.set_index('Driver')[fastest_lap_columns]
+    new_df_FL = new_df_FL.reset_index()
+
+    # Creates a new dataframe with only the drivers and qualifying columns
+    new_df_Q = df.set_index('Driver')[qualifying_columns]
+    new_df_Q = new_df_Q.reset_index()
+
+    # Creates a new dataframe with only the drivers and placement columns
+    new_df_Place = df.set_index('Driver')[place_columns]
+    new_df_Place = new_df_Place.reset_index()
+
+    drivers_total_points = []
+    for i in range(len(new_df['Driver'])):
+        driver_points = new_df.iloc[i, 1:].tolist()
+        total_pointsN = sum(driver_points)
+        drivers_total_points.append(total_pointsN)
+
+    return team_race_totals,driver_race_totals,df,races,team_colors,fig1,fig2,race_place,race_points,index_x, \
+        new_df,new_df_FL,new_df_Q,new_df_Place,races_points_only,driver_points,drivers_total_points,driver_colors

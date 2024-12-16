@@ -15,8 +15,8 @@ def Tab3(team_df,team_races_points_only,index_x,drivers_points_df,colors_driver_
     col3, col4 = st.columns(2)
     
     with col3:
-        st.markdown('''**Constructor Stacked Points**''')
-        fig_name000 = "Constructor Stacked Points"
+        st.markdown('''**Stacked Constructor Points**''')
+        fig_name000 = "Stacked Constructor Points"
         
         # Calculate total points per team
         team_total_points = drivers_points_df.groupby('Team')['Points'].sum().sort_values(ascending=True)

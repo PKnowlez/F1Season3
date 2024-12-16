@@ -119,5 +119,3 @@ def Tab5(new_df,average_changed,drivers_total_points,average_qualifying,average_
     with col6:
         st.plotly_chart(globals()[fig_name4])
         st.plotly_chart(globals()[fig_name7])
-
-    return 

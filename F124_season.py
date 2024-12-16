@@ -23,7 +23,7 @@ tabs = st.tabs([
     "Standings",
     "Race Results",
     "Constructor Statistics",
-    "Driver Statistics"
+    "Driver Statistics",
     "Driver Comparisons",
     "Race Schedule"
     ])

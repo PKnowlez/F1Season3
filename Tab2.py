@@ -5,6 +5,7 @@ import plotly.express as px
 import math
 from PIL import Image
 
+# Expands for each race: Reports race results like post race screen
 def Tab2(races,df,race_place,race_points):
     with st.expander("Pre-Season: Miami"):
         st.subheader("Winner: Joshua")

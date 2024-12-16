@@ -5,6 +5,8 @@ import plotly.express as px
 import math
 from PIL import Image
 
+# Y variables average_changed, average_place, average_qualifying, drivers_total_points
+# X variable is new_df['Driver']
 def Tab5(new_df,average_changed,drivers_total_points,average_qualifying,average_place):
     # --------------------- #
     # Create the figure name

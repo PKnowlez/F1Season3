@@ -5,6 +5,9 @@ import plotly.express as px
 import math
 from PIL import Image
 
+# Expands for each driver: Race results bar graph, highest finish, number of wins, 
+#   number of podiums, total points, fastest laps total, average qualifying,
+#   average place, qualifying vs finsih graph, qualyfing vs finish average
 def Tab4(df,races,colors,index_x):
     # Creates a list of all the points columns in the excel sheet
     points_columns = [col for col in df.columns if col.endswith(('Points', 'SprintPoints'))]

@@ -5,6 +5,12 @@ import plotly.express as px
 import math
 from PIL import Image
 
+# Expands for each constructor: race results bar graph, best finish callout, total points callout,
+# Total points bar graph for all constructors
+# Add expands for each constructor with:
+# - Number of fastest laps callout
+# - Number of wins callout
+# - Driver/Team Bios
 def Tab3(team_df,team_races_points_only,index_x):
     # Loops through each driver to create an expand with their information only
     for i in range(len(team_df['Team'])):

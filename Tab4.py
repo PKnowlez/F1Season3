@@ -64,7 +64,7 @@ def Tab4(df,races,colors,index_x):
             globals()[fig_name].update_yaxes(title_text="Points")
 
             # Update layout
-            globals()[fig_name].update_layout(xaxis_range=[-0.5,index_x], showlegend=False)  # Hide the legend
+            globals()[fig_name].update_layout(xaxis_range=[-0.5,index_x], showlegend=False)
 
             # Calculates the highest placement a driver has achieved
             highest_score = max(driver_points)

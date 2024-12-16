@@ -6,6 +6,7 @@ import math
 from PIL import Image
 import Tab0, Tab1, Tab2, Tab3, Tab4, Tab5, Tab6, Calculations
 
+# Calculations
 team_race_totals,driver_race_totals,df,races,team_colors,fig1,fig2,race_place,race_points,index_x \
     = Calculations.Calculations()
 

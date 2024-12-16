@@ -9,7 +9,7 @@ import Tab0_LeagueNews, Tab1_Standings, Tab2_RaceResults, Tab3_ConstructorStatis
 
 # Calculations
 team_race_totals,driver_race_totals,df,races,team_colors,fig1,fig2,race_place,race_points,index_x, \
-new_df,new_df_FL,new_df_Q,new_df_Place,races_points_only,driver_points,drivers_total_points,driver_colors \
+new_df,new_df_FL,new_df_Q,new_df_Place,races_points_only,drivers_total_points,driver_colors \
     = Calculations.Calculations()
 
 ## ----- App Format ----- ##
@@ -52,8 +52,7 @@ with tabs[3]:
 # Driver Statistics
 with tabs[4]:
     new_df,average_changed,average_qualifying,average_place \
-        = Tab4_DriverStatistics.Tab4(colors,index_x,new_df,new_df_FL,new_df_Q,new_df_Place,races_points_only,
-                                     driver_points)
+        = Tab4_DriverStatistics.Tab4(colors,index_x,new_df,new_df_FL,new_df_Q,new_df_Place,races_points_only)
 
 # Driver Comparisons
 with tabs[5]:

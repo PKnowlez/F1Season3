@@ -26,7 +26,6 @@ def Tab3(team_df,team_races_points_only,index_x,drivers_points_df,colors_driver_
                                         x='Points', 
                                         y='Team', 
                                         color='Driver', 
-                                        #title=fig_name000,
                                         orientation='h',
                                         barmode='stack',
                                         color_discrete_map=dict(zip(drivers_points_df['Driver'], colors_driver_team)))

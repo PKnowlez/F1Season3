@@ -8,8 +8,9 @@ from PIL import Image
 # Expands for each driver: Race results bar graph, highest finish, number of wins, 
 #   number of podiums, total points, fastest laps total, average qualifying,
 #   average place, qualifying vs finsih graph, qualyfing vs finish average
-def Tab4(colors,index_x,new_df,new_df_FL,new_df_Q,new_df_Place,races_points_only,driver_points):
+def Tab4(colors,index_x,new_df,new_df_FL,new_df_Q,new_df_Place,races_points_only):
     # Variables for loop
+    total_points = []
     average_changed = []
     average_qualifying = []
     average_place = []
@@ -18,6 +19,7 @@ def Tab4(colors,index_x,new_df,new_df_FL,new_df_Q,new_df_Place,races_points_only
     for i in range(len(new_df['Driver'])):
         with st.expander(new_df['Driver'][i]):
             driver_name = new_df['Driver'][i]  # Get the driver's name
+            driver_points = new_df.iloc[i, 1:].tolist()
 
             # Create the figure name using the driver's name
             fig_name = f"{driver_name} Points Per Race"

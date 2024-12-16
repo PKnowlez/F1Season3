@@ -158,63 +158,7 @@ with tabs[1]:
 # Race Results
 with tabs[2]:
     # Expands for each race: Reports race results like post race screen
-    with st.expander("Pre-Season: Miami"):
-        st.subheader("Winner: Joshua")
-        MiamiResults = pd.DataFrame({
-            'Place': ['1','2','3','4','16','17','18','19'],
-            'Driver': ['Joshua','Nick**','Patrick','Erick','Yeti','Boz','Del','Gary'],
-        })
-        # Removes the index column from the markdown st.table
-        hide_table_row_index = """
-        <style>
-        thead tr th:first-child {display:none}
-        tbody th {display:none}
-        </style>
-        """
-        st.markdown(hide_table_row_index, unsafe_allow_html=True)
-        st.table(MiamiResults)
-    for i in range(len(races)):
-        if i == 0:
-            x = 0
-        else:
-            if not pd.isnull(df.loc[1,race_place[i-1]]):
-                with st.expander(races[i]):
-                    df_sorted = df.sort_values(race_place[i-1], ascending=True)
-                    winner = df_sorted['Driver'].iloc[0]
-                    constructor = df_sorted['Team'].iloc[0]
-                    st.subheader("Winner: " + winner + " - " + constructor)
-                    
-                    # Construct the correct column name
-                    qualifying_col = races[i] + 'Qualifying' 
-                    if '(S)' in races[i]:  # Adjust for Sprint races
-                        qualifying_col = races[i].replace(' (S)', '') + 'SprintQualifying'
-
-                    fastestlap_col = races[i] + 'FastestLap'
-                    if '(S)' in races[i]:
-                        fastestlap_col = races[i].replace(' (S)','') + 'SprintFastestLap'
-
-                    race_results_df = pd.DataFrame({
-                    'Place': df_sorted[race_place[i-1]],
-                    'Driver': df_sorted['Driver'],
-                    'Team': df_sorted['Team'],
-                    'Qualifying': df_sorted[qualifying_col],
-                    'Points': df_sorted[race_points[i-1]],
-                    'Fastest Lap': df_sorted[fastestlap_col]
-                    })
-
-                    race_results_df['Place'] = race_results_df['Place'].replace({
-                        21: 'DNF', 
-                        22: 'DNS'
-                    })
-
-                    race_results_df['Qualifying'] = race_results_df['Qualifying'].replace({
-                        21: 'DNF', 
-                        22: 'DNS'
-                    })
-
-                    st.table(race_results_df)
-            else:
-                x = 0
+    Tab2.Tab2(races,df,race_place,race_points)
 
 # Constructor Statistics    
 with tabs[3]:
@@ -224,59 +168,7 @@ with tabs[3]:
     # - Number of fastest laps callout
     # - Number of wins callout
     # - Driver/Team Bios
-
-    # Loops through each driver to create an expand with their information only
-    for i in range(len(team_df['Team'])):
-        with st.expander(team_df['Team'][i]):
-            team_name = team_df['Team'][i]  # Get the team's name
-            team_points = team_df.iloc[i, 1:].tolist()
-
-            # Create the figure name using the driver's name
-            fig_name = f"{team_name} Points Per Race"
-            
-            # 15 unique colors
-            colors = [
-                '#e6194b', '#3cb44b', '#ffe119', '#4363d8', '#f58231', '#911eb4', '#46f0f0', 
-                '#f032e6', '#bcf60c', '#fabebe', '#008080', '#e6beff', '#9a6324', '#fffac8', 
-                '#800000'
-            ]
-
-            # Use globals() to dynamically create the variable
-            globals()[fig_name] = px.bar(x=team_races_points_only, y=team_points, title=fig_name,
-                                        color=team_races_points_only,
-                                        color_discrete_sequence=colors)
-            globals()[fig_name].update_xaxes(categoryorder='array', categoryarray=team_races_points_only)
-
-            # Update x-axis title
-            globals()[fig_name].update_xaxes(title_text="Race", categoryorder='array', categoryarray=team_races_points_only)
-
-            # Update y-axis title
-            globals()[fig_name].update_yaxes(title_text="Points")
-
-            # Update layout
-            globals()[fig_name].update_layout(xaxis_range=[-0.5,index_x])
-
-            # Calculates the highest placement a driver has achieved
-            highest_score = max(team_points)
-            index = team_points.index(highest_score)
-            best_result = 'Best Result: ' + team_races_points_only[index] + ' (' + str(highest_score) + ' points)'
-            button_key = 'TeamButton' + "_" + str(i)
-
-            # Calculates the total points for a team
-            button_key1 = button_key + "_" + str(i)
-            total_pointsN = sum(team_points)
-            total_points = 'Total Points: ' + str(total_pointsN)
-            # Create full list of team total points
-            team_total_points = []
-            team_total_points.append(total_pointsN)
-
-            # Creates the layout for each expand
-            col1, col2 = st.columns(2)
-            with col1:
-                st.button(total_points,key=button_key1)
-            with col2:
-                st.button(best_result,key=button_key)
-            st.plotly_chart(globals()[fig_name])
+    colors = Tab3.Tab3(team_df,team_races_points_only,index_x)
 
 # Driver Statistics
 with tabs[4]:
@@ -451,12 +343,12 @@ with tabs[4]:
             fig_name3 = f"{driver_name} Positions Gained or Lost Per Race"
 
             # Create a list of colors based on the values in qualifying_place
-            colors = ['green' if val >= 0 else 'red' for val in qualifying_place]
+            colorsRG = ['green' if val >= 0 else 'red' for val in qualifying_place]
 
             # Use globals() to dynamically create the variable with the color list
             globals()[fig_name3] = px.bar(x=races_points_only, y=qualifying_place, 
-                                        title=fig_name3, color=colors,
-                                        color_discrete_map="identity")  # Use the provided colors
+                                        title=fig_name3, color=colorsRG,
+                                        color_discrete_map="identity")
 
             globals()[fig_name3].update_xaxes(categoryorder='array', categoryarray=races_points_only)
 

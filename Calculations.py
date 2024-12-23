@@ -17,22 +17,12 @@ def Calculations():
                     'SpaPlace','SpainPlace','ChinaSprintPlace','ChinaPlace', 
                     'BakuPlace','CanadaPlace','MonzaPlace','Abu DhabiPlace', 
                     'AustriaSprintPlace','AustriaPlace','COTASprintPlace','COTAPlace']
-    fastest_lap = ['SuzukaFastestLap','SilverstoneFastestLap','AustraliaFastestLap', 
-                    'SpaFastestLap','SpainFastestLap','ChinaSprintFastestLap','ChinaFastestLap', 
-                    'BakuFastestLap','CanadaFastestLap','MonzaFastestLap','Abu DhabiFastestLap', 
-                    'AustriaSprintFastestLap','AustriaFastestLap','COTASprintFastestLap','COTAFastestLap']
-    qualifying = ['SuzukaQualifying','SilverstoneQualifying','AustraliaQualifying', 
-                    'SpaQualifying','SpainQualifying','ChinaSprintQualifying','ChinaQualifying', 
-                    'BakuQualifying','CanadaQualifying','MonzaQualifying','Abu DhabiQualifying', 
-                    'AustriaSprintQualifying','AustriaQualifying','COTASprintQualifying','COTAQualifying']
     races = ['Suzuka','Silverstone','Australia', 
                     'Spa','Spain','China (S)','China', 
                     'Baku','Canada','Monza','Abu Dhabi', 
                     'Austria (S)','Austria','COTA (S)','COTA']
 
     drivers = df['Driver']
-    teams = df['Team']
-    starting = df['Starting']
 
     df['Total'] = 0
     for i in range(len(race_points)):
@@ -53,10 +43,6 @@ def Calculations():
         else:
             driver_race_totals[race_points[i]] = df.groupby('Driver')[race_points[i]].sum() \
                                                     + driver_race_totals[race_points[i-1]]
-
-    total = df['Total']
-    team_totals = df.groupby('Team')['Total'].sum()
-    team_totals_sorted = team_totals.sort_values(ascending=False)
 
     # Define team colors
     team_colors = {

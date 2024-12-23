@@ -5,7 +5,21 @@ import plotly.express as px
 import math
 from PIL import Image
 
+postponed = Image.open("./Images/Postponed.png")
+
 def Tab0():
+    #endregion
+
+    #region Spa Update
+    st.subheader('Spa Update')
+    st.image(postponed)
+    st.markdown('''
+                The league’s battle at Spa has been postponed until 1/1/2025 or later. Something about some driver ditching to party in Mexico and a few drivers unable to connect to EA's crappy servers. However this did allow some of the drivers to run some laps in Saudi Arabia as a mid-season practice session. The FIA will be working to finalize the upcoming schedule for the remainder of the season as rumor has it there will be a week or two of double headers. The league takes a short break as we head into this holiday season to allow drivers to recuperate and spend time with loved ones.
+                ''')
+    st.divider()
+    #endregion
+
+    #region Race Week Spa
     spa_circuit = Image.open("./Images/Spa_Circuit.png")
     spa_collage = Image.open("./Images/Spa_Race_Week_Collage2.png")
     st.subheader('Race Week - Spa')
@@ -24,8 +38,10 @@ def Tab0():
                 <p style="color:lightgray;">Saturday 12/14/2024 - Patrick Knowles</p>
                 ''',
                 unsafe_allow_html=True,)
-    
     st.divider()
+    #endregion
+
+    #region Australia Recap
     australia1 = Image.open("./Images/Australia_Start.png")
     australia2 = Image.open("./Images/Australia_Collage.png")
     australia3 = Image.open("./Images/Australia_Side_Shot.png")
@@ -57,8 +73,10 @@ def Tab0():
                 <p style="color:lightgray;">Thursday 12/11/2024 - Patrick Knowles with credit Erick & Nick</p>
                 ''',
                 unsafe_allow_html=True,)
-    
     st.divider()
+    #endregion
+
+    #region Race Week Australia
     australia_circuit = Image.open("./Images/Australia_Circuit.png")
     st.subheader('Race Week - Australia')
     st.markdown('''
@@ -74,8 +92,10 @@ def Tab0():
                 ''',
                 unsafe_allow_html=True,
                 )
-
     st.divider()
+    #endregion
+
+    #region Silverstone Recap
     silverstone0 = Image.open("./Images/Silverstone_Start.png")
     silverstone1 = Image.open("./Images/Silverstone_Final_Turn.png")
     silverstone2 = Image.open("./Images/Silverstone_PK_Zane.png")
@@ -98,8 +118,10 @@ def Tab0():
                 <p style="color:lightgray;">Wednesday 12/4/2024 - Patrick Knowles with credit Eddie & Nick</p>
                 ''',
                 unsafe_allow_html=True,)
-
     st.divider()
+    #endregion
+
+    #region Race Week Silverstone
     trophy = Image.open("./Images/Trophy.png")
     st.subheader('Race Week - Silverstone')
     st.markdown('''
@@ -112,8 +134,10 @@ def Tab0():
                 <p style="color:lightgray;">Sunday 12/1/2024 - Patrick Knowles</p>
                 ''',
                 unsafe_allow_html=True,)
-
     st.divider()
+    #endregion
+
+    #region Suzuka Recap
     st.subheader('Suzuka & Pre-Season Recap')
     st.markdown('''
                 With a lovely pre-season in Miami complete where 8 of the league's 12 drivers and all 6 constructors took to the streets around Hard Rock Stadium, the lights went out in Suzuka to an aborted start. With a multiple car incident that sent the whole grid into turmoil,the race director determined it was best to have a full restart. One of our top qualifiers, VCARB's Patrick, fell back two positions at the start and near the end of the first lap attempted to make up those positions going into the Hitachi Astemo Chicane. This maneuver failed and ended with a slow down into the chicane allowing many of our drivers to make up spots against the AI and other drivers. The remainder of the race saw only a few spins, beachings, and other minor mishaps that affected a few of the final standings. Big winners from this race include VCARB's Brentuar as well as Aston Martin's Del. Alpine's Joshua took home the win and the fastest lap with McLaren's reigning champion Nick coming in second and Del rounding out the podium.
@@ -123,3 +147,4 @@ def Tab0():
                 <p style="color:lightgray;">Thursday 11/21/2024 - Patrick Knowles</p>
                 ''',
                 unsafe_allow_html=True,)
+    #endregion

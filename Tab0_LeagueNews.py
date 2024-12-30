@@ -23,7 +23,7 @@ def Tab0():
     #region Race Week Spa & Spain
     st.subheader('Race Week - Spa & Spain')
     st.markdown('''
-                Motorsports fans are in for a treat. The league is kicking off the New Year with a double feature: Spa Part 2 Electric Boogaloo followed by high speed thrills in Barcelona Spain. As the perils of Spa have been covered in a previous post, this will focus on Spain and its perilous high speed twists and turns. Track limits, tire wear, and plenty of places for aggressive overtakes should all combine for an unpredictable event. 
+                Motorsports fans are in for a treat. The league is kicking off the New Year with a double feature: Spa Part 2 Electric Boogaloo followed by high speed thrills in Barcelona Spain. As the perils of Spa have been covered in a previous post, this will focus on Spain and its high speed twists and turns. Track limits, tire wear, and plenty of places for aggressive overtakes should all combine for an unpredictable event. 
                 ''')
     st.image(spain_circuit)
     st.markdown('''

@@ -5,9 +5,38 @@ import plotly.express as px
 import math
 from PIL import Image
 
+# Images
+trophy = Image.open("./Images/Trophy.png")
+silverstone0 = Image.open("./Images/Silverstone_Start.png")
+silverstone1 = Image.open("./Images/Silverstone_Final_Turn.png")
+silverstone2 = Image.open("./Images/Silverstone_PK_Zane.png")
+australia_circuit = Image.open("./Images/Australia_Circuit.png")
+australia1 = Image.open("./Images/Australia_Start.png")
+australia2 = Image.open("./Images/Australia_Collage.png")
+australia3 = Image.open("./Images/Australia_Side_Shot.png")
+spa_circuit = Image.open("./Images/Spa_Circuit.png")
+spa_collage = Image.open("./Images/Spa_Race_Week_Collage2.png")
 postponed = Image.open("./Images/Postponed.png")
+spain_circuit = Image.open("./Images/Spain_Circuit.png")
 
 def Tab0():
+    #region Race Week Spa & Spain
+    st.subheader('Race Week - Spa & Spain')
+    st.markdown('''
+                Motorsports fans are in for a treat. The league is kicking off the New Year with a double feature: Spa Part 2 Electric Boogaloo followed by high speed thrills in Barcelona Spain. As the perils of Spa have been covered in a previous post, this will focus on Spain and its perilous high speed twists and turns. Track limits, tire wear, and plenty of places for aggressive overtakes should all combine for an unpredictable event. 
+                ''')
+    st.image(spain_circuit)
+    st.markdown('''
+                Once the lights go out the drivers will have a long straight to draft, bump, and position themselves for the first pair of corners. Both are wide enough to allow for drivers to go two or even three wide for the brave. The third corner will require incredible courage for the drivers to be wheel to wheel throughout, but during the first lap who knows what might happen. Sector 2 will help queue up the drivers for the circuit’s back straight. If everyone’s wings, wheels, and side pods are still intact, the drivers will need to test the track limits on their way to the final corner at full tilt into the main straight. With two DRS straights, there will be plenty of room for conventional overtaking. However, with sweeping high speed and medium speed corners, the circuit will allow for harrowing battles throughout each lap. 
+                ''')
+    st.markdown('''
+                The drivers will need to respect the track limits both for penalties sake as well as the heavy amount of gravel that lines the high speed portions of the circuit. Penalties, crashes, and yellow or red flags all could lead to some incredible shifts in the standings. Drivers will also have to battle through the fatigue of the day’s double header. Which they did not have to contend with the last time out in Spain. Which provided a close race between McLaren’s defending champion Nick and the then Mercedes driver, now Ferrari driver, Erick with the other Ferrari brother, then Aston Martin driver, Zane rounding out the podium. Three of the league’s drivers DNS and two of the AI DNF. Spain should provide plenty of exciting racing for every driver who makes it to the starting line.
+                ''')
+    st.markdown('''
+                <p style="color:lightgray;">Saturday 12/29/2024 - Patrick Knowles</p>
+                ''',
+                unsafe_allow_html=True,)
+    st.divider()
     #endregion
 
     #region Spa Update
@@ -16,12 +45,14 @@ def Tab0():
     st.markdown('''
                 The league’s battle at Spa has been postponed until 1/1/2025 or later. Something about some driver ditching to party in Mexico and a few drivers unable to connect to EA's crappy servers. However this did allow some of the drivers to run some laps in Saudi Arabia as a mid-season practice session. The FIA will be working to finalize the upcoming schedule for the remainder of the season as rumor has it there will be a week or two of double headers. The league takes a short break as we head into this holiday season to allow drivers to recuperate and spend time with loved ones.
                 ''')
+    st.markdown('''
+                <p style="color:lightgray;">Saturday 12/22/2024 - Patrick Knowles</p>
+                ''',
+                unsafe_allow_html=True,)
     st.divider()
     #endregion
 
     #region Race Week Spa
-    spa_circuit = Image.open("./Images/Spa_Circuit.png")
-    spa_collage = Image.open("./Images/Spa_Race_Week_Collage2.png")
     st.subheader('Race Week - Spa')
     st.markdown('''
                 The league heads out for a Spa day this week. However, this one probably won’t be all that relaxing. With the Constructor’s and Driver’s championships heating up, Spa will prove to be a place where everyone has the opportunity to make up ground. Historically known as a track favorable for overtaking, Spa’s sacred pavement is also known for being one of the most treacherous high-speed circuits on the calendar. Nestled deep in the Ardennes forest, Spa is riddled with corners, straights, and stories that have filled the racing history books.
@@ -42,9 +73,6 @@ def Tab0():
     #endregion
 
     #region Australia Recap
-    australia1 = Image.open("./Images/Australia_Start.png")
-    australia2 = Image.open("./Images/Australia_Collage.png")
-    australia3 = Image.open("./Images/Australia_Side_Shot.png")
     st.subheader('Australia Recap: A Rumble Down Under')
     st.markdown('''
                 tldr; Australia did not disappoint. Safety cars, front wings destroyed, questionable restarts, engines blown, drivers fuming, DNFs, a DNS, and a new race winner. 
@@ -77,7 +105,6 @@ def Tab0():
     #endregion
 
     #region Race Week Australia
-    australia_circuit = Image.open("./Images/Australia_Circuit.png")
     st.subheader('Race Week - Australia')
     st.markdown('''
                 This week the drivers will be “defying gravity” while racing upside down in Melbourne. The real question is whether or not the league continues to let Alpine and Joshua cook? Or maybe more fittingly, will the league let Joshua put another shrimp on the barbie? Only the streets of Albert Park will be able to answer these questions.
@@ -96,9 +123,6 @@ def Tab0():
     #endregion
 
     #region Silverstone Recap
-    silverstone0 = Image.open("./Images/Silverstone_Start.png")
-    silverstone1 = Image.open("./Images/Silverstone_Final_Turn.png")
-    silverstone2 = Image.open("./Images/Silverstone_PK_Zane.png")
     st.subheader('Silverstone Recap: “007 You Only Win Twice”')
     st.image(silverstone0)
     st.markdown('''
@@ -122,7 +146,6 @@ def Tab0():
     #endregion
 
     #region Race Week Silverstone
-    trophy = Image.open("./Images/Trophy.png")
     st.subheader('Race Week - Silverstone')
     st.markdown('''
                 Rise and shine gamers, its race week! This week The Alternative will take to the famed and hallowed pavement of Silverstone. With a week off for the Thanksgiving holiday, the drivers should not be worried about meeting the minimum weight limit at the end of the race. With the season still young, all drivers are still hopeful they can make a meaningful impact on both championship races.

@@ -118,6 +118,4 @@ def Tab3(team_df,team_races_points_only,index_x,drivers_points_df,colors_driver_
                         st.markdown(file_content)
                 st.plotly_chart(globals()[fig_name])
 
-        
-    
     return colors

@@ -11,9 +11,17 @@ from PIL import Image
 # - Number of fastest laps callout
 # - Number of wins callout
 # - Driver/Team Bios
-def Tab3(team_df,team_races_points_only,index_x,drivers_points_df,colors_driver_team):
-    col3, col4 = st.columns(2)
+def Tab3(team_df,team_races_points_only,index_x,drivers_points_df,colors_driver_team,new_df):
+    # wins_df = new_df.copy()
+    # wins_df = wins_df.mask(wins_df < "25", 0)
+    # wins_df = wins_df.mask(wins_df > "24", 1)
+
+    def read_text_file(file_path):
+        with open(file_path, 'r') as f:
+            text = f.read()
+        return text
     
+    col3, col4 = st.columns(2)
     with col3:
         st.markdown('''**Stacked Constructor Points**''')
         fig_name000 = "Stacked Constructor Points"
@@ -37,13 +45,13 @@ def Tab3(team_df,team_races_points_only,index_x,drivers_points_df,colors_driver_
     
     with col4:
         st.markdown('''**Individual Constructor Statistics**''')
-        # Loops through each driver to create an expand with their information only
+        # Loops through each constructor to create an expand with their information only
         for i in range(len(team_df['Team'])):
             with st.expander(team_df['Team'][i]):
                 team_name = team_df['Team'][i]  # Get the team's name
                 team_points = team_df.iloc[i, 1:].tolist()
 
-                # Create the figure name using the driver's name
+                # Create the figure name using the constructor's name
                 fig_name = f"{team_name} Points Per Race"
                 
                 # 15 unique colors
@@ -82,12 +90,34 @@ def Tab3(team_df,team_races_points_only,index_x,drivers_points_df,colors_driver_
                 team_total_points = []
                 team_total_points.append(total_pointsN)
 
+                # Get drivers for the current team
+                drivers_in_team = drivers_points_df[drivers_points_df['Team'] == team_name]['Driver'].unique()
+
                 # Creates the layout for each expand
                 col1, col2 = st.columns(2)
                 with col1:
                     st.button(total_points,key=button_key1)
                 with col2:
                     st.button(best_result,key=button_key)
+                col5, col6 = st.columns(2)
+                with col5:
+                    # Display the first driver (if available)
+                    if len(drivers_in_team) > 0:
+                        st.write(f"**Driver Bio: {drivers_in_team[0]}**") 
+                        driver_image = Image.open(f"./Bios/{drivers_in_team[0]}.jpg")
+                        st.image(driver_image)
+                        file_content = read_text_file(f"./Bios/{drivers_in_team[0]}.txt")
+                        st.markdown(file_content)
+                with col6:
+                    # Display the second driver (if available)
+                    if len(drivers_in_team) > 1:
+                        st.write(f"**Driver Bio: {drivers_in_team[1]}**")
+                        driver_image = Image.open(f"./Bios/{drivers_in_team[1]}.jpg")
+                        st.image(driver_image)
+                        file_content = read_text_file(f"./Bios/{drivers_in_team[1]}.txt")
+                        st.markdown(file_content)
                 st.plotly_chart(globals()[fig_name])
+
+        
     
     return colors

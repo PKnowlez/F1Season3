@@ -47,7 +47,7 @@ with tabs[2]:
 # Constructor Statistics    
 with tabs[3]:
     colors = Tab3_ConstructorStatistics.Tab3(team_df,team_races_points_only,index_x,
-                                             drivers_points_df,colors_driver_team)
+                                             drivers_points_df,colors_driver_team,new_df)
 
 # Driver Statistics
 with tabs[4]:

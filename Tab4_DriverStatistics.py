@@ -3,6 +3,7 @@ import streamlit as st
 import plotly.graph_objects as go
 import plotly.express as px
 import math
+import numpy as np
 from PIL import Image
 
 # Expands for each driver: Race results bar graph, highest finish, number of wins, 
@@ -140,8 +141,25 @@ def Tab4(colors,index_x,new_df,new_df_FL,new_df_Q,new_df_Place,races_points_only
             fastest_lap_count = 'Fastest Laps: ' + str(count_fastest_laps)
 
             # Calculates the difference in qualifying and race placement per driver
-            driver_qualifying = new_df_Q.iloc[i, 1:].tolist()
-            driver_place = new_df_Place.iloc[i,1:].tolist()
+            index_a = int(index_x+0.5)
+            # driver_qualifying = new_df_Q.iloc[i, 1:index_a + 1].tolist() 
+            # driver_place = new_df_Place.iloc[i, 1:index_a + 1].tolist() 
+            # qualifying_place = [x - y for x, y in zip(driver_qualifying, driver_place)]
+            
+            driver_qualifying = new_df_Q.iloc[i, 1:index_a + 1].tolist()
+            driver_place = new_df_Place.iloc[i, 1:index_a + 1].tolist()
+
+            # Convert to numeric, replacing non-numeric with NaN
+            driver_qualifying = pd.to_numeric(driver_qualifying, errors='coerce')
+            driver_place = pd.to_numeric(driver_place, errors='coerce')
+
+            # Option 1: Remove NaN values before calculation
+            # valid_indices = ~np.isnan(driver_qualifying) & ~np.isnan(driver_place)
+            # qualifying_place = [x - y for x, y in zip(driver_qualifying[valid_indices], driver_place[valid_indices])]
+
+            # Option 2: Fill NaN with a specific value (e.g., 0)
+            driver_qualifying = np.nan_to_num(driver_qualifying, nan=0)
+            driver_place = np.nan_to_num(driver_place, nan=0)
             qualifying_place = [x - y for x, y in zip(driver_qualifying, driver_place)]
 
             # Create the figure name using the driver's name
@@ -151,7 +169,7 @@ def Tab4(colors,index_x,new_df,new_df_FL,new_df_Q,new_df_Place,races_points_only
             colorsRG = ['green' if val >= 0 else 'red' for val in qualifying_place]
 
             # Use globals() to dynamically create the variable with the color list
-            globals()[fig_name3] = px.bar(x=races_points_only, y=qualifying_place, 
+            globals()[fig_name3] = px.bar(x=races_points_only[:index_a], y=qualifying_place, 
                                         title=fig_name3, color=colorsRG,
                                         color_discrete_map="identity")
 

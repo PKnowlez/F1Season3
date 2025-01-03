@@ -67,7 +67,7 @@ def Tab0():
                 The league takes on China next week in the first Sprint race in league history. There are sure to be fireworks as regulations are set to change back to strict for exceeding track limits and the new Sprint format is bound to cause some sort of drama.
                 ''')
     st.markdown('''
-                <p style="color:lightgray;">Saturday 1/2/2025 - Patrick Knowles</p>
+                <p style="color:lightgray;">Thursday 1/2/2025 - Patrick Knowles</p>
                 ''',
                 unsafe_allow_html=True,)
     st.divider()

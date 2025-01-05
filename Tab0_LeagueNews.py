@@ -23,8 +23,27 @@ spain_yeti = Image.open("./Images/Spain_Yeti.png")
 spa_nick_joshua = Image.open("./Images/Spa_Nick_Joshua.png")
 spa_log_jam = Image.open("./Images/Spa_Log_Jam.png")
 spa_alpines = Image.open("./Images/Spa_Alpines.png")
+china_circuit = Image.open("./Images/China_Circuit.png")
 
 def Tab0():
+    #region Race Week Spa & Spain
+    st.subheader('Race Week - China')
+    st.markdown('''
+                The league’s relentless schedule continues this week in China. Home to the third longest straight on the league’s calendar, Shanghai Audi International Circuit will allow drivers to overtake at high speed as well as through twisting and daring low and medium speed turns. Both straights include DRS zones which should enable thrilling wheel to wheel action in both the sweeping Turn 1 & 2 combination as well as Turn 14’s hairpin.
+                ''')
+    st.image(china_circuit)
+    st.markdown('''
+                While the circuit has many twists and turns, the biggest twist for the league is the week’s format. Not only will a standard race occur on Wednesday, the league will face its first ever Sprint race. If that wasn’t enough, league officials have devised an exciting plan to bring some variety to the race week. Drivers will face a standard three session qualifying to help set the grid for the Sprint. However, the Sprint will be set in reverse order from qualifying results. From there the drivers will complete a short stint of laps around the circuit at full tilt to score points and set the grid order for the race. That’s right, qualifying, reverse grid Sprint, and the main race set by the results of the Sprint. The format is sure to force drivers into daring passing scenarios, fingers crossed everyone keeps it between the white lines.
+
+                So how much does this race matter? With the added 8 points available from the Sprint race, the Driver’s Championship can turn topsy-turvy, especially with the added suspense of the reverse grid. With respect to the Constructor’s Championship, nearly every team has the ability to make up ground or even leap-frog the current leader. As we adjourn this race week update, let’s take a look at the results of yesteryear. Last season saw McLaren’s Nick take home the win, with the then Mercedes driver, now Aston Martin driver, Del stepping up to the second step of the podium, and the then Red Bull driver, now Ferrari driver, bringing home third. However, with two wins up for grabs and the new format almost anything is possible.
+                ''')
+    st.markdown('''
+                <p style="color:lightgray;">Sunday 1/5/2025 - Patrick Knowles</p>
+                ''',
+                unsafe_allow_html=True,)
+    st.divider()
+    #endregion
+
     #region Race Week Spa & Spain
     st.subheader('Spa & Spain Recap: Two Tracks, Tons of Turmoil, and Terrible Teamwork')
     st.markdown('''

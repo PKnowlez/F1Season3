@@ -18,7 +18,11 @@ spa_circuit = Image.open("./Images/Spa_Circuit.png")
 spa_collage = Image.open("./Images/Spa_Race_Week_Collage2.png")
 postponed = Image.open("./Images/Postponed.png")
 spain_circuit = Image.open("./Images/Spain_Circuit.png")
-spa_spain_image = Image.open("./Images/Postponed.png")
+spain_cover = Image.open("./Images/Spain_Cover.png")
+spain_yeti = Image.open("./Images/Spain_Yeti.png")
+spa_nick_joshua = Image.open("./Images/Spa_Nick_Joshua.png")
+spa_log_jam = Image.open("./Images/Spa_Log_Jam.png")
+spa_alpines = Image.open("./Images/Spa_Alpines.png")
 
 def Tab0():
     #region Race Week Spa & Spain
@@ -26,7 +30,7 @@ def Tab0():
     st.markdown('''
                 Buckle your helmet straps, pull up your gloves, and button your firesuits, because this recap is juicy. First we will cover the results of the races. Then we will take a trip down turmoil lane to unpack the dramatic happenings of the double header. Finally, we will highlight the evening’s attempted works of teamwork.
                 ''')
-    #st.image(spa_spain_image)
+    st.image(spain_cover)
     st.markdown('''
                 **Two Tracks**
                 
@@ -34,7 +38,7 @@ def Tab0():
 
                 After a quick break the league strapped in for 33 laps in Barcelona, Spain. Qualifying saw Nick outpace Ferrari’s Erick by a thin margin. However at the end of the race, Joshua ended up taking home the victory, with Nick just behind, and Erick rounding out the podium. Just like in Spa, the race was full of turmoil but also a notable performance by Red Bull’s Yeti. Starting in 14th, Yeti ripped through the field, passing nearly every contender and battling all the way up into 5th place for his best finish of the season. Yeti’s notable performance resulted in the only change in the championship standings, with him overtaking Zane.
                 ''')
-    #st.image(spa_spain_image)
+    st.image(spain_yeti)
     st.markdown('''
                 **Tons of Turmoil**
 
@@ -42,11 +46,11 @@ def Tab0():
 
                 With plenty of penalties awarded for track limits, the FIA was surprisingly quiet when it came to penalizing aggressive drivers who ran their competitors off track. Right out of the gate in Spa, Joshua took an assertive position on the exit of Turn 1, forcing Nick off track on their way down to Eau Rogue. Within the next lap, Joshua chose to slow down and allow Nick to pass in a gesture of good faith and motor-sportsmanship. Unfortunately, this was not the only incident where a driver ended up off track. While battling, Erick began an attack on Patrick on the outside of the main start-finish straight. Patrick, unaware of how far Erick had advanced, held his line, and forced Erick to take drastic actions on the grass and gravel runaway of Turn 1. After review, neither incident was deemed sufficient enough for further penalty to any driver.
                 ''')
-    #st.image(spa_spain_image)
+    st.image(spa_nick_joshua)
     st.markdown('''
                 Spa also delivered two extraordinarily long safety cars. The first was caused by Erick losing control at the top of Eau Rogue. Nearly all the drivers immediately pitted for new tires and queued up behind the insanely erratic safety car. Alpine’s Eddie found himself in front of his teammate Joshua and attempted to provide a meaningful position swap at the restart, more on this later. This maneuver, along with a poorly contrived passing attempt by Patrick, ended with another safety car after Patrick accidentally pit maneuvered Yeti, log jamming the whole field (except Erick who made up 12 places in one turn).
                 ''')
-    #st.image(spa_spain_image)
+    st.image(spa_log_jam)
     st.markdown('''
                 Safety cars were a theme in both races. While in Spain the drivers faced a relatively early safety car at the end of Lap 13. Many drivers pitted, and committed to tire saving throughout the race. The restart was mostly uneventful with nominal slipstream passes and great battles due to the grouped up drivers. One such battle occurred between Nick, Patrick, and Erick headed into La Caixa at the beginning of Sector 3. In what can only be described as an act of vengeance, Erick forgot to brake and nearly sideswiped Patrick and t-boned Nick. However, he gently grazed both drivers and neither incurred any damage.
 
@@ -58,12 +62,12 @@ def Tab0():
 
                 Now if that were the only silly teammate moment, this article would be done. But, as you can see, it isn’t. As previously mentioned Joshua had won the fastest lap award at every single race this season. But in Spain, Patrick had a prime opportunity to snag a fastest lap near the end of the race. Joshua, afraid to lose his victory, did not pit and try to retaliate, instead, he had his teammate Eddie pit and attempt to snag the fastest lap. They tried new tires, slipstreaming, and what some are calling “coaching,” but to no avail. Joshua’s streak ended and on the last lap the Alpine pair were at each other’s throats.
                 ''')
-    #st.image(spa_spain_image)
+    st.image(spa_alpines)
     st.markdown('''
                 The league takes on China next week in the first Sprint race in league history. There are sure to be fireworks as regulations are set to change back to strict for exceeding track limits and the new Sprint format is bound to cause some sort of drama.
                 ''')
     st.markdown('''
-                <p style="color:lightgray;">Saturday 1/2/2025 - Patrick Knowles</p>
+                <p style="color:lightgray;">Thursday 1/2/2025 - Patrick Knowles</p>
                 ''',
                 unsafe_allow_html=True,)
     st.divider()

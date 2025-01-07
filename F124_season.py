@@ -5,7 +5,7 @@ import plotly.express as px
 import math
 from PIL import Image
 import Tab0_LeagueNews, Tab1_Standings, Tab2_RaceResults, Tab3_ConstructorStatistics, Tab4_DriverStatistics, \
-    Tab5_DriverComparison, Tab6_RaceSchedule, Calculations
+    Tab5_DriverComparison, Tab6_RaceSchedule, Tab7_DriverBios, Calculations
 
 # Calculations
 team_race_totals,driver_race_totals,df,races,team_colors,fig1,fig2,race_place,race_points,index_x, \
@@ -26,6 +26,7 @@ tabs = st.tabs([
     "Race Results",
     "Constructor Statistics",
     "Driver Statistics",
+    "Driver Bios",
     "Driver Comparisons",
     "Race Schedule"
     ])
@@ -53,11 +54,15 @@ with tabs[3]:
 with tabs[4]:
     new_df,average_changed,average_qualifying,average_place \
         = Tab4_DriverStatistics.Tab4(colors,index_x,new_df,new_df_FL,new_df_Q,new_df_Place,races_points_only)
+    
+# Driver Bios
+with tabs[5]:
+    Tab7_DriverBios.Tab7(team_df,drivers_points_df)
 
 # Driver Comparisons
-with tabs[5]:
+with tabs[6]:
     Tab5_DriverComparison.Tab5(new_df,average_changed,drivers_total_points,average_qualifying,average_place)
 
 # Race Schedule  
-with tabs[6]:
+with tabs[7]:
     Tab6_RaceSchedule.Tab6()

@@ -24,24 +24,42 @@ spa_nick_joshua = Image.open("./Images/Spa_Nick_Joshua.png")
 spa_log_jam = Image.open("./Images/Spa_Log_Jam.png")
 spa_alpines = Image.open("./Images/Spa_Alpines.png")
 china_circuit = Image.open("./Images/China_Circuit.png")
+chinasprint_erick_patrick = Image.open("./Images/ChinaSprint_Erick_Patrick.png")
+chinarace_incident = Image.open("./Images/ChinaRace_Incident.png")
+chinarace_eddie_boz_incident = Image.open("./Images/ChinaRace_Eddie_Boz_Incident.png")
+chinarace_erick_mistake = Image.open("./Images/ChinaRace_Erick_Mistake.png")
 
 def Tab0():
     if 'show_all_content' not in st.session_state:
         st.session_state.show_all_content = False
 
     #region Race Week Spa & Spain
-    st.subheader('Race Week - China')
+    st.subheader('China Recap: Overtakes, Incidents, and Revenge Oh My!')
     st.markdown('''
-                The league’s relentless schedule continues this week in China. Home to the third longest straight on the league’s calendar, Shanghai Audi International Circuit will allow drivers to overtake at high speed as well as through twisting and daring low and medium speed turns. Both straights include DRS zones which should enable thrilling wheel to wheel action in both the sweeping Turn 1 & 2 combination as well as Turn 14’s hairpin.
+                There was a buzz around the Paddock (Discord) on Wednesday as the drivers prepared for the first Sprint in league history, and first of three Sprints scheduled for this season. The abbreviated qualifying sessions led to a new pole sitter for the Sprint with VCARB’s Patrick setting the pace. McLaren’s Nick took the other slot on the front row and current Driver’s Championship leader, Alpine’s Joshua, saw a five place grid penalty. Once the lights were out, the driver’s sprung to life and cruised through the first few corners of the track. Coming out of Turn 6, Nick took the lead of the race after a small racing incident. There was no looking back for him after that as he built a substantial gap and took home the win. While Nick’s gap built, Patrick battled back from the incident, but ended the race in 18th due to what can only be described as a calculated bit of revenge from Ferrari’s Erick who closed the door on him into Turn 1.
                 ''')
-    st.image(china_circuit)
+    st.image(chinasprint_erick_patrick)
     st.markdown('''
-                While the circuit has many twists and turns, the biggest twist for the league is the week’s format. Not only will a standard race occur on Wednesday, the league will face its first ever Sprint race. If that wasn’t enough, league officials have devised an exciting plan to bring some variety to the race week. Drivers will face a standard three session qualifying to help set the grid for the Sprint. From there the drivers will complete a short stint of laps around the circuit at full tilt to score points. The results of the Sprint race will be used to set the grid order for the race, in reverse. That’s right, qualifying, Sprint, and the main race grid set in reverse off of the results of the Sprint. The format is sure to force drivers into daring passing scenarios, fingers crossed everyone keeps it between the white lines.
+                Other noteworthy outcomes of the Sprint include Joshua being unable to keep it between the white lines with his fancy new racing wheel, and VCARB’s Brentuar taking home his first podium of the season. At the conclusion of the Sprint, Red Bull’s Boz had overtaken McLaren’s Travis and Alpine’s Eddie had brought it even with Ferrari’s Zane. The podium for the Sprint saw Nick celebrating on the top step, Erick one step down, and Brently on the third step.
 
-                So how much does this race matter? With the added 8 points available from the Sprint race, the Driver’s Championship can turn topsy-turvy, especially with the added suspense of the reverse grid. With respect to the Constructor’s Championship, nearly every team has the ability to make up ground or even leap-frog the current leader. As we adjourn this race week update, let’s take a look at the results of yesteryear. Last season saw McLaren’s Nick take home the win, with the then Mercedes driver, now Aston Martin driver, Del stepping up to the second step of the podium, and the then Red Bull driver, now Ferrari driver, Zane bringing home third. However, with two wins up for grabs and the new format almost anything is possible.
+                Once the dust had settled on the track from the Sprint, the drivers lined back up in reverse order from the results of the Sprint for the main event. This saw Joshua starting second next to George Russell who had also DNFed during the Sprint. Chaos ensued throughout the race as contenders started on the back row and were forced into making daring passes to make up ground on Joshua. From crazy maneuvers off the starting line to more Turn 6 shenanigans, drivers were pushing to the limit of the rules and what the cars can provide to make up ground early. Nick was a big winner early on in the race, but Erick was also able to make up ground throughout the first stint. It was clear that two major strategies were in play. For the front runners, a two stop plan was the consensus and for those starting in the back a one stop strategy allowed them to extend and make up places against the two stoppers.
+                ''')
+    st.image(chinarace_incident)
+    st.markdown('''
+                As the race went on, the hairpin at the end of the back straight saw multiple incidences. First there was a double spin out that saw Boz and Alpine’s Eddie slam into their opponents causing four cars to split open like the Red Sea, allowing Erick to make up those places in a single corner.
+                ''')
+    st.image(chinarace_eddie_boz_incident)
+    st.markdown('''
+                However, Erick was not done with participating in dramatic moments in Turn 14’s hairpin. As the race continued and tire strategies began to play out. Front runner Patrick came out of the pit behind a battling duo of Nick and Erick. As the duo went through the hairpin for a second time, Patrick was close enough to make a move on Erick. With this in mind, Erick attempted to pull off an overtake on Nick to slow the incoming attack from behind. However as the hairpin approached and braking began, Erick pulled out of his attack and caused himself to brake too late and into the runoff. This allowed Patrick and Nick through the turn and onto the front straight where Nick would eventually give way to the fresher tires on Patrick’s VCARB.
+                ''')
+    st.image(chinarace_erick_mistake)
+    st.markdown('''
+                While some drivers were calling for an end to the reverse grid format, the results of the race are the most spectacular for the league all season. Drivers like Boz, Eddie, and Patrick saw their best finishes of the season in the main race. Additionally, spectators were given a show of talent as the drivers completed their most overtakes of the season, nearly doubling the total number of overtakes from all the previous races combined. With this in mind league officials have begun devising ways to mitigate the complaints of the format, while still allowing for the epic conclusions it provided.
+
+                With every car across the line, Joshua took home another win, with Patrick and Erick just behind. Nick crossed in third, but due to penalties acquired while overtaking the backfield he ended up falling to Erick who was just a few seconds behind. The Driver’s Championship saw VCARB teammates swap places, while the Constructor’s Championship saw the VCARB outfit grow ever closer to jumping into second place. The final standings of the race also included a first for the league. This is the first race where the league’s drivers finished in the top places consecutively without AI players in the mix. All-in-all an incredible outing full of high energy, a tasteful bit of cyberbullying, and stellar driving performances. Next week the league takes on the streets of Baku which may prove to be the most challenging race of the season.
                 ''')
     st.markdown('''
-                <p style="color:lightgray;">Sunday 1/5/2025 - Patrick Knowles</p>
+                <p style="color:lightgray;">Thursday 1/9/2025 - Patrick Knowles with credit Erick</p>
                 ''',
                 unsafe_allow_html=True,)
     st.divider()
@@ -58,6 +76,24 @@ def Tab0():
             st.rerun()
 
     if st.session_state.show_all_content: 
+        #region Race Week Spa & Spain
+        st.subheader('Race Week - China')
+        st.markdown('''
+                    The league’s relentless schedule continues this week in China. Home to the third longest straight on the league’s calendar, Shanghai Audi International Circuit will allow drivers to overtake at high speed as well as through twisting and daring low and medium speed turns. Both straights include DRS zones which should enable thrilling wheel to wheel action in both the sweeping Turn 1 & 2 combination as well as Turn 14’s hairpin.
+                    ''')
+        st.image(china_circuit)
+        st.markdown('''
+                    While the circuit has many twists and turns, the biggest twist for the league is the week’s format. Not only will a standard race occur on Wednesday, the league will face its first ever Sprint race. If that wasn’t enough, league officials have devised an exciting plan to bring some variety to the race week. Drivers will face a standard three session qualifying to help set the grid for the Sprint. From there the drivers will complete a short stint of laps around the circuit at full tilt to score points. The results of the Sprint race will be used to set the grid order for the race, in reverse. That’s right, qualifying, Sprint, and the main race grid set in reverse off of the results of the Sprint. The format is sure to force drivers into daring passing scenarios, fingers crossed everyone keeps it between the white lines.
+
+                    So how much does this race matter? With the added 8 points available from the Sprint race, the Driver’s Championship can turn topsy-turvy, especially with the added suspense of the reverse grid. With respect to the Constructor’s Championship, nearly every team has the ability to make up ground or even leap-frog the current leader. As we adjourn this race week update, let’s take a look at the results of yesteryear. Last season saw McLaren’s Nick take home the win, with the then Mercedes driver, now Aston Martin driver, Del stepping up to the second step of the podium, and the then Red Bull driver, now Ferrari driver, Zane bringing home third. However, with two wins up for grabs and the new format almost anything is possible.
+                    ''')
+        st.markdown('''
+                    <p style="color:lightgray;">Sunday 1/5/2025 - Patrick Knowles</p>
+                    ''',
+                    unsafe_allow_html=True,)
+        st.divider()
+        #endregion
+
         #region Race Week Spa & Spain
         st.subheader('Spa & Spain Recap: Two Tracks, Tons of Turmoil, and Terrible Teamwork')
         st.markdown('''

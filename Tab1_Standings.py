@@ -12,7 +12,7 @@ def Tab1(team_race_totals,driver_race_totals,df,races,team_colors,fig1,fig2,new_
     constructor_sorted = constructor_sorted.reset_index() 
     constructor_totals = pd.DataFrame({
     'Team': constructor_sorted['Team'],
-    'Points': constructor_sorted['COTAPoints'],
+    'Points': [f"{points:.1f}" for points in constructor_sorted['COTAPoints']],
     })
 
     totals = driver_race_totals.T
@@ -20,7 +20,7 @@ def Tab1(team_race_totals,driver_race_totals,df,races,team_colors,fig1,fig2,new_
     driver_sorted = driver_sorted.reset_index() 
     driver_totals = pd.DataFrame({
     'Driver': driver_sorted['Driver'],
-    'Points': driver_sorted['COTAPoints'],
+    'Points': [f"{points:.1f}" for points in driver_sorted['COTAPoints']],
     })
 
     # Creates a list of all the points columns in the excel sheet

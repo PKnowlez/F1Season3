@@ -82,6 +82,11 @@ def Tab4(colors,index_x,new_df,new_df_FL,new_df_Q,new_df_Place,races_points_only
             for value in driver_points:
                 if value >= specific_value:
                     count += 1
+            # sprint_cols = [col for col in new_df.columns if col.endswith('SprintPoints')]
+            # sprint_indexes = [new_df.columns.get_loc(col) for col in sprint_cols]
+            # for i, points in enumerate(driver_points):
+            #     if i in sprint_indexes and points >= 6:
+            #         count += 1
             button_key3 = button_key2 + "_" + str(i)
             countP = 'Podiums: ' + str(count)
 
@@ -112,7 +117,7 @@ def Tab4(colors,index_x,new_df,new_df_FL,new_df_Q,new_df_Place,races_points_only
                     placements[7] += 1
                 elif value >= 2:
                     placements[8] += 1
-                elif value >= 1:
+                elif value >= 0.5:
                     placements[9] += 1
             # Create the figure name using the driver's name
             fig_name2 = f"{driver_name} Placements Summary"
@@ -132,9 +137,9 @@ def Tab4(colors,index_x,new_df,new_df_FL,new_df_Q,new_df_Place,races_points_only
             count_fastest_laps = 0
             for value in driver_fastest_laps:
                 if value == 'Y':
-                    count_fastest_laps =+ 1
+                    count_fastest_laps += 1
                 elif value == 'y':
-                    count_fastest_laps =+ 1
+                    count_fastest_laps += 1
             
             # Sets the value to be displayed for Driver Fastest Lap
             button_key5 = button_key4 + "_" + str(i)
@@ -142,10 +147,6 @@ def Tab4(colors,index_x,new_df,new_df_FL,new_df_Q,new_df_Place,races_points_only
 
             # Calculates the difference in qualifying and race placement per driver
             index_a = int(index_x+0.5)
-            # driver_qualifying = new_df_Q.iloc[i, 1:index_a + 1].tolist() 
-            # driver_place = new_df_Place.iloc[i, 1:index_a + 1].tolist() 
-            # qualifying_place = [x - y for x, y in zip(driver_qualifying, driver_place)]
-            
             driver_qualifying = new_df_Q.iloc[i, 1:index_a + 1].tolist()
             driver_place = new_df_Place.iloc[i, 1:index_a + 1].tolist()
 
@@ -153,11 +154,7 @@ def Tab4(colors,index_x,new_df,new_df_FL,new_df_Q,new_df_Place,races_points_only
             driver_qualifying = pd.to_numeric(driver_qualifying, errors='coerce')
             driver_place = pd.to_numeric(driver_place, errors='coerce')
 
-            # Option 1: Remove NaN values before calculation
-            # valid_indices = ~np.isnan(driver_qualifying) & ~np.isnan(driver_place)
-            # qualifying_place = [x - y for x, y in zip(driver_qualifying[valid_indices], driver_place[valid_indices])]
-
-            # Option 2: Fill NaN with a specific value (e.g., 0)
+            # Fill NaN with a specific value (e.g., 0)
             driver_qualifying = np.nan_to_num(driver_qualifying, nan=0)
             driver_place = np.nan_to_num(driver_place, nan=0)
             qualifying_place = [x - y for x, y in zip(driver_qualifying, driver_place)]
@@ -204,10 +201,20 @@ def Tab4(colors,index_x,new_df,new_df_FL,new_df_Q,new_df_Place,races_points_only
 
             # Calculates Average Positions Gained/Lost
             driver_changedN = driver_qualifying_averageN - driver_place_averageN
-            driver_changed = 'Average Position Change: ' + str(round(driver_changedN))
+            driver_changed = 'Average Position Change: ' + str(round(driver_changedN,1))
             button_key8 = button_key7 + "_" + str(i)
             # Create full average positions gained/lost list
             average_changed.append(driver_changedN)
+
+            # Calculates the number of fastest laps a driver has earned
+            pole_positions_count = 0
+            for value in driver_qualifying:
+                if value == 1:
+                    pole_positions_count = pole_positions_count + 1
+
+            # Sets the value to be displayed for number of pole positions
+            button_key9 = button_key8 + "_" + str(i)
+            pole_positions = 'Pole Positions: ' + str(pole_positions_count)
 
             # Creates the layout for each expand
             col1, col2, col3, col4 = st.columns(4)
@@ -227,13 +234,16 @@ def Tab4(colors,index_x,new_df,new_df_FL,new_df_Q,new_df_Place,races_points_only
             with col7:
                 st.button(driver_changed,key=button_key8)
             with col8:
-                st.button(best_finish,key=button_key)
-            col9, col10, col11 = st.columns(3)
+                st.button(pole_positions,key=button_key9)
+            col9,colN = st.columns(2)
             with col9:
-                st.plotly_chart(globals()[fig_name])
+                st.button(best_finish,key=button_key)
+            col10, col11, col12 = st.columns(3)
             with col10:
-                st.plotly_chart(globals()[fig_name2])
+                st.plotly_chart(globals()[fig_name])
             with col11:
+                st.plotly_chart(globals()[fig_name2])
+            with col12:
                 st.plotly_chart(globals()[fig_name3])
     
     return new_df,average_changed,average_qualifying,average_place

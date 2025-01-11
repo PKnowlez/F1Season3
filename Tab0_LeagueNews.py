@@ -32,8 +32,46 @@ chinarace_erick_mistake = Image.open("./Images/ChinaRace_Erick_Mistake.png")
 def Tab0():
     if 'show_all_content' not in st.session_state:
         st.session_state.show_all_content = False
+    
+    #region FIA China Press Release
+    st.markdown('''
+                **Press Release** \n
+                **For Immediate Release**  
+                _Date: January 10 2025_
+                ''')
+    st.subheader('Joshua Penalized with Five-Place Grid Drop Following Sprint Race Incident at the F124 League’s Chinese Grand Prix')
+    st.markdown('''
+                The Alternative F124 League’s independent FIA directors have issued a decision regarding an incident that occurred during the recent Chinese Grand Prix, resulting in a five-place grid penalty for driver Joshua. 
 
-    #region Race Week Spa & Spain
+                Following an extensive review of race footage and telemetry data, it has been determined that Joshua retired his car during the sprint race despite no terminal damage, with the intention of improving his starting position for the main race—set to be held in reverse order of the sprint race results. This behavior was deemed to be in violation of league regulations.
+
+                In comparison, Patrick, who also sustained damage during the sprint, made the decision to repair his car and continue racing, ultimately putting in a solid performance to finish the race.
+
+                As a result of the penalty, Joshua will drop from 1st to 6th in the final results. The revised finishing positions from the Chinese Grand Prix are as follows:
+
+                - 1st: Patrick  
+                - 2nd: Erick  
+                - 3rd: Nick  
+                - 4th: Eddie  
+                - 5th: Boz  
+                - 6th: Joshua  
+
+                Joshua has the right to appeal this decision to the independent FIA directors, David and Marcus, should he wish to contest the ruling. The Alternative F124 League remains committed to upholding fair and competitive racing for all participants.
+
+                For further inquiries or clarification, please contact Erick Tavera or Nick Beglin.
+                ''')
+    st.markdown('''
+                <div style="width: 25%; border-bottom: 1px solid #cccccc;"></div>
+                ''', unsafe_allow_html=True)
+    st.markdown('''
+                _The Alternative F124 League_
+                <p style="color:lightgray;">Where racing meets integrity and fair competition.</p>
+                ''',
+                unsafe_allow_html=True,)
+    st.divider()
+    #endregion
+
+    #region China Recap
     st.subheader('China Recap: Overtakes, Incidents, and Revenge Oh My!')
     st.markdown('''
                 There was a buzz around the Paddock (Discord) on Wednesday as the drivers prepared for the first Sprint in league history, and the first of three Sprints scheduled for this season. The abbreviated qualifying sessions led to a new pole sitter for the Sprint, with VCARB’s Patrick setting the pace. McLaren’s Nick took the other slot on the front row after current Driver’s Championship leader, Alpine’s Joshua, saw a five place grid penalty drop him to sixth. Once the lights were out, the driver’s sprung to life and cruised through the first few corners of the track. Coming out of Turn 6, Nick took the lead of the race after a small racing incident. There was no looking back for him after that as he built a substantial gap and took home the win. While Nick’s gap built, Patrick battled back from the incident, but ended the race in 18th due to what can only be described as a calculated bit of revenge from Ferrari’s Erick who closed the door on him into Turn 1.

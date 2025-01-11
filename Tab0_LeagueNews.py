@@ -3,6 +3,7 @@ import streamlit as st
 import plotly.graph_objects as go
 import plotly.express as px
 import math
+from streamlit_carousel import carousel
 from PIL import Image
 
 # Images
@@ -28,10 +29,73 @@ chinasprint_erick_patrick = Image.open("./Images/ChinaSprint_Erick_Patrick.png")
 chinarace_incident = Image.open("./Images/ChinaRace_Incident.png")
 chinarace_eddie_boz_incident = Image.open("./Images/ChinaRace_Eddie_Boz_Incident.png")
 chinarace_erick_mistake = Image.open("./Images/ChinaRace_Erick_Mistake.png")
+baku_circuit = Image.open("./Images/Baku_Circuit.png")
 
 def Tab0():
     if 'show_all_content' not in st.session_state:
         st.session_state.show_all_content = False
+    
+    #region Race Week Baku
+    st.subheader('Race Week - Baku')
+    st.markdown('''
+                It has been an eventful few days since the league’s first Sprint race. A major FIA decision was made that changed the results of the race, and let’s just say there has not been this much rioting since the 1991 Chicago Bulls celebration riots. Some drivers put pen to paper to rip into the FIA’s decision for being abrupt and unfair. While other drivers defended the decision as it upheld aspects of racing sportsmanship they appreciate. Alpine’s start driver Joshua ended his tirade by saying:
+
+                > _**This is really BS and unfair.** - Joshua_
+                
+                The next day, Joshua spoke to a local reporter and stated:
+
+                > _**Everyone better watch out because we are coming for blood [in Baku]. [The decision is] Not fair but we move forward.** - Joshua_
+
+                His teammate Eddie took an interview with a Houston based reporter where he labelled the FIA as blind while elaborating on the situation between he and Joshua:
+
+                > _**While yes I do admit to running Josh off the road, which I did get a penalty for on top of my other 5-grid penalty (which resulted in me having a 10-grid penalty already), Joshua also got a 5-grid penalty from that for no exact reason. Due to the FIA not having eye balls, Joshua already had to push harder and try stupider sh*t just to make it back to his true position, P1. This all resulted in his situation during the Sprint race. He should not be penalized further, when he was already penalized and is getting penalized for a rule which was never stated before the race.** - Eddie_
+
+                Other drivers like the VCARB pair were more ceremonious and in agreement with the FIA’s decision. Patrick was heard screaming, “I’m a winner!” as far away as Erick’s house. The shouts were measured on local seismology equipment as a 3.2 magnitude earthquake on the Richter Scale. His teammate Brently was more subdued with his commentary stating:
+
+                > _**I feel like it was the right decision. As it seemed odd when and where he retired [in the Sprint].** - Brently_
+
+                Multiple teams have also released formal statements which can be found at the end of this article. More importantly, this ruling shakes up the standings quite a bit. Joshua dropped below McLaren’s Nick in the Driver’s Championship and VCARB closed even further on McLaren in the Constructor’s Championship.
+
+                With all this said, it’s time to focus on the upcoming street race in Baku. Drivers will be met with close walls, the longest pedal to the medal straight on the calendar, and deviously challenging combinations of undulation and corners. Sector 1 is essentially three flatout straights with ninety-degree left turns at the end of each. If drivers survive that, they will quickly find themselves at the beginning of the most challenging sector on the league’s calendar. The castle section and Turn 15 have caught out many talented drivers before and are certainly capable of wreaking havoc on the race this week. Sector 3 is a drafters paradise, but the exit of Turn 16 will make or break any challenger’s attack on their rivals.
+                ''')
+    st.image(baku_circuit)
+    st.markdown('''
+                This will be the league’s first race in Azerbaijan. With plenty of treacherous turns and a great passing opportunity at the end of the front straight, the Baku street circuit will certainly test the league’s fortitude. Especially when one considers the embers that are ready to be stoked by even the slightest breeze from China’s incident.
+                ''')
+    st.markdown('''
+                <p style="color:lightgray;">Saturday 1/11/2025 - Patrick Knowles</p>
+                ''',
+                unsafe_allow_html=True,)
+    st.markdown('''
+                **Official Team Statements**
+                ''')
+    
+    china_statements = [
+        {
+            "title": "",
+            "text": "",
+            "img": "./Images/China_Alpine_Statement.png"
+        },
+        {
+            "title": "",
+            "text": "",
+            "img": "./Images/China_Red_Bull_Statement1.png"
+        },
+        {
+            "title": "",
+            "text": "",
+            "img": "./Images/China_Red_Bull_Statement2.png"
+        },
+        {
+            "title": "",
+            "text": "",
+            "img": "./Images/China_VCARB_Statement.png"
+        },
+    ]
+    
+    carousel(china_statements)
+    st.divider()
+    #endregion
     
     #region FIA China Press Release
     st.markdown('''
@@ -71,38 +135,6 @@ def Tab0():
     st.divider()
     #endregion
 
-    #region China Recap
-    st.subheader('China Recap: Overtakes, Incidents, and Revenge Oh My!')
-    st.markdown('''
-                There was a buzz around the Paddock (Discord) on Wednesday as the drivers prepared for the first Sprint in league history, and the first of three Sprints scheduled for this season. The abbreviated qualifying sessions led to a new pole sitter for the Sprint, with VCARB’s Patrick setting the pace. McLaren’s Nick took the other slot on the front row after current Driver’s Championship leader, Alpine’s Joshua, saw a five place grid penalty drop him to sixth. Once the lights were out, the driver’s sprung to life and cruised through the first few corners of the track. Coming out of Turn 6, Nick took the lead of the race after a small racing incident. There was no looking back for him after that as he built a substantial gap and took home the win. While Nick’s gap built, Patrick battled back from the incident, but ended the race in 18th due to what can only be described as a calculated bit of revenge from Ferrari’s Erick who closed the door on him into Turn 1.
-                ''')
-    st.image(chinasprint_erick_patrick)
-    st.markdown('''
-                Other noteworthy outcomes of the Sprint include Joshua being unable to keep it between the white lines with his fancy new racing wheel, and VCARB’s Brentuar taking home his first podium of the season. At the conclusion of the Sprint, Red Bull’s Boz had overtaken McLaren’s Travis and Alpine’s Eddie had brought it even with Ferrari’s Zane in the Driver's standings. The podium for the Sprint saw Nick celebrating on the top step, Erick one step down, and Brently on the third step.
-
-                Once the dust had settled on the track from the Sprint, the drivers lined back up in reverse order from the results of the Sprint for the main event. This saw Joshua starting second next to George Russell who had also DNFed during the Sprint. Chaos ensued throughout the race as contenders started on the back row and were forced into making daring passes to make up ground on Joshua. From crazy maneuvers off the starting line to more Turn 6 shenanigans, drivers were pushing to the limit of the rules and what the cars can provide to make up ground early. Nick was a big winner early on in the race, but Erick was also able to make up ground throughout the first stint. It was clear that two major strategies were in play. For the front runners, a two stop plan was the consensus and for those starting in the back a one stop strategy allowed them to extend and make up places against the two stoppers.
-                ''')
-    st.image(chinarace_incident)
-    st.markdown('''
-                As the race went on, the hairpin at the end of the back straight saw multiple incidences. First there was a double spin out that saw Boz and Alpine’s Eddie slam into their opponents causing four cars to split open like the Red Sea, allowing Erick to make up those places in a single corner.
-                ''')
-    st.image(chinarace_eddie_boz_incident)
-    st.markdown('''
-                However, Erick was not done with participating in dramatic moments in Turn 14’s hairpin. As the race continued and tire strategies began to play out. Front runner Patrick came out of the pit behind a battling duo of Nick and Erick. As the duo went through the hairpin for a second time, Patrick was close enough to make a move on Erick. With this in mind, Erick attempted to pull off an overtake on Nick to slow the incoming attack from behind. However as the hairpin approached and braking began, Erick pulled out of his attack and caused himself to brake too late and into the runoff. This allowed the other two drivers in the battle to move onto the front straight where Nick would eventually give way to the fresher tires on Patrick’s VCARB.
-                ''')
-    st.image(chinarace_erick_mistake)
-    st.markdown('''
-                While some drivers were calling for an end to the reverse grid format, the results of the race might be the most spectacular for the league all season. Drivers like Boz, Eddie, and Patrick saw their best finishes of the season in the main race. Additionally, spectators were given a show of talent as the drivers completed the most overtakes of the season, nearly doubling the total number of overtakes from all the previous races combined. With this in mind league officials have begun devising ways to mitigate the complaints of the format, while still allowing for the epic conclusions it provided.
-
-                With every car across the line, Joshua took home another win, with Patrick and Erick just behind. Nick crossed in third, but due to penalties acquired while overtaking the backfield he ended up falling to Erick who was just a few seconds behind. The Driver’s Championship saw VCARB teammates swap places, while the Constructor’s Championship saw the VCARB outfit grow ever closer to jumping into second place. The final standings of the race also included a first for the league. This is the first race where the league’s drivers finished in the top places consecutively without AI players in the mix. All-in-all an incredible outing full of high energy, a tasteful bit of cyberbullying, and stellar driving performances. Next week the league takes on the streets of Baku which may prove to be the most challenging race of the season.
-                ''')
-    st.markdown('''
-                <p style="color:lightgray;">Thursday 1/9/2025 - Patrick Knowles with credit Erick</p>
-                ''',
-                unsafe_allow_html=True,)
-    st.divider()
-    #endregion
-
     # "Show More/Less" button 
     if not st.session_state.show_all_content:
         if st.button('Show More'):
@@ -114,7 +146,39 @@ def Tab0():
             st.rerun()
 
     if st.session_state.show_all_content: 
-        #region Race Week Spa & Spain
+        #region China Recap
+        st.subheader('China Recap: Overtakes, Incidents, and Revenge Oh My!')
+        st.markdown('''
+                    There was a buzz around the Paddock (Discord) on Wednesday as the drivers prepared for the first Sprint in league history, and the first of three Sprints scheduled for this season. The abbreviated qualifying sessions led to a new pole sitter for the Sprint, with VCARB’s Patrick setting the pace. McLaren’s Nick took the other slot on the front row after current Driver’s Championship leader, Alpine’s Joshua, saw a five place grid penalty drop him to sixth. Once the lights were out, the driver’s sprung to life and cruised through the first few corners of the track. Coming out of Turn 6, Nick took the lead of the race after a small racing incident. There was no looking back for him after that as he built a substantial gap and took home the win. While Nick’s gap built, Patrick battled back from the incident, but ended the race in 18th due to what can only be described as a calculated bit of revenge from Ferrari’s Erick who closed the door on him into Turn 1.
+                    ''')
+        st.image(chinasprint_erick_patrick)
+        st.markdown('''
+                    Other noteworthy outcomes of the Sprint include Joshua being unable to keep it between the white lines with his fancy new racing wheel, and VCARB’s Brentuar taking home his first podium of the season. At the conclusion of the Sprint, Red Bull’s Boz had overtaken McLaren’s Travis and Alpine’s Eddie had brought it even with Ferrari’s Zane in the Driver's standings. The podium for the Sprint saw Nick celebrating on the top step, Erick one step down, and Brently on the third step.
+
+                    Once the dust had settled on the track from the Sprint, the drivers lined back up in reverse order from the results of the Sprint for the main event. This saw Joshua starting second next to George Russell who had also DNFed during the Sprint. Chaos ensued throughout the race as contenders started on the back row and were forced into making daring passes to make up ground on Joshua. From crazy maneuvers off the starting line to more Turn 6 shenanigans, drivers were pushing to the limit of the rules and what the cars can provide to make up ground early. Nick was a big winner early on in the race, but Erick was also able to make up ground throughout the first stint. It was clear that two major strategies were in play. For the front runners, a two stop plan was the consensus and for those starting in the back a one stop strategy allowed them to extend and make up places against the two stoppers.
+                    ''')
+        st.image(chinarace_incident)
+        st.markdown('''
+                    As the race went on, the hairpin at the end of the back straight saw multiple incidences. First there was a double spin out that saw Boz and Alpine’s Eddie slam into their opponents causing four cars to split open like the Red Sea, allowing Erick to make up those places in a single corner.
+                    ''')
+        st.image(chinarace_eddie_boz_incident)
+        st.markdown('''
+                    However, Erick was not done with participating in dramatic moments in Turn 14’s hairpin. As the race continued and tire strategies began to play out. Front runner Patrick came out of the pit behind a battling duo of Nick and Erick. As the duo went through the hairpin for a second time, Patrick was close enough to make a move on Erick. With this in mind, Erick attempted to pull off an overtake on Nick to slow the incoming attack from behind. However as the hairpin approached and braking began, Erick pulled out of his attack and caused himself to brake too late and into the runoff. This allowed the other two drivers in the battle to move onto the front straight where Nick would eventually give way to the fresher tires on Patrick’s VCARB.
+                    ''')
+        st.image(chinarace_erick_mistake)
+        st.markdown('''
+                    While some drivers were calling for an end to the reverse grid format, the results of the race might be the most spectacular for the league all season. Drivers like Boz, Eddie, and Patrick saw their best finishes of the season in the main race. Additionally, spectators were given a show of talent as the drivers completed the most overtakes of the season, nearly doubling the total number of overtakes from all the previous races combined. With this in mind league officials have begun devising ways to mitigate the complaints of the format, while still allowing for the epic conclusions it provided.
+
+                    With every car across the line, Joshua took home another win, with Patrick and Erick just behind. Nick crossed in third, but due to penalties acquired while overtaking the backfield he ended up falling to Erick who was just a few seconds behind. The Driver’s Championship saw VCARB teammates swap places, while the Constructor’s Championship saw the VCARB outfit grow ever closer to jumping into second place. The final standings of the race also included a first for the league. This is the first race where the league’s drivers finished in the top places consecutively without AI players in the mix. All-in-all an incredible outing full of high energy, a tasteful bit of cyberbullying, and stellar driving performances. Next week the league takes on the streets of Baku which may prove to be the most challenging race of the season.
+                    ''')
+        st.markdown('''
+                    <p style="color:lightgray;">Thursday 1/9/2025 - Patrick Knowles with credit Erick</p>
+                    ''',
+                    unsafe_allow_html=True,)
+        st.divider()
+        #endregion
+        
+        #region Race Week China
         st.subheader('Race Week - China')
         st.markdown('''
                     The league’s relentless schedule continues this week in China. Home to the third longest straight on the league’s calendar, Shanghai Audi International Circuit will allow drivers to overtake at high speed as well as through twisting and daring low and medium speed turns. Both straights include DRS zones which should enable thrilling wheel to wheel action in both the sweeping Turn 1 & 2 combination as well as Turn 14’s hairpin.

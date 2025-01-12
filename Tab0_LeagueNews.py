@@ -91,6 +91,11 @@ def Tab0():
             "text": "",
             "img": "./Images/China_VCARB_Statement.png"
         },
+        {
+            "title": "",
+            "text": "",
+            "img": "./Images/China_Ferrari_Statement.png"
+        },
     ]
     
     carousel(china_statements)

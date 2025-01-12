@@ -101,6 +101,11 @@ def Tab0():
             "text": "",
             "img": "./Images/China_Aston_Martin_Statement.png"
         },
+        {
+            "title": "",
+            "text": "",
+            "img": "./Images/China_McLaren_Statement.png"
+        },
     ]
     
     carousel(china_statements)

@@ -35,109 +35,28 @@ def Tab0():
     if 'show_all_content' not in st.session_state:
         st.session_state.show_all_content = False
     
-    #region Race Week Baku
-    st.subheader('Race Week - Baku')
-    st.markdown('''
-                It has been an eventful few days since the league’s first Sprint race. A major FIA decision was made that changed the results of the race, and let’s just say there has not been this much rioting since the 1991 Chicago Bulls celebration riots. Some drivers put pen to paper to rip into the FIA’s decision for being abrupt and unfair. While other drivers defended the decision as it upheld aspects of racing sportsmanship they appreciate. Alpine’s start driver Joshua ended his tirade by saying:
-
-                > _**This is really BS and unfair.** - Joshua_
-                
-                The next day, Joshua spoke to a local reporter and stated:
-
-                > _**Everyone better watch out because we are coming for blood [in Baku]. [The decision is] Not fair but we move forward.** - Joshua_
-
-                His teammate Eddie took an interview with a Houston based reporter where he labelled the FIA as blind while elaborating on the situation between he and Joshua:
-
-                > _**While yes I do admit to running Josh off the road, which I did get a penalty for on top of my other 5-grid penalty (which resulted in me having a 10-grid penalty already), Joshua also got a 5-grid penalty from that for no exact reason. Due to the FIA not having eye balls, Joshua already had to push harder and try stupider sh*t just to make it back to his true position, P1. This all resulted in his situation during the Sprint race. He should not be penalized further, when he was already penalized and is getting penalized for a rule which was never stated before the race.** - Eddie_
-
-                Other drivers like the VCARB pair were more ceremonious and in agreement with the FIA’s decision. Patrick was heard screaming, “I’m a winner!” as far away as Erick’s house. The shouts were measured on local seismology equipment as a 3.2 magnitude earthquake on the Richter Scale. His teammate Brently was more subdued with his commentary stating:
-
-                > _**I feel like it was the right decision. As it seemed odd when and where he retired [in the Sprint].** - Brently_
-
-                Multiple teams have also released formal statements which can be found at the end of this article. More importantly, this ruling shakes up the standings quite a bit. Joshua dropped below McLaren’s Nick in the Driver’s Championship and VCARB closed even further on McLaren in the Constructor’s Championship.
-
-                With all this said, it’s time to focus on the upcoming street race in Baku. Drivers will be met with close walls, the longest pedal to the medal straight on the calendar, and deviously challenging combinations of undulation and corners. Sector 1 is essentially three flatout straights with ninety-degree left turns at the end of each. If drivers survive that, they will quickly find themselves at the beginning of the most challenging sector on the league’s calendar. The castle section and Turn 15 have caught out many talented drivers before and are certainly capable of wreaking havoc on the race this week. Sector 3 is a drafters paradise, but the exit of Turn 16 will make or break any challenger’s attack on their rivals.
-                ''')
-    st.image(baku_circuit)
-    st.markdown('''
-                This will be the league’s first race in Azerbaijan. With plenty of treacherous turns and a great passing opportunity at the end of the front straight, the Baku street circuit will certainly test the league’s fortitude. Especially when one considers the embers that are ready to be stoked by even the slightest breeze from China’s incident.
-                ''')
-    st.markdown('''
-                <p style="color:lightgray;">Saturday 1/11/2025 - Patrick Knowles</p>
-                ''',
-                unsafe_allow_html=True,)
-    st.markdown('''
-                **Official Team Statements**
-                ''')
-    
-    china_statements = [
-        {
-            "title": "",
-            "text": "",
-            "img": "./Images/China_Alpine_Statement.png"
-        },
-        {
-            "title": "",
-            "text": "",
-            "img": "./Images/China_Red_Bull_Statement1.png"
-        },
-        {
-            "title": "",
-            "text": "",
-            "img": "./Images/China_Red_Bull_Statement2.png"
-        },
-        {
-            "title": "",
-            "text": "",
-            "img": "./Images/China_VCARB_Statement.png"
-        },
-        {
-            "title": "",
-            "text": "",
-            "img": "./Images/China_Ferrari_Statement.png"
-        },
-        {
-            "title": "",
-            "text": "",
-            "img": "./Images/China_Aston_Martin_Statement.png"
-        },
-        {
-            "title": "",
-            "text": "",
-            "img": "./Images/China_McLaren_Statement.png"
-        },
-    ]
-    
-    carousel(china_statements)
-    st.divider()
-    #endregion
-    
-    #region FIA China Press Release
+    #region FIA China Press Release Update
     st.markdown('''
                 **Press Release** \n
                 **For Immediate Release**  
-                _Date: January 10 2025_
+                _Date: January 16 2025_
                 ''')
-    st.subheader('Joshua Penalized with Five-Place Grid Drop Following Sprint Race Incident at the F124 League’s Chinese Grand Prix')
+    st.subheader("UPDATE: Joshua's Penalty at the F124 League’s Chinese Grand Prix Reduced to 3 Place Drop")
     st.markdown('''
-                The Alternative F124 League’s independent FIA directors have issued a decision regarding an incident that occurred during the recent Chinese Grand Prix, resulting in a five-place grid penalty for driver Joshua. 
+                The Alternative F124 League’s independent FIA directors have openly discussed the incident that occurred during the Chinese GP Sprint Race with Joshua. 
 
-                Following an extensive review of race footage and telemetry data, it has been determined that Joshua retired his car during the sprint race despite no terminal damage, with the intention of improving his starting position for the main race—set to be held in reverse order of the sprint race results. This behavior was deemed to be in violation of league regulations.
+                Upon further review the drop of 5 places was deemed too harsh for the punishment under the circumstances of the incident.
 
-                In comparison, Patrick, who also sustained damage during the sprint, made the decision to repair his car and continue racing, ultimately putting in a solid performance to finish the race.
-
-                As a result of the penalty, Joshua will drop from 1st to 6th in the final results. The revised finishing positions from the Chinese Grand Prix are as follows:
-
+                The FIA directors have determined a 3 place drop is more fitting in this instance. Therefore, the standings of the race are updated as shown below, effective immediately.
+                                    
                 - 1st: Patrick  
                 - 2nd: Erick  
                 - 3rd: Nick  
-                - 4th: Eddie  
-                - 5th: Boz  
-                - 6th: Joshua  
+                - 4th: Joshua
 
-                Joshua has the right to appeal this decision to the independent FIA directors, David and Marcus, should he wish to contest the ruling. The Alternative F124 League remains committed to upholding fair and competitive racing for all participants.
-
-                For further inquiries or clarification, please contact Erick Tavera or Nick Beglin.
+                There will be no further room for appeals, but the FIA directors are still open for inquiries or clarifications. For further inquiries or clarification, please contact Erick Tavera or Nick Beglin.
+                
+                Finally, due to the appeal process and complaints from team principals and drivers, the FIA directors are contemplating a voting system for future appeals to future penalties.
                 ''')
     st.markdown('''
                 <div style="width: 25%; border-bottom: 1px solid #cccccc;"></div>
@@ -161,6 +80,121 @@ def Tab0():
             st.rerun()
 
     if st.session_state.show_all_content: 
+        #region Race Week Baku
+        st.subheader('Race Week - Baku')
+        st.markdown('''
+                    It has been an eventful few days since the league’s first Sprint race. A major FIA decision was made that changed the results of the race, and let’s just say there has not been this much rioting since the 1991 Chicago Bulls celebration riots. Some drivers put pen to paper to rip into the FIA’s decision for being abrupt and unfair. While other drivers defended the decision as it upheld aspects of racing sportsmanship they appreciate. Alpine’s start driver Joshua ended his tirade by saying:
+
+                    > _**This is really BS and unfair.** - Joshua_
+                    
+                    The next day, Joshua spoke to a local reporter and stated:
+
+                    > _**Everyone better watch out because we are coming for blood [in Baku]. [The decision is] Not fair but we move forward.** - Joshua_
+
+                    His teammate Eddie took an interview with a Houston based reporter where he labelled the FIA as blind while elaborating on the situation between he and Joshua:
+
+                    > _**While yes I do admit to running Josh off the road, which I did get a penalty for on top of my other 5-grid penalty (which resulted in me having a 10-grid penalty already), Joshua also got a 5-grid penalty from that for no exact reason. Due to the FIA not having eye balls, Joshua already had to push harder and try stupider sh*t just to make it back to his true position, P1. This all resulted in his situation during the Sprint race. He should not be penalized further, when he was already penalized and is getting penalized for a rule which was never stated before the race.** - Eddie_
+
+                    Other drivers like the VCARB pair were more ceremonious and in agreement with the FIA’s decision. Patrick was heard screaming, “I’m a winner!” as far away as Erick’s house. The shouts were measured on local seismology equipment as a 3.2 magnitude earthquake on the Richter Scale. His teammate Brently was more subdued with his commentary stating:
+
+                    > _**I feel like it was the right decision. As it seemed odd when and where he retired [in the Sprint].** - Brently_
+
+                    Multiple teams have also released formal statements which can be found at the end of this article. More importantly, this ruling shakes up the standings quite a bit. Joshua dropped below McLaren’s Nick in the Driver’s Championship and VCARB closed even further on McLaren in the Constructor’s Championship.
+
+                    With all this said, it’s time to focus on the upcoming street race in Baku. Drivers will be met with close walls, the longest pedal to the medal straight on the calendar, and deviously challenging combinations of undulation and corners. Sector 1 is essentially three flatout straights with ninety-degree left turns at the end of each. If drivers survive that, they will quickly find themselves at the beginning of the most challenging sector on the league’s calendar. The castle section and Turn 15 have caught out many talented drivers before and are certainly capable of wreaking havoc on the race this week. Sector 3 is a drafters paradise, but the exit of Turn 16 will make or break any challenger’s attack on their rivals.
+                    ''')
+        st.image(baku_circuit)
+        st.markdown('''
+                    This will be the league’s first race in Azerbaijan. With plenty of treacherous turns and a great passing opportunity at the end of the front straight, the Baku street circuit will certainly test the league’s fortitude. Especially when one considers the embers that are ready to be stoked by even the slightest breeze from China’s incident.
+                    ''')
+        st.markdown('''
+                    <p style="color:lightgray;">Saturday 1/11/2025 - Patrick Knowles</p>
+                    ''',
+                    unsafe_allow_html=True,)
+        st.markdown('''
+                    **Official Team Statements**
+                    ''')
+        
+        china_statements = [
+            {
+                "title": "",
+                "text": "",
+                "img": "./Images/China_Alpine_Statement.png"
+            },
+            {
+                "title": "",
+                "text": "",
+                "img": "./Images/China_Red_Bull_Statement1.png"
+            },
+            {
+                "title": "",
+                "text": "",
+                "img": "./Images/China_Red_Bull_Statement2.png"
+            },
+            {
+                "title": "",
+                "text": "",
+                "img": "./Images/China_VCARB_Statement.png"
+            },
+            {
+                "title": "",
+                "text": "",
+                "img": "./Images/China_Ferrari_Statement.png"
+            },
+            {
+                "title": "",
+                "text": "",
+                "img": "./Images/China_Aston_Martin_Statement.png"
+            },
+            {
+                "title": "",
+                "text": "",
+                "img": "./Images/China_McLaren_Statement.png"
+            },
+        ]
+        
+        carousel(china_statements)
+        st.divider()
+        #endregion
+        
+        #region FIA China Press Release
+        st.markdown('''
+                    **Press Release** \n
+                    **For Immediate Release**  
+                    _Date: January 10 2025_
+                    ''')
+        st.subheader('Joshua Penalized with Five-Place Grid Drop Following Sprint Race Incident at the F124 League’s Chinese Grand Prix')
+        st.markdown('''
+                    The Alternative F124 League’s independent FIA directors have issued a decision regarding an incident that occurred during the recent Chinese Grand Prix, resulting in a five-place grid penalty for driver Joshua. 
+
+                    Following an extensive review of race footage and telemetry data, it has been determined that Joshua retired his car during the sprint race despite no terminal damage, with the intention of improving his starting position for the main race—set to be held in reverse order of the sprint race results. This behavior was deemed to be in violation of league regulations.
+
+                    In comparison, Patrick, who also sustained damage during the sprint, made the decision to repair his car and continue racing, ultimately putting in a solid performance to finish the race.
+
+                    As a result of the penalty, Joshua will drop from 1st to 6th in the final results. The revised finishing positions from the Chinese Grand Prix are as follows:
+
+                    - 1st: Patrick  
+                    - 2nd: Erick  
+                    - 3rd: Nick  
+                    - 4th: Eddie  
+                    - 5th: Boz  
+                    - 6th: Joshua  
+
+                    Joshua has the right to appeal this decision to the independent FIA directors, David and Marcus, should he wish to contest the ruling. The Alternative F124 League remains committed to upholding fair and competitive racing for all participants.
+
+                    For further inquiries or clarification, please contact Erick Tavera or Nick Beglin.
+                    ''')
+        st.markdown('''
+                    <div style="width: 25%; border-bottom: 1px solid #cccccc;"></div>
+                    ''', unsafe_allow_html=True)
+        st.markdown('''
+                    _The Alternative F124 League_
+                    <p style="color:lightgray;">Where racing meets integrity and fair competition.</p>
+                    ''',
+                    unsafe_allow_html=True,)
+        st.divider()
+        #endregion
+
         #region China Recap
         st.subheader('China Recap: Overtakes, Incidents, and Revenge Oh My!')
         st.markdown('''

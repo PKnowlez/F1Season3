@@ -34,77 +34,49 @@ baku_travis_eddie = Image.open("./Images/Baku_Travis_Eddie.png")
 baku_eddie = Image.open("./Images/Baku_Eddie.png")
 baku_nick_patrick = Image.open("./Images/Baku_Nick_Patrick_Pass.png")
 baku_collage = Image.open("./Images/Baku_Collage.png")
+canada_circuit = Image.open("./Images/Canada_Circuit.png")
 
 def Tab0():
     if 'show_all_content' not in st.session_state:
         st.session_state.show_all_content = False
     
-    #region Baku Recap
-    st.subheader('Baku Recap: Castles and Crashes')
+    #region Race Week - Canada
+    st.subheader("Race Week - Canada")
     st.markdown('''
-                First and foremost, the late breaking news must be addressed. With the FIA’s update to the penalty for Alpine’s Joshua, the standings swung back into his favor as he took the lead by one point over McLaren’s Nick. Critics and pundits of the league are expressing concerns that this may undermine the future credibility of the FIA’s decision making process. This will likely remain a hot topic going into future races.
-                ''')
-    st.image(baku_travis_eddie)
-    st.markdown('''
-                With the past in the proverbial rearview mirror, cars roared to life, however, some garages stayed silent. For the first time, the league went into a qualifying session with only half of the drivers. Some are saying drivers deliberately boycotted the race due to its location, while others are reporting that many of the drivers were simply too scared to take to the tightly walled streets of Baku. Regardless, after qualifying finished the drivers who were in attendance made up the first three rows of the grid. McLaren and VCARB both had season best qualifying sessions as teams, while Alpine’s Eddie and Red Bull’s Boz really showed up for their teams with their best qualifying performances of the year.
+                <div style>
+                </style>
+                <center>
 
-                Just in the nick of time, Aston Martin’s Del arrived at the paddock and entered into the race in 20th. Which meant the grid was finalized and it was time to rocket down the long straights of Baku. Notably, the grid was set without both Erick and Zane’s Ferraris, Gary’s Aston Martin, Yeti’s Red Bull, and Joshua’s Alpine. When the lights went out, most drivers got reasonable starts, and the front runners held their positions through the first corner. Positions swapped, tire strategies came into play, and a few minor incidents occurred throughout the first half of the race.
+                _Oh Canada!  
+                Our neighbor and next race track!  
+                True driver love in all of us command.  
+                With glowing exhausts we see thee rise,  
+                The True North fast and free!  
+                From far and wide,  
+                Oh Canada, we drive our cars for thee.  
+                FIA keep our track fast and free!  
+                Oh Canada, we drive our cars for thee.  
+                Oh Canada, we drive our cars for thee._
 
-                But just as the race passed the halfway point, the first safety car of the evening occurred. The primary strategy of the race had been a single stop from the hard compound to the medium compound. Therefore, most drivers were not ready to risk extending a new set of mediums for half of the race. So with most drivers staying out, the safety car parade began. However Eddie, who had been running in second, had a damaged front wing and required a pitstop. But either because he was screaming about something Marvel Rivals related over the radio or because his pit crew was worn out from dealing with all the spinouts during qualifying, Alpine did not swap his wing. This error forced Eddie to pit again on the following lap, still under safety car. 
-
-                While tumbling backwards in position, Eddie prepared for the race restart on new tires with a fresh front wing. Many of the drivers were positioned near the front of the queue and began to spar in the tight turns of the circuit’s first sector. However, after a lap, there were again no major incidents. The drivers were keeping it as civil as they could with the occasional “I’m gonna dive bomb you,” being shouted from those trying to make up positions. As the sparring continued, Del unfortunately met an early demise which led to the second safety car of the evening.
-
-                With a few of the front runners hoping to stretch their original tires for a chance at fresh softs, a risky choice became clear, pit now for mediums, or hold out for softs later. Nick made the decision to pit for the medium compound tires and gamble that he could get through all of the traffic from halfway down the field. This decision put VCARB’s Patrick, Red Bull’s Boz, and Alpine’s Eddie in the top three at the onset of the restart. On the front stretch the drivers took off and Eddie managed to get past Boz within a lap or two. During that time, Nick came screaming up the ranks and managed to position himself into third. As Patrick, Eddie, Nick, and Boz entered the castle section, Eddie made a race losing mistake. With a minor lapse in concentration he spun at the top of the castle turns and collided nose first with the right wall. Nick narrowly avoided clipping his rear, but as Eddie began to get off of the racing line he blocked Boz’s path causing an additional collision. 
-                ''')
-    st.image(baku_eddie)
-    st.markdown('''
-                Eddie and Boz would recover from this and manage to finish the race at the back of the pack, even with some last corner shenanigans. Due to a drive through penalty gained during the safety car and a collision caused by Perez, VCARB’s Brently finished in the middle of the field. McLaren’s Travis was also caught out due to the Perez-Brently incident but managed to finish the race as well. So with one driver off to the shores of the Caspian Sea, and four drivers out of the points, it came down to reigning champion Nick and rookie driver Patrick.
-                ''')
-    st.image(baku_nick_patrick)
-    st.markdown('''
-                As the duo entered the front straight, it was clear that Nick was positioned for an overtake. With his battery depleted, Patrick was only able to defend up to the finish line where Nick overtook going into the final lap, therefore all but securing another win for himself and McLaren. Nick’s win along with Travis’ performance brings McLaren within two points of Alpine in the Constructor’s Championship. Red Bull and Aston Martin are now within one point of one another in the battle for 5th. This win also pushes Nick an entire race win ahead of Joshua in the Driver’s Championship, and Patrick’s second place pushed him ahead of Erick for third.
-                ''')
-    st.image(baku_collage)
-    st.markdown('''
-                <p style="color:lightgray;">Friday 1/17/2025 - Patrick Knowles with credit Nick</p>
-                ''',
-                unsafe_allow_html=True,)
-    st.divider()
-    #endregion
-
-    #region FIA China Press Release Update
-    st.markdown('''
-                **Press Release** \n
-                **For Immediate Release**  
-                _Date: January 16 2025_
-                ''')
-    st.subheader("UPDATE: Joshua's Penalty at the F124 League’s Chinese Grand Prix Reduced to 3 Place Drop")
-    st.markdown('''
-                The Alternative F124 League’s independent FIA directors have openly discussed the incident that occurred during the Chinese GP Sprint Race with Joshua. 
-
-                Upon further review the drop of 5 places was deemed too harsh for the punishment under the circumstances of the incident.
-
-                The FIA directors have determined a 3 place drop is more fitting in this instance. Therefore, the standings of the race are updated as shown below, effective immediately.
-                                    
-                - 1st: Patrick  
-                - 2nd: Erick  
-                - 3rd: Nick  
-                - 4th: Joshua
-
-                There will be no further room for appeals, but the FIA directors are still open for inquiries or clarifications. For further inquiries or clarification, please contact Erick Tavera or Nick Beglin.
-                
-                Finally, due to the appeal process and complaints from team principals and drivers, the FIA directors are contemplating a voting system for future appeals to future penalties.
-                ''')
-    st.markdown('''
-                <div style="width: 25%; border-bottom: 1px solid #cccccc;"></div>
+                </center>                
+                </div>
                 ''', unsafe_allow_html=True)
     st.markdown('''
-                _The Alternative F124 League_
-                <p style="color:lightgray;">Where racing meets integrity and fair competition.</p>
+                The league takes to Montreal’s Notre Dame Island this week to rip some laps around the Circuit Gilles-Villeneuve. With the standings closer than ever and an increasingly small margin for error, drivers and constructors will be putting it all on the line at a circuit known for its high risk reward ratio. Drivers will be challenged by The Wall of Champions found at Turn 14 as well as the twisting and technical Sector 1. When the lights go out, drivers will likely be wheel to wheel in the Turn 1 and 2 combo. As they leave those turns and head into the end of Sector 1, many drivers will begin to queue up for the high-speed straights in Sector 2 and 3. Notable passing opportunities will occur at both Turn 10 and Turn 13, but drivers who are brave may find chances in Turn 1, 6, and 8.
+                ''')
+    st.image(canada_circuit)
+    st.markdown('''
+                With over a season between now and the last time the league took on Canada, it will be interesting to see how drivers improve from the last outing. The last performance from the league was lackluster with only one driver on the podium and no other drivers finishing above 8th place. With the standings as close as they are, no one can afford a major mishap here. With respect to the Constructor’s Championship, Red Bull will be looking to overtake Aston Martin, McLaren will be looking to overtake Alpine, and both Ferrari and VCARB will be poised to capitalize on any opportunity afforded them. Drivers like Alpine’s Eddie, Ferrari’s Erick, and Red Bull’s Yeti will all be looking to get on the offensive and overtake their nearest rivals. While drivers like Ferrari’s Zane, Aston Martin’s Del, and VCARB’s Patrick will all be looking to further themselves in the standings from those just behind them.
+
+                There are rumors of a double this week, so stay tuned for another update if the drivers are taking a quick flight to the Italian countryside for laps around Monza.
+                ''')
+    st.markdown('''
+                <p style="color:lightgray;">Saturday 1/18/2025 - Patrick Knowles</p>
                 ''',
                 unsafe_allow_html=True,)
     st.divider()
     #endregion
+    
 
     # "Show More/Less" button 
     if not st.session_state.show_all_content:
@@ -117,6 +89,73 @@ def Tab0():
             st.rerun()
 
     if st.session_state.show_all_content: 
+        #region Baku Recap
+        st.subheader('Baku Recap: Castles and Crashes')
+        st.markdown('''
+                    First and foremost, the late breaking news must be addressed. With the FIA’s update to the penalty for Alpine’s Joshua, the standings swung back into his favor as he took the lead by one point over McLaren’s Nick. Critics and pundits of the league are expressing concerns that this may undermine the future credibility of the FIA’s decision making process. This will likely remain a hot topic going into future races.
+                    ''')
+        st.image(baku_travis_eddie)
+        st.markdown('''
+                    With the past in the proverbial rearview mirror, cars roared to life, however, some garages stayed silent. For the first time, the league went into a qualifying session with only half of the drivers. Some are saying drivers deliberately boycotted the race due to its location, while others are reporting that many of the drivers were simply too scared to take to the tightly walled streets of Baku. Regardless, after qualifying finished the drivers who were in attendance made up the first three rows of the grid. McLaren and VCARB both had season best qualifying sessions as teams, while Alpine’s Eddie and Red Bull’s Boz really showed up for their teams with their best qualifying performances of the year.
+
+                    Just in the nick of time, Aston Martin’s Del arrived at the paddock and entered into the race in 20th. Which meant the grid was finalized and it was time to rocket down the long straights of Baku. Notably, the grid was set without both Erick and Zane’s Ferraris, Gary’s Aston Martin, Yeti’s Red Bull, and Joshua’s Alpine. When the lights went out, most drivers got reasonable starts, and the front runners held their positions through the first corner. Positions swapped, tire strategies came into play, and a few minor incidents occurred throughout the first half of the race.
+
+                    But just as the race passed the halfway point, the first safety car of the evening occurred. The primary strategy of the race had been a single stop from the hard compound to the medium compound. Therefore, most drivers were not ready to risk extending a new set of mediums for half of the race. So with most drivers staying out, the safety car parade began. However Eddie, who had been running in second, had a damaged front wing and required a pitstop. But either because he was screaming about something Marvel Rivals related over the radio or because his pit crew was worn out from dealing with all the spinouts during qualifying, Alpine did not swap his wing. This error forced Eddie to pit again on the following lap, still under safety car. 
+
+                    While tumbling backwards in position, Eddie prepared for the race restart on new tires with a fresh front wing. Many of the drivers were positioned near the front of the queue and began to spar in the tight turns of the circuit’s first sector. However, after a lap, there were again no major incidents. The drivers were keeping it as civil as they could with the occasional “I’m gonna dive bomb you,” being shouted from those trying to make up positions. As the sparring continued, Del unfortunately met an early demise which led to the second safety car of the evening.
+
+                    With a few of the front runners hoping to stretch their original tires for a chance at fresh softs, a risky choice became clear, pit now for mediums, or hold out for softs later. Nick made the decision to pit for the medium compound tires and gamble that he could get through all of the traffic from halfway down the field. This decision put VCARB’s Patrick, Red Bull’s Boz, and Alpine’s Eddie in the top three at the onset of the restart. On the front stretch the drivers took off and Eddie managed to get past Boz within a lap or two. During that time, Nick came screaming up the ranks and managed to position himself into third. As Patrick, Eddie, Nick, and Boz entered the castle section, Eddie made a race losing mistake. With a minor lapse in concentration he spun at the top of the castle turns and collided nose first with the right wall. Nick narrowly avoided clipping his rear, but as Eddie began to get off of the racing line he blocked Boz’s path causing an additional collision. 
+                    ''')
+        st.image(baku_eddie)
+        st.markdown('''
+                    Eddie and Boz would recover from this and manage to finish the race at the back of the pack, even with some last corner shenanigans. Due to a drive through penalty gained during the safety car and a collision caused by Perez, VCARB’s Brently finished in the middle of the field. McLaren’s Travis was also caught out due to the Perez-Brently incident but managed to finish the race as well. So with one driver off to the shores of the Caspian Sea, and four drivers out of the points, it came down to reigning champion Nick and rookie driver Patrick.
+                    ''')
+        st.image(baku_nick_patrick)
+        st.markdown('''
+                    As the duo entered the front straight, it was clear that Nick was positioned for an overtake. With his battery depleted, Patrick was only able to defend up to the finish line where Nick overtook going into the final lap, therefore all but securing another win for himself and McLaren. Nick’s win along with Travis’ performance brings McLaren within two points of Alpine in the Constructor’s Championship. Red Bull and Aston Martin are now within one point of one another in the battle for 5th. This win also pushes Nick an entire race win ahead of Joshua in the Driver’s Championship, and Patrick’s second place pushed him ahead of Erick for third.
+                    ''')
+        st.image(baku_collage)
+        st.markdown('''
+                    <p style="color:lightgray;">Friday 1/17/2025 - Patrick Knowles with credit Nick</p>
+                    ''',
+                    unsafe_allow_html=True,)
+        st.divider()
+        #endregion
+
+        #region FIA China Press Release Update
+        st.markdown('''
+                    **Press Release** \n
+                    **For Immediate Release**  
+                    _Date: January 16 2025_
+                    ''')
+        st.subheader("UPDATE: Joshua's Penalty at the F124 League’s Chinese Grand Prix Reduced to 3 Place Drop")
+        st.markdown('''
+                    The Alternative F124 League’s independent FIA directors have openly discussed the incident that occurred during the Chinese GP Sprint Race with Joshua. 
+
+                    Upon further review the drop of 5 places was deemed too harsh for the punishment under the circumstances of the incident.
+
+                    The FIA directors have determined a 3 place drop is more fitting in this instance. Therefore, the standings of the race are updated as shown below, effective immediately.
+                                        
+                    - 1st: Patrick  
+                    - 2nd: Erick  
+                    - 3rd: Nick  
+                    - 4th: Joshua
+
+                    There will be no further room for appeals, but the FIA directors are still open for inquiries or clarifications. For further inquiries or clarification, please contact Erick Tavera or Nick Beglin.
+                    
+                    Finally, due to the appeal process and complaints from team principals and drivers, the FIA directors are contemplating a voting system for future appeals to future penalties.
+                    ''')
+        st.markdown('''
+                    <div style="width: 25%; border-bottom: 1px solid #cccccc;"></div>
+                    ''', unsafe_allow_html=True)
+        st.markdown('''
+                    _The Alternative F124 League_
+                    <p style="color:lightgray;">Where racing meets integrity and fair competition.</p>
+                    ''',
+                    unsafe_allow_html=True,)
+        st.divider()
+        #endregion
+
         #region Race Week Baku
         st.subheader('Race Week - Baku')
         st.markdown('''

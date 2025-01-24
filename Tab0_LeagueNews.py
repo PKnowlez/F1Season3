@@ -35,49 +35,61 @@ baku_eddie = Image.open("./Images/Baku_Eddie.png")
 baku_nick_patrick = Image.open("./Images/Baku_Nick_Patrick_Pass.png")
 baku_collage = Image.open("./Images/Baku_Collage.png")
 canada_circuit = Image.open("./Images/Canada_Circuit.png")
+canada_start = Image.open("./Images/Canada_Start.png")
+canada_nick_collage = Image.open("./Images/Canada_Nick_Collage.png")
+canada_eddie_erick_collage = Image.open("./Images/Canada_Eddie_Erick_Collage.png")
+canada_joshua_crash = Image.open("./Images/Canada_Joshua_Crash.png")
+canada_del = Image.open("./Images/Canada_Del.png")
 
 def Tab0():
     if 'show_all_content' not in st.session_state:
         st.session_state.show_all_content = False
     
-    #region Race Week - Canada
-    st.subheader("Race Week - Canada")
+    #region Canada Recap
+    st.subheader('Canada Recap: An Ontario Scari-o Makes its Way to Montreal')
     st.markdown('''
-                <div style>
-                </style>
-                <center>
-
-                _Oh Canada!  
-                Our neighbor and next race track!  
-                True driver love in all of us command.  
-                With glowing exhausts we see thee rise,  
-                The True North fast and free!  
-                From far and wide,  
-                Oh Canada, we drive our cars for thee.  
-                FIA keep our track fast and free!  
-                Oh Canada, we drive our cars for thee.  
-                Oh Canada, we drive our cars for thee._
-
-                </center>                
-                </div>
-                ''', unsafe_allow_html=True)
-    st.markdown('''
-                The league takes to Montreal’s Notre Dame Island this week to rip some laps around the Circuit Gilles-Villeneuve. With the standings closer than ever and an increasingly small margin for error, drivers and constructors will be putting it all on the line at a circuit known for its high risk reward ratio. Drivers will be challenged by The Wall of Champions found at Turn 14 as well as the twisting and technical Sector 1. When the lights go out, drivers will likely be wheel to wheel in the Turn 1 and 2 combo. As they leave those turns and head into the end of Sector 1, many drivers will begin to queue up for the high-speed straights in Sector 2 and 3. Notable passing opportunities will occur at both Turn 10 and Turn 13, but drivers who are brave may find chances in Turn 1, 6, and 8.
+                The league took to the hybrid streets of Montreal’s Notre Dame Island and let’s beat to the chase, it was thrilling. Rain, tire strategies, spin outs, teams infighting, and penalties galore. The Canadian GP is well known for its infamous Wall of Champions, but for the league’s drivers, it became synonymous with corner cutting and time penalties. Infact, drivers all avoided making a fatal mistake at the Wall of Champions, but racked up incredible penalty totals as they lapped around and around the famed island.
                 ''')
-    st.image(canada_circuit)
+    st.image(canada_start)
     st.markdown('''
-                With over a season between now and the last time the league took on Canada, it will be interesting to see how drivers improve from the last outing. The last performance from the league was lackluster with only one driver on the podium and no other drivers finishing above 8th place. With the standings as close as they are, no one can afford a major mishap here. With respect to the Constructor’s Championship, Red Bull will be looking to overtake Aston Martin, McLaren will be looking to overtake Alpine, and both Ferrari and VCARB will be poised to capitalize on any opportunity afforded them. Drivers like Alpine’s Eddie, Ferrari’s Erick, and Red Bull’s Yeti will all be looking to get on the offensive and overtake their nearest rivals. While drivers like Ferrari’s Zane, Aston Martin’s Del, and VCARB’s Patrick will all be looking to further themselves in the standings from those just behind them.
+                Most notably, Alpine’s Eddie topped the leaderboards in the worst way imaginable. With over 20 seconds in penalties, Eddie barely held onto points at the end of the race. On the flip side, the McLaren drivers Nick and Travis were extremely precise and managed to make it through the race without a corner dutting penalty. But, Nick wasn’t able to keep it completely clean, during the lone Virtual Safety Car of the race he was caught out just over the requisite delta and received a drive through penalty which may have cost him the race.
 
-                There are rumors of a double this week, so stay tuned for another update if the drivers are taking a quick flight to the Italian countryside for laps around Monza.
+                The race wasn’t all sunshine and penalties though. Sometime during the 13th lap, the heavens opened. Rain began to pitter patter down onto the track, cooling both surface and tire temperatures. Drivers began diving into the pits, opting for intermediate tires to lessen the difficulty of driving on the slick track. As the rain continued nearly everyone went in for intermediate tires. However, as the rain began to lighten up, some drivers gambled and swapped to slicks early. This proved to be an effective way to bring the slicks in gradually, but it was also tough sledding for a few laps as grip was nowhere to be found.
+                ''')
+    st.image(canada_nick_collage)
+    st.markdown('''
+                Others were not so lucky with their tire strategies and pit stops. The Milton Keynes outfit was down a driver for the race and on top of that they did not effectively support the one driver they had in the running. Boz was found speechless after his pit stops turned into a long string of slow nightmares. More on this in the league’s first ever insider scoop about the recent struggles at Red Bull.
+                ''')
+    st.image(canada_eddie_erick_collage)
+    st.markdown('''
+                Boz’s tribulation and the rain were not the only dramatic happenings on track. The incredible saga of philia and zelos between the Tavera brothers continued to escalate in Canada. The brothers started one behind the other in 4th and 6th on the grid. As the race began they stayed out of each other’s ways, but as tire strategies and the weather pulled the two closer together, disaster struck. Alpine’s Eddie and Ferrari’s Erick wrestled back and forth for position. Just after Eddie overtook Erick in the back straight, the two sped into Turn 1 and Turn 2 where Eddie was too early on the throttle, oversteering his car perpendicular to the racing line. Erick, even with his incredible F1 reflexes that got him his seat at Ferrari, was unable to avoid slamming directly into Eddie’s sidepod. Both drivers recovered from the mishap with only lost time and hurt egos. However, Eddie’s teammate Joshua likely will find a bruise on his ego after an unforced error in Turn 7 had him spinning out and losing places.
+                ''')
+    st.image(canada_joshua_crash)
+    st.markdown('''
+                Most of the rest of the race was filled with good passes, some backfield lapping, and drivers doing the best they can to stay on the asphalt. While much of the race was nominal, the results were not. When the chequered flag flew, Aston Martin’s Del was the first to cross the finish line. With his first win of the season, Del begins to pull Aston Martin out of the bottom ranks of the Constructors and closer to contention with the midfield. 
+                ''')
+    st.image(canada_del)
+    st.markdown('''
+                The rest of the podium was filled out by Nick and Joshua, allowing Nick to continue to maintain his lead in the Driver’s World Championship. Nick’s edge over Joshua and Travis’ edge over Eddie allowed McLaren to overtake Alpine by two points for the Cosntructor’s World Championship. The VCARB pairing began to lose some of their ground to their nearest rivals. Del, with his win, closed the gap to VCARB’s Brently, while Erick closed the gap to VCARB’s Patrick. Finally, Travis took a cut out of the lead Boz had over him. Next week the league takes to the countryside of Italy to race around the Temple of Speed. Who knows if the Tavera Saga will continue, if McLaren can continue their lead in both championships, or if Eddie will keep his car between the white lines.
                 ''')
     st.markdown('''
-                <p style="color:lightgray;">Saturday 1/18/2025 - Patrick Knowles</p>
+                <p style="color:lightgray;">Thursday 1/23/2025 - Patrick Knowles with credit Erick & Nick</p>
+                ''',
+                unsafe_allow_html=True,)
+    st.divider()
+    #endregion
+
+    #region Insider Scoop - Red Bull
+    st.subheader("INSIDER SCOOP: ***Red Bull's Drama in the Pits***")
+
+    st.markdown('''
+                <p style="color:lightgray;">Saturday 1/18/2025 - Patrick Knowles & Senad (Boz)</p>
                 ''',
                 unsafe_allow_html=True,)
     st.divider()
     #endregion
     
-
+    # ----------------------------------------------------------------------------------------------------------
     # "Show More/Less" button 
     if not st.session_state.show_all_content:
         if st.button('Show More'):
@@ -88,7 +100,44 @@ def Tab0():
             st.session_state.show_all_content = False
             st.rerun()
 
-    if st.session_state.show_all_content: 
+    if st.session_state.show_all_content:
+        #region Race Week - Canada
+        st.subheader("Race Week - Canada")
+        st.markdown('''
+                    <div style>
+                    </style>
+                    <center>
+
+                    _Oh Canada!  
+                    Our neighbor and next race track!  
+                    True driver love in all of us command.  
+                    With glowing exhausts we see thee rise,  
+                    The True North fast and free!  
+                    From far and wide,  
+                    Oh Canada, we drive our cars for thee.  
+                    FIA keep our track fast and free!  
+                    Oh Canada, we drive our cars for thee.  
+                    Oh Canada, we drive our cars for thee._
+
+                    </center>                
+                    </div>
+                    ''', unsafe_allow_html=True)
+        st.markdown('''
+                    The league takes to Montreal’s Notre Dame Island this week to rip some laps around the Circuit Gilles-Villeneuve. With the standings closer than ever and an increasingly small margin for error, drivers and constructors will be putting it all on the line at a circuit known for its high risk reward ratio. Drivers will be challenged by The Wall of Champions found at Turn 14 as well as the twisting and technical Sector 1. When the lights go out, drivers will likely be wheel to wheel in the Turn 1 and 2 combo. As they leave those turns and head into the end of Sector 1, many drivers will begin to queue up for the high-speed straights in Sector 2 and 3. Notable passing opportunities will occur at both Turn 10 and Turn 13, but drivers who are brave may find chances in Turn 1, 6, and 8.
+                    ''')
+        st.image(canada_circuit)
+        st.markdown('''
+                    With over a season between now and the last time the league took on Canada, it will be interesting to see how drivers improve from the last outing. The last performance from the league was lackluster with only one driver on the podium and no other drivers finishing above 8th place. With the standings as close as they are, no one can afford a major mishap here. With respect to the Constructor’s Championship, Red Bull will be looking to overtake Aston Martin, McLaren will be looking to overtake Alpine, and both Ferrari and VCARB will be poised to capitalize on any opportunity afforded them. Drivers like Alpine’s Eddie, Ferrari’s Erick, and Red Bull’s Yeti will all be looking to get on the offensive and overtake their nearest rivals. While drivers like Ferrari’s Zane, Aston Martin’s Del, and VCARB’s Patrick will all be looking to further themselves in the standings from those just behind them.
+
+                    There are rumors of a double this week, so stay tuned for another update if the drivers are taking a quick flight to the Italian countryside for laps around Monza.
+                    ''')
+        st.markdown('''
+                    <p style="color:lightgray;">Saturday 1/18/2025 - Patrick Knowles</p>
+                    ''',
+                    unsafe_allow_html=True,)
+        st.divider()
+        #endregion
+
         #region Baku Recap
         st.subheader('Baku Recap: Castles and Crashes')
         st.markdown('''

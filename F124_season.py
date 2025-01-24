@@ -5,7 +5,7 @@ import plotly.express as px
 import math
 from PIL import Image
 import Tab0_LeagueNews, Tab1_Standings, Tab2_RaceResults, Tab3_ConstructorStatistics, Tab4_DriverStatistics, \
-    Tab5_DriverComparison, Tab6_RaceSchedule, Tab7_DriverBios, Tab8_InsiderScoop, Calculations
+    Tab5_DriverComparison, Tab6_RaceSchedule, Tab7_DriverBios, Calculations
 
 # Calculations
 team_race_totals,driver_race_totals,df,races,team_colors,fig1,fig2,race_place,race_points,index_x, \
@@ -29,7 +29,6 @@ tabs = st.tabs([
     "Driver Bios",
     "Driver Comparisons",
     "Race Schedule",
-    "Insider Scoop"
     ])
 
 # League News
@@ -67,7 +66,3 @@ with tabs[6]:
 # Race Schedule  
 with tabs[7]:
     Tab6_RaceSchedule.Tab6()
-
-# Insider Scoop
-with tabs[8]:
-    Tab8_InsiderScoop.Tab8()

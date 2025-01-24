@@ -78,6 +78,16 @@ def Tab0():
                 unsafe_allow_html=True,)
     st.divider()
     #endregion
+
+    #region Insider Scoop - Red Bull
+    st.subheader("INSIDER SCOOP: ***Red Bull's Drama in the Pits***")
+
+    st.markdown('''
+                <p style="color:lightgray;">Thursday 1/23/2025 - Reporter: Patrick Knowles, Insider: Senad (Boz)</p>
+                ''',
+                unsafe_allow_html=True,)
+    st.divider()
+    #endregion
     
     # ----------------------------------------------------------------------------------------------------------
     # "Show More/Less" button 

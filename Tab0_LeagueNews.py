@@ -58,7 +58,7 @@ def Tab0():
                 ''')
     st.image(canada_nick_collage)
     st.markdown('''
-                Others were not so lucky with their tire strategies and pit stops. The Milton Keynes outfit was down a driver for the race and on top of that they did not effectively support the one driver they had in the running. Boz was found speechless after his pit stops turned into a long string of slow nightmares. More on this in the league’s first ever [insider scoop](https://thealternativef124.streamlit.app/#red-bull-s-drama-in-the-pits) about the recent struggles at Red Bull.
+                Others were not so lucky with their tire strategies and pit stops. The Milton Keynes outfit was down a driver for the race and on top of that they did not effectively support the one driver they had in the running. Boz was found speechless after his pit stops turned into a long string of slow nightmares. More on this in the league’s first ever [insider scoop](https://thealternativef124.streamlit.app/#insider-scoop-red-bull-s-drama-in-the-pits) about the recent struggles at Red Bull.
                 ''')
     st.image(canada_eddie_erick_collage)
     st.markdown('''
@@ -81,9 +81,23 @@ def Tab0():
 
     #region Insider Scoop - Red Bull
     st.subheader("INSIDER SCOOP: ***Red Bull's Drama in the Pits***")
-
     st.markdown('''
-                <p style="color:lightgray;">Thursday 1/23/2025 - Reporter: Patrick Knowles, Insider: Senad (Boz)</p>
+                As the season has progressed, it is clear that Red Bull has not been able to perform at the level they initially planned. During the most recent outing in Canada, it appears that the season has completely spiraled out of control, and now the gloves, and wheels, are off. What was once a well-oiled machine of racing dominance has devolved into a spectacle of frustration, failure, and outright calamity.
+
+                In the latest catastrophe, a radio failure severed communication between Bositive and his pit crew at the worst possible time. Tire sensors failed, leaving the engineers blind to the car’s conditions. Yet, despite the wet conditions, the crew insisted on fitting hard tires, forcing Boz to wrestle a car that slid helplessly across the circuit. Desperation mounted, and as the weather turned, Boz called for soft compounds. In a shocking blunder, wet tires were thrown on instead. The result? Four chaotic pit stops, lost time, and a furious Boz left screaming into the void of radio silence as Red Bull’s race fell apart before their eyes. Red Bull did not just struggle with Boz during this race, Yeti was a no show throughout the event, leaving the team grasping at the few points Boz could secure. 
+
+                After the race, Boz let loose in the media pen with a fiery post-race critique:
+
+                > _**This team can’t fix anything right. They need to get it together and stop relying on old data from past years—what worked then doesn’t work now. They need to start focusing on what’s happening on the track, in real time. Nobody is listening to me, and it’s costing us everything. I’m out there fighting for every second, and these mistakes are unacceptable. Something has to change, or this season should be considered finished before it even began.**_
+
+                The frustration didn’t end with words. After the race, an enraged Bositive stormed into the garage and threw his helmet against the wall, the sound echoing across the pit lane as team members stood frozen. It was the perfect symbol of a driver at his breaking point, furious at a team that seems unable to deliver when it matters most. Red Bull’s once-golden reputation is now hanging by a thread as the tension between driver and crew reaches an all-time high.
+
+                Canada’s disaster follows the heartbreaking collapse in Baku, where a critical engineering miscalculation turned a potential podium into a fiery wreck. Clinging to third position, down to 5th, Red Bull stubbornly kept Boz on medium tires, ignoring his growing concerns. The decision proved fatal—on the final turn before the straight, the car lost grip, slid out of control, and smashed into the wall in a devastating crash. What could have been a triumphant finish, instead became another glaring symbol of a team in freefall.
+
+                With every race, Red Bull’s struggles grow deeper, and Boz’s fury becomes impossible to ignore. The once-dominant team now finds itself not just losing races, but losing its identity. Strategic failures, technical disasters, and broken trust have left Red Bull limping from race to race. Rumor has it that even McLaren has offered Boz a life line. The team has opened their practice session up to the driver, but so far no confirmed participation has occurred.
+                ''')
+    st.markdown('''
+                <p style="color:lightgray;">Thursday 1/23/2025 - Insiders: Senad (Boz) & Patrick</p>
                 ''',
                 unsafe_allow_html=True,)
     st.divider()

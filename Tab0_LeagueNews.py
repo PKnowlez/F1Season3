@@ -58,7 +58,7 @@ def Tab0():
                 ''')
     st.image(canada_nick_collage)
     st.markdown('''
-                Others were not so lucky with their tire strategies and pit stops. The Milton Keynes outfit was down a driver for the race and on top of that they did not effectively support the one driver they had in the running. Boz was found speechless after his pit stops turned into a long string of slow nightmares. More on this in the league’s first ever insider scoop about the recent struggles at Red Bull.
+                Others were not so lucky with their tire strategies and pit stops. The Milton Keynes outfit was down a driver for the race and on top of that they did not effectively support the one driver they had in the running. Boz was found speechless after his pit stops turned into a long string of slow nightmares. More on this in the league’s first ever [insider scoop](https://thealternativef124.streamlit.app/#insider-scoop-red-bull-s-drama-in-the-pits) about the recent struggles at Red Bull.
                 ''')
     st.image(canada_eddie_erick_collage)
     st.markdown('''
@@ -74,16 +74,6 @@ def Tab0():
                 ''')
     st.markdown('''
                 <p style="color:lightgray;">Thursday 1/23/2025 - Patrick Knowles with credit Erick & Nick</p>
-                ''',
-                unsafe_allow_html=True,)
-    st.divider()
-    #endregion
-
-    #region Insider Scoop - Red Bull
-    st.subheader("INSIDER SCOOP: ***Red Bull's Drama in the Pits***")
-
-    st.markdown('''
-                <p style="color:lightgray;">Saturday 1/18/2025 - Patrick Knowles & Senad (Boz)</p>
                 ''',
                 unsafe_allow_html=True,)
     st.divider()

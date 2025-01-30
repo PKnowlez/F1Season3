@@ -50,7 +50,7 @@ def Tab0():
     st.markdown('''
                 Patrick is MIA, something about skiing or whatever. So they gave me, the intern, the keys to the castle. Monza is a fast track or something, I literally just took this job because they pay well...
 
-                Ok, so as I was typign that someone came by and said they don't pay me. So this is all you're getting.
+                Ok, so as I was typing that someone came by and said they don't pay me. So this is all you're getting.
                 ''')
     st.image(monza_update)
     st.markdown('''

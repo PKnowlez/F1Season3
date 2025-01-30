@@ -40,11 +40,26 @@ canada_nick_collage = Image.open("./Images/Canada_Nick_Collage.png")
 canada_eddie_erick_collage = Image.open("./Images/Canada_Eddie_Erick_Collage.png")
 canada_joshua_crash = Image.open("./Images/Canada_Joshua_Crash.png")
 canada_del = Image.open("./Images/Canada_Del.png")
+monza_update = Image.open("Images/Monza_Update.png")
 
 def Tab0():
     if 'show_all_content' not in st.session_state:
         st.session_state.show_all_content = False
-    
+    #region Race Week - Monza
+    st.subheader('Race Week - Monza')
+    st.markdown('''
+                Patrick is MIA, something about skiing or whatever. So they gave me, the intern, the keys to the castle. Monza is a fast track or something, I literally just took this job because they pay well...
+
+                Ok, so as I was typign that someone came by and said they don't pay me. So this is all you're getting.
+                ''')
+    st.image(monza_update)
+    st.markdown('''
+                <p style="color:lightgray;">Wednesday 1/29/2025 - The Intern</p>
+                ''',
+                unsafe_allow_html=True,)
+    st.divider()
+    #endregion
+
     #region Canada Recap
     st.subheader('Canada Recap: An Ontario Scari-o Makes its Way to Montreal')
     st.markdown('''

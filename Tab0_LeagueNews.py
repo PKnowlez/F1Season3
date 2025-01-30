@@ -59,64 +59,6 @@ def Tab0():
                 unsafe_allow_html=True,)
     st.divider()
     #endregion
-
-    #region Canada Recap
-    st.subheader('Canada Recap: An Ontario Scari-o Makes its Way to Montreal')
-    st.markdown('''
-                The league took to the hybrid streets of Montreal’s Notre Dame Island and let’s beat to the chase, it was thrilling. Rain, tire strategies, spin outs, teams infighting, and penalties galore. The Canadian GP is well known for its infamous Wall of Champions, but for the league’s drivers, it became synonymous with corner cutting and time penalties. Infact, drivers all avoided making a fatal mistake at the Wall of Champions, but racked up incredible penalty totals as they lapped around and around the famed island.
-                ''')
-    st.image(canada_start)
-    st.markdown('''
-                Most notably, Alpine’s Eddie topped the leaderboards in the worst way imaginable. With over 20 seconds in penalties, Eddie barely held onto points at the end of the race. On the flip side, the McLaren drivers Nick and Travis were extremely precise and managed to make it through the race without a corner dutting penalty. But, Nick wasn’t able to keep it completely clean, during the lone Virtual Safety Car of the race he was caught out just over the requisite delta and received a drive through penalty which may have cost him the race.
-
-                The race wasn’t all sunshine and penalties though. Sometime during the 13th lap, the heavens opened. Rain began to pitter patter down onto the track, cooling both surface and tire temperatures. Drivers began diving into the pits, opting for intermediate tires to lessen the difficulty of driving on the slick track. As the rain continued nearly everyone went in for intermediate tires. However, as the rain began to lighten up, some drivers gambled and swapped to slicks early. This proved to be an effective way to bring the slicks in gradually, but it was also tough sledding for a few laps as grip was nowhere to be found.
-                ''')
-    st.image(canada_nick_collage)
-    st.markdown('''
-                Others were not so lucky with their tire strategies and pit stops. The Milton Keynes outfit was down a driver for the race and on top of that they did not effectively support the one driver they had in the running. Boz was found speechless after his pit stops turned into a long string of slow nightmares. More on this in the league’s first ever [insider scoop](https://thealternativef124.streamlit.app/#insider-scoop-red-bull-s-drama-in-the-pits) about the recent struggles at Red Bull.
-                ''')
-    st.image(canada_eddie_erick_collage)
-    st.markdown('''
-                Boz’s tribulation and the rain were not the only dramatic happenings on track. The incredible saga of philia and zelos between the Tavera brothers continued to escalate in Canada. The brothers started one behind the other in 4th and 6th on the grid. As the race began they stayed out of each other’s ways, but as tire strategies and the weather pulled the two closer together, disaster struck. Alpine’s Eddie and Ferrari’s Erick wrestled back and forth for position. Just after Eddie overtook Erick in the back straight, the two sped into Turn 1 and Turn 2 where Eddie was too early on the throttle, oversteering his car perpendicular to the racing line. Erick, even with his incredible F1 reflexes that got him his seat at Ferrari, was unable to avoid slamming directly into Eddie’s sidepod. Both drivers recovered from the mishap with only lost time and hurt egos. However, Eddie’s teammate Joshua likely will find a bruise on his ego after an unforced error in Turn 7 had him spinning out and losing places.
-                ''')
-    st.image(canada_joshua_crash)
-    st.markdown('''
-                Most of the rest of the race was filled with good passes, some backfield lapping, and drivers doing the best they can to stay on the asphalt. While much of the race was nominal, the results were not. When the chequered flag flew, Aston Martin’s Del was the first to cross the finish line. With his first win of the season, Del begins to pull Aston Martin out of the bottom ranks of the Constructors and closer to contention with the midfield. 
-                ''')
-    st.image(canada_del)
-    st.markdown('''
-                The rest of the podium was filled out by Nick and Joshua, allowing Nick to continue to maintain his lead in the Driver’s World Championship. Nick’s edge over Joshua and Travis’ edge over Eddie allowed McLaren to overtake Alpine by two points for the Cosntructor’s World Championship. The VCARB pairing began to lose some of their ground to their nearest rivals. Del, with his win, closed the gap to VCARB’s Brently, while Erick closed the gap to VCARB’s Patrick. Finally, Travis took a cut out of the lead Boz had over him. Next week the league takes to the countryside of Italy to race around the Temple of Speed. Who knows if the Tavera Saga will continue, if McLaren can continue their lead in both championships, or if Eddie will keep his car between the white lines.
-                ''')
-    st.markdown('''
-                <p style="color:lightgray;">Thursday 1/23/2025 - Patrick Knowles with credit Erick & Nick</p>
-                ''',
-                unsafe_allow_html=True,)
-    st.divider()
-    #endregion
-
-    #region Insider Scoop - Red Bull
-    st.subheader("INSIDER SCOOP: ***Red Bull's Drama in the Pits***")
-    st.markdown('''
-                As the season has progressed, it is clear that Red Bull has not been able to perform at the level they initially planned. During the most recent outing in Canada, it appears that the season has completely spiraled out of control, and now the gloves, and wheels, are off. What was once a well-oiled machine of racing dominance has devolved into a spectacle of frustration, failure, and outright calamity.
-
-                In the latest catastrophe, a radio failure severed communication between Bositive and his pit crew at the worst possible time. Tire sensors failed, leaving the engineers blind to the car’s conditions. Yet, despite the wet conditions, the crew insisted on fitting hard tires, forcing Boz to wrestle a car that slid helplessly across the circuit. Desperation mounted, and as the weather turned, Boz called for soft compounds. In a shocking blunder, wet tires were thrown on instead. The result? Four chaotic pit stops, lost time, and a furious Boz left screaming into the void of radio silence as Red Bull’s race fell apart before their eyes. Red Bull did not just struggle with Boz during this race, Yeti was a no show throughout the event, leaving the team grasping at the few points Boz could secure. 
-
-                After the race, Boz let loose in the media pen with a fiery post-race critique:
-
-                > _**This team can’t fix anything right. They need to get it together and stop relying on old data from past years—what worked then doesn’t work now. They need to start focusing on what’s happening on the track, in real time. Nobody is listening to me, and it’s costing us everything. I’m out there fighting for every second, and these mistakes are unacceptable. Something has to change, or this season should be considered finished before it even began.**_
-
-                The frustration didn’t end with words. After the race, an enraged Bositive stormed into the garage and threw his helmet against the wall, the sound echoing across the pit lane as team members stood frozen. It was the perfect symbol of a driver at his breaking point, furious at a team that seems unable to deliver when it matters most. Red Bull’s once-golden reputation is now hanging by a thread as the tension between driver and crew reaches an all-time high.
-
-                Canada’s disaster follows the heartbreaking collapse in Baku, where a critical engineering miscalculation turned a potential podium into a fiery wreck. Clinging to third position, down to 5th, Red Bull stubbornly kept Boz on medium tires, ignoring his growing concerns. The decision proved fatal—on the final turn before the straight, the car lost grip, slid out of control, and smashed into the wall in a devastating crash. What could have been a triumphant finish, instead became another glaring symbol of a team in freefall.
-
-                With every race, Red Bull’s struggles grow deeper, and Boz’s fury becomes impossible to ignore. The once-dominant team now finds itself not just losing races, but losing its identity. Strategic failures, technical disasters, and broken trust have left Red Bull limping from race to race. Rumor has it that even McLaren has offered Boz a life line. The team has opened their practice session up to the driver, but so far no confirmed participation has occurred.
-                ''')
-    st.markdown('''
-                <p style="color:lightgray;">Thursday 1/23/2025 - Insiders: Senad (Boz) & Patrick</p>
-                ''',
-                unsafe_allow_html=True,)
-    st.divider()
-    #endregion
     
     # ----------------------------------------------------------------------------------------------------------
     # "Show More/Less" button 
@@ -130,6 +72,64 @@ def Tab0():
             st.rerun()
 
     if st.session_state.show_all_content:
+        #region Canada Recap
+        st.subheader('Canada Recap: An Ontario Scari-o Makes its Way to Montreal')
+        st.markdown('''
+                    The league took to the hybrid streets of Montreal’s Notre Dame Island and let’s beat to the chase, it was thrilling. Rain, tire strategies, spin outs, teams infighting, and penalties galore. The Canadian GP is well known for its infamous Wall of Champions, but for the league’s drivers, it became synonymous with corner cutting and time penalties. Infact, drivers all avoided making a fatal mistake at the Wall of Champions, but racked up incredible penalty totals as they lapped around and around the famed island.
+                    ''')
+        st.image(canada_start)
+        st.markdown('''
+                    Most notably, Alpine’s Eddie topped the leaderboards in the worst way imaginable. With over 20 seconds in penalties, Eddie barely held onto points at the end of the race. On the flip side, the McLaren drivers Nick and Travis were extremely precise and managed to make it through the race without a corner dutting penalty. But, Nick wasn’t able to keep it completely clean, during the lone Virtual Safety Car of the race he was caught out just over the requisite delta and received a drive through penalty which may have cost him the race.
+
+                    The race wasn’t all sunshine and penalties though. Sometime during the 13th lap, the heavens opened. Rain began to pitter patter down onto the track, cooling both surface and tire temperatures. Drivers began diving into the pits, opting for intermediate tires to lessen the difficulty of driving on the slick track. As the rain continued nearly everyone went in for intermediate tires. However, as the rain began to lighten up, some drivers gambled and swapped to slicks early. This proved to be an effective way to bring the slicks in gradually, but it was also tough sledding for a few laps as grip was nowhere to be found.
+                    ''')
+        st.image(canada_nick_collage)
+        st.markdown('''
+                    Others were not so lucky with their tire strategies and pit stops. The Milton Keynes outfit was down a driver for the race and on top of that they did not effectively support the one driver they had in the running. Boz was found speechless after his pit stops turned into a long string of slow nightmares. More on this in the league’s first ever [insider scoop](https://thealternativef124.streamlit.app/#insider-scoop-red-bull-s-drama-in-the-pits) about the recent struggles at Red Bull.
+                    ''')
+        st.image(canada_eddie_erick_collage)
+        st.markdown('''
+                    Boz’s tribulation and the rain were not the only dramatic happenings on track. The incredible saga of philia and zelos between the Tavera brothers continued to escalate in Canada. The brothers started one behind the other in 4th and 6th on the grid. As the race began they stayed out of each other’s ways, but as tire strategies and the weather pulled the two closer together, disaster struck. Alpine’s Eddie and Ferrari’s Erick wrestled back and forth for position. Just after Eddie overtook Erick in the back straight, the two sped into Turn 1 and Turn 2 where Eddie was too early on the throttle, oversteering his car perpendicular to the racing line. Erick, even with his incredible F1 reflexes that got him his seat at Ferrari, was unable to avoid slamming directly into Eddie’s sidepod. Both drivers recovered from the mishap with only lost time and hurt egos. However, Eddie’s teammate Joshua likely will find a bruise on his ego after an unforced error in Turn 7 had him spinning out and losing places.
+                    ''')
+        st.image(canada_joshua_crash)
+        st.markdown('''
+                    Most of the rest of the race was filled with good passes, some backfield lapping, and drivers doing the best they can to stay on the asphalt. While much of the race was nominal, the results were not. When the chequered flag flew, Aston Martin’s Del was the first to cross the finish line. With his first win of the season, Del begins to pull Aston Martin out of the bottom ranks of the Constructors and closer to contention with the midfield. 
+                    ''')
+        st.image(canada_del)
+        st.markdown('''
+                    The rest of the podium was filled out by Nick and Joshua, allowing Nick to continue to maintain his lead in the Driver’s World Championship. Nick’s edge over Joshua and Travis’ edge over Eddie allowed McLaren to overtake Alpine by two points for the Cosntructor’s World Championship. The VCARB pairing began to lose some of their ground to their nearest rivals. Del, with his win, closed the gap to VCARB’s Brently, while Erick closed the gap to VCARB’s Patrick. Finally, Travis took a cut out of the lead Boz had over him. Next week the league takes to the countryside of Italy to race around the Temple of Speed. Who knows if the Tavera Saga will continue, if McLaren can continue their lead in both championships, or if Eddie will keep his car between the white lines.
+                    ''')
+        st.markdown('''
+                    <p style="color:lightgray;">Thursday 1/23/2025 - Patrick Knowles with credit Erick & Nick</p>
+                    ''',
+                    unsafe_allow_html=True,)
+        st.divider()
+        #endregion
+
+        #region Insider Scoop - Red Bull
+        st.subheader("INSIDER SCOOP: ***Red Bull's Drama in the Pits***")
+        st.markdown('''
+                    As the season has progressed, it is clear that Red Bull has not been able to perform at the level they initially planned. During the most recent outing in Canada, it appears that the season has completely spiraled out of control, and now the gloves, and wheels, are off. What was once a well-oiled machine of racing dominance has devolved into a spectacle of frustration, failure, and outright calamity.
+
+                    In the latest catastrophe, a radio failure severed communication between Bositive and his pit crew at the worst possible time. Tire sensors failed, leaving the engineers blind to the car’s conditions. Yet, despite the wet conditions, the crew insisted on fitting hard tires, forcing Boz to wrestle a car that slid helplessly across the circuit. Desperation mounted, and as the weather turned, Boz called for soft compounds. In a shocking blunder, wet tires were thrown on instead. The result? Four chaotic pit stops, lost time, and a furious Boz left screaming into the void of radio silence as Red Bull’s race fell apart before their eyes. Red Bull did not just struggle with Boz during this race, Yeti was a no show throughout the event, leaving the team grasping at the few points Boz could secure. 
+
+                    After the race, Boz let loose in the media pen with a fiery post-race critique:
+
+                    > _**This team can’t fix anything right. They need to get it together and stop relying on old data from past years—what worked then doesn’t work now. They need to start focusing on what’s happening on the track, in real time. Nobody is listening to me, and it’s costing us everything. I’m out there fighting for every second, and these mistakes are unacceptable. Something has to change, or this season should be considered finished before it even began.**_
+
+                    The frustration didn’t end with words. After the race, an enraged Bositive stormed into the garage and threw his helmet against the wall, the sound echoing across the pit lane as team members stood frozen. It was the perfect symbol of a driver at his breaking point, furious at a team that seems unable to deliver when it matters most. Red Bull’s once-golden reputation is now hanging by a thread as the tension between driver and crew reaches an all-time high.
+
+                    Canada’s disaster follows the heartbreaking collapse in Baku, where a critical engineering miscalculation turned a potential podium into a fiery wreck. Clinging to third position, down to 5th, Red Bull stubbornly kept Boz on medium tires, ignoring his growing concerns. The decision proved fatal—on the final turn before the straight, the car lost grip, slid out of control, and smashed into the wall in a devastating crash. What could have been a triumphant finish, instead became another glaring symbol of a team in freefall.
+
+                    With every race, Red Bull’s struggles grow deeper, and Boz’s fury becomes impossible to ignore. The once-dominant team now finds itself not just losing races, but losing its identity. Strategic failures, technical disasters, and broken trust have left Red Bull limping from race to race. Rumor has it that even McLaren has offered Boz a life line. The team has opened their practice session up to the driver, but so far no confirmed participation has occurred.
+                    ''')
+        st.markdown('''
+                    <p style="color:lightgray;">Thursday 1/23/2025 - Insiders: Senad (Boz) & Patrick</p>
+                    ''',
+                    unsafe_allow_html=True,)
+        st.divider()
+        #endregion
+
         #region Race Week - Canada
         st.subheader("Race Week - Canada")
         st.markdown('''

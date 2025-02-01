@@ -64,19 +64,28 @@ def Tab1(team_race_totals,driver_race_totals,df,races,team_colors,fig1,fig2,new_
         'Driver': new_df['Driver'].copy(),
         'Team': df['Team'].copy(),
         'Points': drivers_total_points
-        })
-    drivers_points_df = drivers_points_df.sort_values(by='Points', ascending=False)
+    })
 
-    # Create a list of colors corresponding to the drivers in drivers_points_df['Driver']
-    colors_driver_team = [driver_colors.get(driver) for driver in drivers_points_df['Driver']]
+    # Key change: Group by driver and sum points
+    drivers_points_2df = drivers_points_df.groupby('Driver')['Points'].sum().reset_index()
 
-    # Use globals() to dynamically create the variable with the color list
+    drivers_points_3df = drivers_points_2df.sort_values(by='Points', ascending=False)
+
+    # Create a list of colors corresponding to the drivers
+    colors_driver_team = []
+    colors_driver_list = []
+    for driver in drivers_points_3df['Driver']:
+        color = driver_colors.get(driver)
+        colors_driver_team.append(color)
+        colors_driver_list.append(driver)
+    colors_driver_df = pd.DataFrame(list(zip(colors_driver_list, colors_driver_team)), columns=['Driver', 'Color'])
+
     globals()[fig_name00] = px.bar(
-        x=drivers_points_df['Driver'], 
-        y=drivers_points_df['Points'], 
+        x=drivers_points_3df['Driver'],
+        y=drivers_points_3df['Points'],
         title=fig_name00,
-        color=colors_driver_team,  # Assign the color list here
-        color_discrete_map="identity"  # Use the provided colors directly
+        color=colors_driver_team, 
+        color_discrete_map="identity" 
     )
 
     # Update x-axis title
@@ -106,4 +115,4 @@ def Tab1(team_race_totals,driver_race_totals,df,races,team_colors,fig1,fig2,new_
         # Display the Driver Bar plot
         st.plotly_chart(globals()[fig_name00])
 
-    return team_df,team_races_points_only,drivers_points_df,colors_driver_team
+    return team_df,team_races_points_only,drivers_points_df,colors_driver_team,colors_driver_df

@@ -11,7 +11,7 @@ from PIL import Image
 # - Number of fastest laps callout
 # - Number of wins callout
 # - Driver/Team Bios
-def Tab3(team_df,team_races_points_only,index_x,drivers_points_df,colors_driver_team,new_df):
+def Tab3(team_df,team_races_points_only,index_x,drivers_points_df,colors_driver_team,colors_driver_df):
     # wins_df = new_df.copy()
     # wins_df = wins_df.mask(wins_df < "25", 0)
     # wins_df = wins_df.mask(wins_df > "24", 1)
@@ -31,7 +31,7 @@ def Tab3(team_df,team_races_points_only,index_x,drivers_points_df,colors_driver_
                                         color='Driver', 
                                         orientation='h',
                                         barmode='stack',
-                                        color_discrete_map=dict(zip(drivers_points_df['Driver'], colors_driver_team)))
+                                        color_discrete_map=dict(zip(colors_driver_df['Driver'], colors_driver_df['Color'])))
 
         # Order the bars based on total team points
         globals()[fig_name000].update_yaxes(categoryorder='array', categoryarray=team_total_points.index)

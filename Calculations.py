@@ -55,8 +55,8 @@ def Calculations():
     }
 
     # Driver colors
-    color_list = ['darkorange','orange','blue','skyblue','red','#ff6060','pink','hotpink','darkblue',
-                  '#8888c9','#84c1c1','teal']
+    color_list = ['darkorange','orange','blue','skyblue','red','teal','#ff6060','pink','hotpink','darkblue',
+                  '#8888c9','#84c1c1','teal','teal']
     driver_colors = {}  # Initialize an empty dictionary
     for i, driver in enumerate(drivers.unique()):
         driver_colors[driver] = color_list[i % len(color_list)]
@@ -66,6 +66,9 @@ def Calculations():
             index = i
             index_x = index-0.5
             break
+        elif race_place[i] == 'COTAPlace':
+            index = i
+            index_x = index-0.5
         else:
             x = 0
 

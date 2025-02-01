@@ -37,7 +37,7 @@ with tabs[0]:
 
 # Standings
 with tabs[1]:
-    team_df,team_races_points_only,drivers_points_df,colors_driver_team \
+    team_df,team_races_points_only,drivers_points_df,colors_driver_team,colors_driver_df \
         = Tab1_Standings.Tab1(team_race_totals,driver_race_totals,df,races,team_colors,fig1,fig2,new_df,
                               drivers_total_points,driver_colors)
 
@@ -48,7 +48,7 @@ with tabs[2]:
 # Constructor Statistics    
 with tabs[3]:
     colors = Tab3_ConstructorStatistics.Tab3(team_df,team_races_points_only,index_x,
-                                             drivers_points_df,colors_driver_team,new_df)
+                                             drivers_points_df,colors_driver_team,colors_driver_df)
 
 # Driver Statistics
 with tabs[4]:

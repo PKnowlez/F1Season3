@@ -16,6 +16,11 @@ def Tab5(new_df,average_changed,drivers_total_points,average_qualifying,average_
         'Driver': new_df['Driver'].copy(),
         'Average Changed': average_changed
         })
+    
+    # Group by 'Driver' and sum 'Average Changed'
+    avg_changed_df = avg_changed_df.groupby('Driver')['Average Changed'].sum().reset_index()
+
+    # Sort by average value
     avg_changed_df = avg_changed_df.sort_values(by='Average Changed', ascending=False)
 
     # Create a list of colors based on the values in average_changed
@@ -39,8 +44,12 @@ def Tab5(new_df,average_changed,drivers_total_points,average_qualifying,average_
     drivers_points_df = pd.DataFrame({
         'Driver': new_df['Driver'].copy(),
         'Points': drivers_total_points
-        })
-    drivers_points_df = drivers_points_df.sort_values(by='Points', ascending=False)
+    })
+
+    # Key change: Group by driver and sum points
+    drivers_points_2df = drivers_points_df.groupby('Driver')['Points'].sum().reset_index()
+
+    drivers_points_3df = drivers_points_2df.sort_values(by='Points', ascending=False)
 
     # Unique colors
     colors = [
@@ -48,10 +57,13 @@ def Tab5(new_df,average_changed,drivers_total_points,average_qualifying,average_
         '#0068c9', '#0068c9', '#0068c9', '#0068c9', '#0068c9'
     ]
     
-    # Use globals() to dynamically create the variable with the color list
-    globals()[fig_name5] = px.bar(x=drivers_points_df['Driver'], y=drivers_points_df['Points'], 
-                                title=fig_name5, color=colors,
-                                color_discrete_map="identity")
+    globals()[fig_name5] = px.bar(
+        x=drivers_points_3df['Driver'],
+        y=drivers_points_3df['Points'],
+        title=fig_name5,
+        color=colors,  # Assign the color list here
+        color_discrete_map="identity"  # Use the provided colors directly
+    )
 
     # Update x-axis title
     globals()[fig_name5].update_xaxes(title_text="Driver")
@@ -67,6 +79,11 @@ def Tab5(new_df,average_changed,drivers_total_points,average_qualifying,average_
         'Driver': new_df['Driver'].copy(),
         'Qualifying': average_qualifying
         })
+    
+    # Group by 'Driver' and sum 'Average Changed'
+    avg_qualifying_df = avg_qualifying_df.groupby('Driver')['Qualifying'].sum().reset_index()
+    
+    # Sort by average value
     avg_qualifying_df = avg_qualifying_df.sort_values(by='Qualifying', ascending=True)
 
     # Use globals() to dynamically create the variable with the color list
@@ -88,6 +105,11 @@ def Tab5(new_df,average_changed,drivers_total_points,average_qualifying,average_
         'Driver': new_df['Driver'].copy(),
         'Place': average_place
         })
+    
+    # Group by 'Driver' and sum 'Average Changed'
+    avg_place_df = avg_place_df.groupby('Driver')['Place'].sum().reset_index()
+    
+    # Sort by average value
     avg_place_df = avg_place_df.sort_values(by='Place', ascending=True)
     
     # Use globals() to dynamically create the variable with the color list

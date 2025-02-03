@@ -45,55 +45,20 @@ monza_intern = Image.open("./Images/Monza_Intern.png")
 monza_erick = Image.open("./Images/Monza_Erick_Map.png")
 monza_nick_del = Image.open("./Images/Monza_Nick_Del.png")
 monza_eddie = Image.open("./Images/Monza_Eddie.png")
+bn_del_zane = Image.open("./Images/BN_Del_Zane.png")
 
 def Tab0():
     if 'show_all_content' not in st.session_state:
         st.session_state.show_all_content = False
-    #region Race Recap - Monza
-    st.subheader('Monza Recap: It’s-A Me, The Intern')
-    st.image(monza_intern)
-    st.markdown('''
-                Welcome to the greatest race recap of the year. Yes, that’s right, me, the intern, was given the full reins to write the cringiest, most meme-ified race recap this league has ever seen. So let’s get down to business.
-
-                I got notes from Patrick, but no cap, it was just a list of Erick crashing into other drivers or making mistakes, and I heard you all liked the track map so here’s a quick summary of Erick’s tragedy of a race.
-                ''')
-    st.image(monza_erick)
-    st.markdown('''
-                If I’m a Tifossi, I might try and cancel all of Ferrari after that one… 
-
-                Beyond Erick’s tirade, the league flexed on the AI and took the top 5 spots on the grid with Del securing his first pole position of the season. Tire strategies was the hottest goss on the track at the start of the race with Brently running the hards and literally everyone else running the mediums. However it turned out fine for him as he was able to battle through the Tavera sibling squabble and come out on the podium in third.
-
-                Nick and Del played nice together in the Italian sunshine and managed to tow each other all the way until the last few laps where Bottas decided he didn’t really like Del after all, blocking him and sealing the win for Nick.
-                ''')
-    st.image(monza_nick_del)
-    st.markdown('''
-                Let me be real with you, this might as well have been Monaco though. Beyond the drama with the two Taveras and Nick overtaking Del nothing really happened to change anything after qualifying. However, I was not shook to hear that Eddie had the most penalties again, and honestly Del pitting for fastest lap was hella petty but we love to see it.
-
-                I was told I had to do a standings update at the end of the recap, but like that’s what the flipping standings tab is for so I’m just gonna yeet that section. Next week the league races in Abu Dhabi on Wednesday and in Austria on Saturday with the updated Sprint format.
-                
-                Oh, also, I am just gonna leave this cringy little race radio screenshot here...
-                ''')
-    st.image(monza_eddie)
-    st.markdown('''
-                <p style="color:lightgray;">Friday 1/31/2025 - The Intern</p>
-                ''',
-                unsafe_allow_html=True,)
-    st.divider()
-    #endregion
-    #region Race Week - Monza
-    st.subheader('Race Week - Monza')
-    st.markdown('''
-                Patrick is MIA, something about skiing or whatever. So they gave me, the intern, the keys to the castle. Monza is a fast track or something, I literally just took this job because they pay well...
-
-                Ok, so as I was typing that someone came by and said they don't pay me. So this is all you're getting.
-                ''')
-    st.image(monza_update)
-    st.markdown('''
-                <p style="color:lightgray;">Wednesday 1/29/2025 - The Intern</p>
-                ''',
-                unsafe_allow_html=True,)
-    st.divider()
-    #endregion
+        st.subheader('BREAKING NEWS - DRIVER SWAP')
+        st.image(bn_del_zane)
+        st.markdown('''
+                    _The Alternative F124 League_
+                    <p style="color:lightgray;">Where racing meets integrity and fair competition.</p>
+                    ''',
+                    unsafe_allow_html=True,)
+        st.divider()
+        #endregion
     
     # ----------------------------------------------------------------------------------------------------------
     # "Show More/Less" button 
@@ -107,6 +72,52 @@ def Tab0():
             st.rerun()
 
     if st.session_state.show_all_content:
+        #region Race Recap - Monza
+        st.subheader('Monza Recap: It’s-A Me, The Intern')
+        st.image(monza_intern)
+        st.markdown('''
+                    Welcome to the greatest race recap of the year. Yes, that’s right, me, the intern, was given the full reins to write the cringiest, most meme-ified race recap this league has ever seen. So let’s get down to business.
+
+                    I got notes from Patrick, but no cap, it was just a list of Erick crashing into other drivers or making mistakes, and I heard you all liked the track map so here’s a quick summary of Erick’s tragedy of a race.
+                    ''')
+        st.image(monza_erick)
+        st.markdown('''
+                    If I’m a Tifossi, I might try and cancel all of Ferrari after that one… 
+
+                    Beyond Erick’s tirade, the league flexed on the AI and took the top 5 spots on the grid with Del securing his first pole position of the season. Tire strategies was the hottest goss on the track at the start of the race with Brently running the hards and literally everyone else running the mediums. However it turned out fine for him as he was able to battle through the Tavera sibling squabble and come out on the podium in third.
+
+                    Nick and Del played nice together in the Italian sunshine and managed to tow each other all the way until the last few laps where Bottas decided he didn’t really like Del after all, blocking him and sealing the win for Nick.
+                    ''')
+        st.image(monza_nick_del)
+        st.markdown('''
+                    Let me be real with you, this might as well have been Monaco though. Beyond the drama with the two Taveras and Nick overtaking Del nothing really happened to change anything after qualifying. However, I was not shook to hear that Eddie had the most penalties again, and honestly Del pitting for fastest lap was hella petty but we love to see it.
+
+                    I was told I had to do a standings update at the end of the recap, but like that’s what the flipping standings tab is for so I’m just gonna yeet that section. Next week the league races in Abu Dhabi on Wednesday and in Austria on Saturday with the updated Sprint format.
+                    
+                    Oh, also, I am just gonna leave this cringy little race radio screenshot here...
+                    ''')
+        st.image(monza_eddie)
+        st.markdown('''
+                    <p style="color:lightgray;">Friday 1/31/2025 - The Intern</p>
+                    ''',
+                    unsafe_allow_html=True,)
+        st.divider()
+        #endregion
+        
+        #region Race Week - Monza
+        st.subheader('Race Week - Monza')
+        st.markdown('''
+                    Patrick is MIA, something about skiing or whatever. So they gave me, the intern, the keys to the castle. Monza is a fast track or something, I literally just took this job because they pay well...
+
+                    Ok, so as I was typing that someone came by and said they don't pay me. So this is all you're getting.
+                    ''')
+        st.image(monza_update)
+        st.markdown('''
+                    <p style="color:lightgray;">Wednesday 1/29/2025 - The Intern</p>
+                    ''',
+                    unsafe_allow_html=True,)
+        st.divider()
+        #endregion
         #region Canada Recap
         st.subheader('Canada Recap: An Ontario Scari-o Makes its Way to Montreal')
         st.markdown('''

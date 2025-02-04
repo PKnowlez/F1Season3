@@ -78,7 +78,7 @@ def Tab0():
     st.markdown('''
                 ***Driver’s Championship***
 
-                Let’s start it off right and talk about our top individual award for the season, the Driver’s Championship. There is a maximum of 96 points left for one person to score. Two Sprints, three races, and five fastest laps. That means anyone currently with less than 100 points is not gonna be a winner. So I am not even going to waste another second on Patrick, Brently, Del, Eddie, Zane, Yeti, Boz, Travis, or Gary. “But wait, they could still get second or third,” man shush, who cares about first loser and second loser. All that matters is the top step on the podium. Which means Erick, Joshua, and Nick are the only three left who can take home the trophy. So how can each driver do it?
+                Let’s start it off right and talk about our top individual award for the season, the Driver’s Championship. There are a maximum of 96 points left for one person to score. Two Sprints, three races, and five fastest laps. That means anyone currently with less than 100 points is not gonna be a winner. So I am not even going to waste another second on Patrick, Brently, Del, Eddie, Zane, Yeti, Boz, Travis, or Gary. “But wait, they could still get second or third,” man shush, who cares about first loser and second loser. All that matters is the top step on the podium. Which means Erick, Joshua, and Nick are the only three left who can take home the trophy. So how can each driver do it?
 
                 All Nick has to do is not choke. That’s it. Don’t choke. It's not that hard, man. Straight up, if Nick stays on the podium for all three races and gets 5th or better in the two Sprints, it's over for Joshua and Erick. We’re talking about the guy whose average finishing position is 1.6… It really feels like he’s got this in the bag. If he wins just one more race and gets a fastest lap, all he has to do is finish 9th or better in the remaining events. He has this on lock. So no pressure dude. Three time champion has a nice ring, however, Joshua has a legitimate chance, and well…Erick…he can technically win.
 
@@ -90,7 +90,7 @@ def Tab0():
     st.markdown('''
                 Erick actually does have to win out. Where Joshua has some room based on how Nick performs, Erick has no wiggle room. If he wins two races, both Sprints, gets second in the third race, and has all five fastest laps, he will end up 1 point short of where Nick will finish if Nick simply does not show up. Yikes. So, technically, there’s a chance, but the vibes in the studio say he is likely playing for second fiddle.
 
-                The rest of y’all are just praying for a giant meteor to whip out the drivers in front of you.
+                The rest of y’all are just praying for a giant meteor to whipe out the drivers in front of you.
                 ''')
     st.image(meteor)
     st.markdown('''

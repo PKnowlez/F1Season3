@@ -110,6 +110,8 @@ def Tab0():
                 <p style="color:lightgray;">Tuesday 2/4/2025 - The Intern</p>
                 ''',
                 unsafe_allow_html=True,)
+    st.divider()
+    #endregion
         
     #region Race Week - Abu Dhabi & Austria
     st.subheader('Race Week - Abu Dhabi & Austria')

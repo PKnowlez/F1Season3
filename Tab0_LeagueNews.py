@@ -46,19 +46,55 @@ monza_erick = Image.open("./Images/Monza_Erick_Map.png")
 monza_nick_del = Image.open("./Images/Monza_Nick_Del.png")
 monza_eddie = Image.open("./Images/Monza_Eddie.png")
 bn_del_zane = Image.open("./Images/BN_Del_Zane.png")
+abu_dhabi_circuit = Image.open("./Images/Abu_Dhabi_Circuit.png")
+austria_circuit = Image.open("./Images/Austria_Circuit.png")
 
 def Tab0():
     if 'show_all_content' not in st.session_state:
         st.session_state.show_all_content = False
-        st.subheader('BREAKING NEWS - DRIVER SWAP')
-        st.image(bn_del_zane)
-        st.markdown('''
-                    _The Alternative F124 League_
-                    <p style="color:lightgray;">Where racing meets integrity and fair competition.</p>
-                    ''',
-                    unsafe_allow_html=True,)
-        st.divider()
-        #endregion
+        
+    #region Race Week - Abu Dhabi & Austria
+    st.subheader('Race Week - Abu Dhabi & Austria')
+    st.markdown('''
+                Only two weeks remain for the league and the standings are tight. Everything is still to play for, but the focus of this article is the potential action on the tracks coming up this week. While there are only two weeks left, there are three races and two Sprints scheduled for our drivers. The first of this week’s races will take place in Abu Dhabi at the Yas Marina Circuit which was made infamous for providing Max Verstappen’s first Driver’s Championship victory. The second race of the week takes the drivers to Austria to rip around the Red Bull Ring, not once, but twice in a Sprint and main race.
+
+                Let’s tackle the twists and turns of Yas Marina first. The start finish straight is a short one, but it leads into a medium braking corner and two full tilt turns just after that. Once drivers are up to speed they are met with a wide hairpin that could allow for some early passing and late stage desperation. Once the harrowing overtaking is done in Turn 5, drivers will face the long back straight where lead cars will be at risk of being overtaken into the Turn 6 & 7 chicance. But drivers who play their cards right should be able to battle back immediately after the chicane with the second DRS zone heading into the sweeping Turn 9. The middle of Sector 3 is where the drivers will earn their paychecks as they face the extremely technical hotel section and the challenging braking zones of the final two turns.
+                ''')
+    st.image(abu_dhabi_circuit)
+    st.markdown('''
+                In the prior two seasons McLaren’s Nick has found himself successful around Yas Marina Circuit, winning both of the races. Alpine’s Joshua and retired driver Mark have both found themselves on the second step of the podium once, and Ferrari’s Erick has found himself on the podium in third place during both of those instances
+
+                Now let’s review the opportunities the drivers will have at the Red Bull Ring, the shortest track on the league’s calendar this season. Even though the Red Bull Ring is rather short, it is not short of challenging turns and passing opportunities. As the drivers floor it up the steep front straight and into the first turn, some drivers may be given the opportunity to jump the inside line or, if they have a grip advantage, take the outside line for an overtake. The drivers will then head down and back up the twisting DRS zone up to Turn 3. Here drivers will have their best opportunity for overtaking throughout the race. Pinching off their opponents, drivers will then open their back wings again on the back straight down to Turn 4. As the elevation begins to change the drivers will sweep around Turns 4, 5, 6, 7, and 8 in quick succession. The brave, or maybe the foolish, may try overtaking on the outside of these turns if they have the grip and pace. Then the last two turns on the track will rear their ugly heads. If drivers are cautious they will stay within the white lines, but knowing this league, expect to see time penalties being handed out left, right, and center on the exits of each of the last two turns.
+                ''')
+    st.image(austria_circuit)
+    st.markdown('''
+                This will be the first Sprint with the revised format and rules that were proposed and ratified after the Sprint in China. The league will qualify in a shortened Sprint qualifying style. This means that each lap of qualifying will matter just a touch more. From there the drivers will line up for the Sprint in the order they qualified and rip it around the Red Bull Ring at full tilt with little to no regard to tires or strategy. With the dust settled the drivers will be lined back up for the main race. However, the starting grid will be set in reverse from the results of the Sprint. There are a few minor exceptions for the reverse grid which are listed below.
+                > 1) All drivers will line up behind _ALL_ AI regardless of the position the AI finished in during the Sprint.
+                > 2) Any driver that DNF or DNS the Sprint will line up behind the drivers that did start and finish the Sprint.
+
+                With all that said, last time out where the hills are alive with the sound of racecars, the league saw the now Ferrari driver Del hoist the winner’s trophy. The season before that, Nick was on the top step of the podium. The following steps of the podium have seen Nick and now Aston Martin driver Zane in second as well as Joshua and Erick in third. 
+                ''')
+    st.markdown('''
+                <p style="color:lightgray;">Friday 2/3/2025 - Patrick Knowles</p>
+                ''',
+                unsafe_allow_html=True,)
+    st.markdown('''
+                <p style="color:lightgray;">THE INTERN WILL RETURN</p>
+                ''',
+                unsafe_allow_html=True,)
+    st.divider()
+    #endregion
+
+    #region Breaking News
+    st.subheader('BREAKING NEWS - DRIVER SWAP')
+    st.image(bn_del_zane)
+    st.markdown('''
+                _The Alternative F124 League_
+                <p style="color:lightgray;">Where racing meets integrity and fair competition.</p>
+                ''',
+                unsafe_allow_html=True,)
+    st.divider()
+    #endregion
     
     # ----------------------------------------------------------------------------------------------------------
     # "Show More/Less" button 

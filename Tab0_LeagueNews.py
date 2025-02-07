@@ -56,58 +56,32 @@ standings_gif.close()
 standings_memes = Image.open("./Images/Standings_Memes.png")
 chance = Image.open("./Images/Chance.png")
 meteor = Image.open("./Images/Meteor.png")
+abu_dhabi_joshua_line = Image.open("./Images/Abu_Dhabi_Joshua_Line.png")
+abu_dhabi_memes = Image.open("./Images/Abu_Dhabi_Memes.png")
 
 def Tab0():
     if 'show_all_content' not in st.session_state:
         st.session_state.show_all_content = False
-
-    #region Standings Update
-    st.subheader("Standings Update")
+    
+    #region Abu Dhabi Race Recap
+    st.subheader("Abu Dhabi Recap: No, Erick, No, No, Erick, That Was So Not Right!")
     st.markdown('''
-                Does anyone hear that? That muffled beat? Oh no...they're back...
+                At this point I think I am the real employee here and Patrick is just the note taking intern. That’s right, I am back yet again. The notes kinda suck (shocker) so I’ll do my best. There apparently was a heaping mess of absolute garbage strategy and driving during quali. Like, the notes say hotshot Joshua didn’t even set a time in Q2? I kinda think Patrick just wrote the notes wrong…but after reviewing the quali results Joshua straight up fumbled the bag, giving Nick a golden opportunity to secure the championship under the lights in Abu Dhabi Max Verstappen style. I heard y’all loved the map of Erick’s mistakes so I decided to give you a variant of that, I call it Joshua’s quali line:
                 ''')
-    st.markdown(f'<img src="data:image/gif;base64,{data_url}" alt="Your GIF">', unsafe_allow_html=True)
+    st.image(abu_dhabi_joshua_line)
     st.markdown('''
-                _***Fetty Wap continues to blare in the background***_
-                
-                That's right folks, I am back and better than ever. I heard you all were looking for a standings update. Now, I told Patrick I would do this on one condition, I get paid stacks. Which he refused. So I countered and asked if I could be as unhinged as I wanted when rating and ranking each driver’s and team’s chances. Which he begrudgingly accepted. So go get your blanky and snuggle up with whoever helps you stop crying, because I ain’t holding back.
+                I also heard that Eddie biffed it during quali. Something about not knowing how to do the simplest of racing activities, a drag race. Apparently he earned himself a 5-place grid penalty for sucking so much at drag racing. His brother Erick also had a moment during quali where he was a bit too extra out of a corner and almost missed putting a time in during Q1.
 
-                My boss said I had to do a formal writeup of each team and driver, which for once I listened to and did. But it's the worst. So please enjoy the collection of memes below that detail each driver’s and team’s championship odds.
+                High-key seems a little over the top for just a quali, but with it closed out it looked like VCARB and Nick had incredible opportunities to close in or even close out the championships. But y’all just can’t have a simple race, can you? As you are very aware at this point, I am low-key a huge fan of memes. So, Imma just recap the rest in my preferred art form.
                 ''')
-    st.image(standings_memes)
+    st.image(abu_dhabi_memes)
     st.markdown('''
-                ***Driver’s Championship***
+                Yep, that’s right, Joshua came back from 15th, McLaren kept their lead alive with help from Travis and Nick even though Logan Sargeant tried to screw that up, Del and Erick went through a horror show with Ferrari, Boz cooked his tires, Eddie continued to be delulu, Brently and Erick battled like real F1 drivers, Patrick really screwed the pooch, and Fetty Wap kept bopping on the JBL speaker all night long.
 
-                Let’s start it off right and talk about our top individual award for the season, the Driver’s Championship. There are a maximum of 96 points left for one person to score. Two Sprints, three races, and five fastest laps. That means anyone currently with less than 100 points is not gonna be a winner. So I am not even going to waste another second on Patrick, Brently, Del, Eddie, Zane, Yeti, Boz, Travis, or Gary. “But wait, they could still get second or third,” man shush, who cares about first loser and second loser. All that matters is the top step on the podium. Which means Erick, Joshua, and Nick are the only three left who can take home the trophy. So how can each driver do it?
-
-                All Nick has to do is not choke. That’s it. Don’t choke. It's not that hard, man. Straight up, if Nick stays on the podium for all three races and gets 5th or better in the two Sprints, it's over for Joshua and Erick. We’re talking about the guy whose average finishing position is 1.6… It really feels like he’s got this in the bag. If he wins just one more race and gets a fastest lap, all he has to do is finish 9th or better in the remaining events. He has this on lock. So no pressure dude. Three time champion has a nice ring, however, Joshua has a legitimate chance, and well…Erick…he can technically win.
-
-                Joshua simply needs to win. Win, win, win. Well, actually I forgot one thing. Since this guy forgot to show up for a few races, now he also has to pray for Nick to make a mistake. So really Joshua’s strategy is win, win, win, pray, and maybe send Nick into the wall. Again, it's not that hard, but ever since he got his wheel there has been a severe drop off in performance and attendance. So maybe it will be a challenge? Or maybe he will quit in Austria after trying to kill Nick like we saw with Max and Lando earlier this year.
-
-                Now for Erick the road to the championship is actually quite challenging and convoluted. From my perspective he is out of the running, but the math says there’s a chance.
-                ''')
-    st.image(chance)
-    st.markdown('''
-                Erick actually does have to win out. Where Joshua has some room based on how Nick performs, Erick has no wiggle room. If he wins two races, both Sprints, gets second in the third race, and has all five fastest laps, he will end up 1 point short of where Nick will finish if Nick simply does not show up. Yikes. So, technically, there’s a chance, but the vibes in the studio say he is likely playing for second fiddle.
-
-                The rest of y’all are just praying for a giant meteor to whipe out the drivers in front of you.
-                ''')
-    st.image(meteor)
-    st.markdown('''
-                ***Constructor’s Championship***
-
-                Now I wanted to say all hope is not lost for all of you in the Constructor’s Championship, but for one team, the math says it's over. The storied energy drink team has had some tough sledding this year and even if Boz and Yeti pull off the miracle of back-to-back-to-back-to-back-to-back 1-2s in all the races and Sprints remaining with five fastest laps, they will end 10 points shy of McLaren if they simply don’t show up. Therefore, with all due respect, gentlemen of Red Bull, “you’re fired.”
-
-                For the rest of y’all, you’ve got a chance, even if it is a miniscule one. New look Aston Martin will really need to pull in some incredible points hauls with Zane and Gary going absolutely ballistic to take home the championship. Even Ferrari down in fourth needs to have an incredible turn around with their new driver pairing. So let’s focus on our current top three, McLaren, Alpine, and VCARB. 
-
-                I think we all know what McLaren needs to do, win. The only thing that could really stop them is if the Alpine drivers decide to stop bickering and actually work together. If one McLaren driver wins out with the fastest laps and the other DNFs, the Alpine duo can take home the championship by placing 2nd and 4th in every race, winning by just 3 points. So McLaren does have to show out, but if both McLaren drivers finish and one wins out with the fastest laps, there is no possible way for Alpine to catch up.
-
-                So how does Alpine win? Well they either outplace both McLarens by a couple places, or they learn how to effectively sabotage. Neither of which seem all that likely as we have watched Eddie try to sabotage Erick all season with no success. But the team still is in the hunt and if McLaren even slightly missteps, Alpine will likely take home the championship.
-
-                Now the VCARB bozos have a slim shot at victory here. Technically they, like Ferrari and Aston Martin, are still in the hunt. But they need to really show up and show out, and maybe even pray for some chaos with Alpine and McLaren. We’re talking double podium finishes at every race with McLaren and Alpine crashing each other out a couple of times.
+                ith only two races left, Aston Martin has been eliminated from the Constructor’s Championship contention, and realistically it's a 2.5 horse race between McLaren, Alpine, and sorta VCARB. The Driver’s Championship eliminated everyone but Nick and Joshua. However, while I brushed off the battle for third place last week, it's really heated up. Erick, Patrick, Brently, and Del are within one race win’s swing for third. Who knows, it could come down to quick math and team orders between the VCARB or Ferrari teammates depending on how the next two races and Sprints unfold. Buckle up for an exciting penultimate race in Austria.
                 ''')
     st.markdown('''
-                <p style="color:lightgray;">Tuesday 2/4/2025 - The Intern</p>
+                <p style="color:lightgray;">Thursday 2/6/2025 - The Intern</p>
                 ''',
                 unsafe_allow_html=True,)
     st.divider()
@@ -125,6 +99,58 @@ def Tab0():
             st.rerun()
 
     if st.session_state.show_all_content:
+        #region Standings Update
+        st.subheader("Standings Update")
+        st.markdown('''
+                    Does anyone hear that? That muffled beat? Oh no...they're back...
+                    ''')
+        st.markdown(f'<img src="data:image/gif;base64,{data_url}" alt="Your GIF">', unsafe_allow_html=True)
+        st.markdown('''
+                    _***Fetty Wap continues to blare in the background***_
+                    
+                    That's right folks, I am back and better than ever. I heard you all were looking for a standings update. Now, I told Patrick I would do this on one condition, I get paid stacks. Which he refused. So I countered and asked if I could be as unhinged as I wanted when rating and ranking each driver’s and team’s chances. Which he begrudgingly accepted. So go get your blanky and snuggle up with whoever helps you stop crying, because I ain’t holding back.
+
+                    My boss said I had to do a formal writeup of each team and driver, which for once I listened to and did. But it's the worst. So please enjoy the collection of memes below that detail each driver’s and team’s championship odds.
+                    ''')
+        st.image(standings_memes)
+        st.markdown('''
+                    ***Driver’s Championship***
+
+                    Let’s start it off right and talk about our top individual award for the season, the Driver’s Championship. There are a maximum of 96 points left for one person to score. Two Sprints, three races, and five fastest laps. That means anyone currently with less than 100 points is not gonna be a winner. So I am not even going to waste another second on Patrick, Brently, Del, Eddie, Zane, Yeti, Boz, Travis, or Gary. “But wait, they could still get second or third,” man shush, who cares about first loser and second loser. All that matters is the top step on the podium. Which means Erick, Joshua, and Nick are the only three left who can take home the trophy. So how can each driver do it?
+
+                    All Nick has to do is not choke. That’s it. Don’t choke. It's not that hard, man. Straight up, if Nick stays on the podium for all three races and gets 5th or better in the two Sprints, it's over for Joshua and Erick. We’re talking about the guy whose average finishing position is 1.6… It really feels like he’s got this in the bag. If he wins just one more race and gets a fastest lap, all he has to do is finish 9th or better in the remaining events. He has this on lock. So no pressure dude. Three time champion has a nice ring, however, Joshua has a legitimate chance, and well…Erick…he can technically win.
+
+                    Joshua simply needs to win. Win, win, win. Well, actually I forgot one thing. Since this guy forgot to show up for a few races, now he also has to pray for Nick to make a mistake. So really Joshua’s strategy is win, win, win, pray, and maybe send Nick into the wall. Again, it's not that hard, but ever since he got his wheel there has been a severe drop off in performance and attendance. So maybe it will be a challenge? Or maybe he will quit in Austria after trying to kill Nick like we saw with Max and Lando earlier this year.
+
+                    Now for Erick the road to the championship is actually quite challenging and convoluted. From my perspective he is out of the running, but the math says there’s a chance.
+                    ''')
+        st.image(chance)
+        st.markdown('''
+                    Erick actually does have to win out. Where Joshua has some room based on how Nick performs, Erick has no wiggle room. If he wins two races, both Sprints, gets second in the third race, and has all five fastest laps, he will end up 1 point short of where Nick will finish if Nick simply does not show up. Yikes. So, technically, there’s a chance, but the vibes in the studio say he is likely playing for second fiddle.
+
+                    The rest of y’all are just praying for a giant meteor to whipe out the drivers in front of you.
+                    ''')
+        st.image(meteor)
+        st.markdown('''
+                    ***Constructor’s Championship***
+
+                    Now I wanted to say all hope is not lost for all of you in the Constructor’s Championship, but for one team, the math says it's over. The storied energy drink team has had some tough sledding this year and even if Boz and Yeti pull off the miracle of back-to-back-to-back-to-back-to-back 1-2s in all the races and Sprints remaining with five fastest laps, they will end 10 points shy of McLaren if they simply don’t show up. Therefore, with all due respect, gentlemen of Red Bull, “you’re fired.”
+
+                    For the rest of y’all, you’ve got a chance, even if it is a miniscule one. New look Aston Martin will really need to pull in some incredible points hauls with Zane and Gary going absolutely ballistic to take home the championship. Even Ferrari down in fourth needs to have an incredible turn around with their new driver pairing. So let’s focus on our current top three, McLaren, Alpine, and VCARB. 
+
+                    I think we all know what McLaren needs to do, win. The only thing that could really stop them is if the Alpine drivers decide to stop bickering and actually work together. If one McLaren driver wins out with the fastest laps and the other DNFs, the Alpine duo can take home the championship by placing 2nd and 4th in every race, winning by just 3 points. So McLaren does have to show out, but if both McLaren drivers finish and one wins out with the fastest laps, there is no possible way for Alpine to catch up.
+
+                    So how does Alpine win? Well they either outplace both McLarens by a couple places, or they learn how to effectively sabotage. Neither of which seem all that likely as we have watched Eddie try to sabotage Erick all season with no success. But the team still is in the hunt and if McLaren even slightly missteps, Alpine will likely take home the championship.
+
+                    Now the VCARB bozos have a slim shot at victory here. Technically they, like Ferrari and Aston Martin, are still in the hunt. But they need to really show up and show out, and maybe even pray for some chaos with Alpine and McLaren. We’re talking double podium finishes at every race with McLaren and Alpine crashing each other out a couple of times.
+                    ''')
+        st.markdown('''
+                    <p style="color:lightgray;">Tuesday 2/4/2025 - The Intern</p>
+                    ''',
+                    unsafe_allow_html=True,)
+        st.divider()
+        #endregion
+    
         #region Race Week - Abu Dhabi & Austria
         st.subheader('Race Week - Abu Dhabi & Austria')
         st.markdown('''

@@ -56,7 +56,7 @@ standings_gif.close()
 standings_memes = Image.open("./Images/Standings_Memes.png")
 chance = Image.open("./Images/Chance.png")
 meteor = Image.open("./Images/Meteor.png")
-abu_dhabi_joshua_line = Image.open("./Images/Abu_Dhabi_Joshua_Line.png")
+abu_dhabi_joshua_line = Image.open("./Images/Abu_Dhabi_Joshua_Quali.png")
 abu_dhabi_memes = Image.open("./Images/Abu_Dhabi_Memes.png")
 
 def Tab0():

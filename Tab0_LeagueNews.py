@@ -74,26 +74,26 @@ def Tab0():
     #region Race Week - COTA
     st.subheader("The Final Race Week - COTA")
     st.markdown('''
-                    <div style>
-                    </style>
-                    <center>
+                <div style>
+                </style>
+                <center>
 
-                    _The cars all lined up
-                    Are ready to be fired up
-                    Deep in the heart of Texas
-                    The track’s finish line
-                    Chequered by design
-                    Deep in the heart of Texas
-                    The season ready to close
-                    With standings froze
-                    Deep in the heart of Texas
-                    A final race tonight
-                    Every driver ready to fight
-                    Deep in the heart of Texas_
+                _The cars all lined up
+                Are ready to be fired up
+                Deep in the heart of Texas
+                The track’s finish line
+                Chequered by design
+                Deep in the heart of Texas
+                The season ready to close
+                With standings froze
+                Deep in the heart of Texas
+                A final race tonight
+                Every driver ready to fight
+                Deep in the heart of Texas_
 
-                    </center>                
-                    </div>
-                    ''', unsafe_allow_html=True)
+                </center>                
+                </div>
+                ''', unsafe_allow_html=True)
     st.markdown('''
                 Ya heard right folks. The league has made it to its final circuit of the year in the grand ole U S of A, where the red, white, and blue run thicker than molasses, deep in the heart of Texas. In the state’s capital lies a hallowed track known as the Circuit of the Americas or COTA for short. In the famed state, infamous for its cowboys, guns, and outlaws, our drivers will face a track shaped like a rifle while staring down the barrel of the end of the season. One last chance to taste glory. One last lap with their current teams. One last chance to step one rung higher in the standings.
 

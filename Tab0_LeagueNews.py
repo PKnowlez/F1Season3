@@ -93,10 +93,15 @@ def Tab0():
 
                 I call this the roast of Joshua & Eddie’s braking abilities:
                 > You know, they say racing is 90% mental. In Joshua's case, it's more like 90% "Where's the brake pedal?"
+                
                 > I heard Eddie is thinking of switching careers... to a crash test driver. At least then he'd have an excuse for not stopping in time.
+                
                 > What's Joshua's favorite song? "Oops, I Did It Again!"
+                
                 > Eddie's braking technique is so innovative, they're calling it "The Scenic Route."
+                
                 > You know, they say experience is the best teacher. Joshua has a PhD in "Overshooting Corners."
+                
                 > Eddie's braking points are like a unicorn – mythical and never seen.
 
                 The duo’s absolute inability to brake caused some incredibly sketchy moments. Erick put on his best impression of Evel Knievel and got his entire car airborne when he had to avoid and evade the Alpine mess.

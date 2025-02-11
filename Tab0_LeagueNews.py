@@ -72,7 +72,7 @@ def Tab0():
     
     #region McLaren Post
     st.subheader("Congratulations Nick")
-    st.image()
+    st.image(nick_championship)
     st.markdown('''
                 The team at McLaren wants to express our sincerest congratulations to our champion. Nick’s commitment to this team, to the league, and to the sport have shown through as he battled from behind and overtook his competitor midway through the season. It has been an absolute pleasure having him on the team for three straight World Driver’s Championship victories, and we look forward to what is still to come.
                 ''')

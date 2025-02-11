@@ -58,30 +58,71 @@ chance = Image.open("./Images/Chance.png")
 meteor = Image.open("./Images/Meteor.png")
 abu_dhabi_joshua_line = Image.open("./Images/Abu_Dhabi_Joshua_Quali.png")
 abu_dhabi_memes = Image.open("./Images/Abu_Dhabi_Memes.png")
+austria_cover = Image.open("./Images/Austria_Alpine_Braking.png")
+austria_talent = Image.open("./Images/Austria_Talent.png")
+austria_erick_airborne = Image.open("./Images/Austria_Erick_Airborne.png")
+austria_kamikaze = Image.open("./Images/Austria_Kamikaze.png")
+austria_erick = Image.open("./Images/Austria_Erick.png")
+austria_brently = Image.open("./Images/Austria_Brently.png")
 
 def Tab0():
     if 'show_all_content' not in st.session_state:
         st.session_state.show_all_content = False
     
-    #region Abu Dhabi Race Recap
-    st.subheader("Abu Dhabi Recap: No, Erick, No, No, Erick, That Was So Not Right!")
+    #region Austria Race Recap
+    st.subheader("Austria Recap: Absolute Cinema")
+    st.image(austria_cover)
     st.markdown('''
-                At this point I think I am the real employee here and Patrick is just the note taking intern. That’s right, I am back yet again. The notes kinda suck (shocker) so I’ll do my best. There apparently was a heaping mess of absolute garbage strategy and driving during quali. Like, the notes say hotshot Joshua didn’t even set a time in Q2? I kinda think Patrick just wrote the notes wrong…but after reviewing the quali results Joshua straight up fumbled the bag, giving Nick a golden opportunity to secure the championship under the lights in Abu Dhabi Max Verstappen style. I heard y’all loved the map of Erick’s mistakes so I decided to give you a variant of that, I call it Joshua’s quali line:
-                ''')
-    st.image(abu_dhabi_joshua_line)
-    st.markdown('''
-                I also heard that Eddie biffed it during quali. Something about not knowing how to do the simplest of racing activities, a drag race. Apparently he earned himself a 5-place grid penalty for sucking so much at drag racing. His brother Erick also had a moment during quali where he was a bit too extra out of a corner and almost missed putting a time in during Q1.
+                One Sprint, one race, two championships on the line, and an incredible amount of drama. Austria had it all folks. It was truly one for the ages. All the contenders were there and each of them spiced up the Saturday race with their own extra magic. The hills were certainly alive with the sound of music, and for one driver, the sound of championship celebrations.
 
-                High-key seems a little over the top for just a quali, but with it closed out it looked like VCARB and Nick had incredible opportunities to close in or even close out the championships. But y’all just can’t have a simple race, can you? As you are very aware at this point, I am low-key a huge fan of memes. So, Imma just recap the rest in my preferred art form.
-                ''')
-    st.image(abu_dhabi_memes)
-    st.markdown('''
-                Yep, that’s right, Joshua came back from 15th, McLaren kept their lead alive with help from Travis and Nick even though Logan Sargeant tried to screw that up, Del and Erick went through a horror show with Ferrari, Boz cooked his tires, Eddie continued to be delulu, Brently and Erick battled like real F1 drivers, Patrick really screwed the pooch, and Fetty Wap kept bopping on the JBL speaker all night long.
+                The Red Bull Ring is known for creating perilous moments on track. Drivers are forced to execute along the finest of margins in both the heavy braking zones and the high speed turns and exits. For a league that struggles with keeping it between the white lines, this track only magnifies those mistakes. Ferrari’s Erick took home the crown for most penalties awarded, but still no one has surpassed Alpine’s Eddie’s season high yet. Per the usual, the McLaren’s kept it tidy throughout, while the rest of the field either earned penalties or ended their races prematurely.
 
-                With only two races left, Aston Martin has been eliminated from the Constructor’s Championship contention, and realistically it's a 2.5 horse race between McLaren, Alpine, and sorta VCARB. The Driver’s Championship eliminated everyone but Nick and Joshua. However, while I brushed off the battle for third place last week, it's really heated up. Erick, Patrick, Brently, and Del are within one race win’s swing for third. Who knows, it could come down to quick math and team orders between the VCARB or Ferrari teammates depending on how the next two races and Sprints unfold. Buckle up for an exciting penultimate race in Austria.
+                But before we get to the main event, let’s discuss qualifying and the Sprint race. During qualifying spectators were treated to a first time polesitter with Eddie lighting up the timing charts and setting the time to beat. However his Alpine teammate and main contender for the Driver’s World Championship, Joshua, ended up stuck in Q2 for the second time in a row. On his exit from the pit at the start of the session Joshua had a major lapse in talent and ended up pinning his car in the narrowest part of the pitlane exit. This disqualified the driver from continuing, situating him in 15th place on the grid for the Sprint.
+                ''')
+    st.image(austria_talent)
+    st.markdown('''
+                At the start of the Sprint, most of the field was up near the front and as the first lap began, some bumping and shoving occurred in both Turn 1 and Turn 3. However, the drivers predominantly remained clean through the first portion of the lap. That was all true until VCARB’s Patrick attempted a daring overtake on Erick into Turn 4, but missed his braking point and ended up in the gravel and losing places to the majority of the field. As the race continued he was able to battle back and switch places with his teammate when a radio call on the penultimate last lap set team orders for the two of them. More notably though is the progress Joshua made from 15th up into 5th. He was able to pass the majority of the field but ran out of laps to make it all the way to the front. His teammate Eddie however, did not have as fortunate of a race, tumbling from pole to 4th place, the first time pole sitter was not able to clutch up this go around. 
+
+                Ferrari’s new driver Del was able to make gains throughout the Sprint and battled with McLaren’s Nick for first and ultimately won the race, with Nick and Erick just behind. The battle at the front led to a busy post-Sprint media room where drivers were heard bickering about how to best conserve battery, make overtakes, and ultimately win the race at the Red Bull Ring.
+
+                With tensions high, no one expected all the drama that the main event would bring. After setting the reverse grid, drivers waited for the lights to go out, and when they did, chaos ensued. Drivers were launched off the track in Turn 1, some perilously plummeting behind the rest of the field, with others damaged and in need of a pitstop. Because of the mass chaos, the race director determined a full restart with enough time to repair minor damage was the right call. The race was red flagged and the drivers returned to the grid for another start. This go around, with much more caution, and a heightened sensitivity to the turmoil that could occur in Turn 1, most drivers decided to safely play out the first few corners.
+
+                It is important to stress that while most drivers proceeded with caution, the Alpine duo had other ideas. To better illuminate their decision making, along with subsequent events of the race, we have requested that the intern take over for the remainder of this article.
+
+                THAT’S RIGHT FOLKS, STRAP IN FOR SOME ROASTS BECAUSE THERE IS NO OTHER WAY TO HANDLE WHAT HAPPENED NEXT.
+
+                I call this the roast of Joshua & Eddie’s braking abilities:
+                > You know, they say racing is 90% mental. In Joshua's case, it's more like 90% "Where's the brake pedal?"
+                > I heard Eddie is thinking of switching careers... to a crash test driver. At least then he'd have an excuse for not stopping in time.
+                > What's Joshua's favorite song? "Oops, I Did It Again!"
+                > Eddie's braking technique is so innovative, they're calling it "The Scenic Route."
+                > You know, they say experience is the best teacher. Joshua has a PhD in "Overshooting Corners."
+                > Eddie's braking points are like a unicorn – mythical and never seen.
+
+                The duo’s absolute inability to brake caused some incredibly sketchy moments. Erick put on his best impression of Evel Knievel and got his entire car airborne when he had to avoid and evade the Alpine mess.
+                ''')
+    st.image(austria_erick_airborne)
+    st.markdown('''
+                It was honestly a nightmare for the first few laps and I discovered a new ick: boys who can’t brake. No cap, it got worse. After the Alpines caused enough of a traffic jam, drivers began to spread out and overtake one another. Remember, the whole league started in the back of the grid and had a lot of ground to make up on the AI.
+
+                As drivers began to pass the AI, something I can only describe as sudo-Imperial Japan occurred on track. Alex Albon could not fathom being passed by a VCARB and so he kamikazed it straight into the back of Patrick, causing a major accident and ending his race entirely.
+                ''')
+    st.image(austria_kamikaze)
+    st.markdown('''
+                But the AI weren’t satisfied with only taking out Patrick. They also took out Eddie later in the race just as everyone’s strategies were starting to heat up. This allowed for some incredibly late pitstops for some drivers such as Erick and VCARB’s Brently. Erick took the pitstop in the hopes that his pitcrew would let him serve his penalties, however, we’re talking about Ferrari. The clown meme is so tired so please enjoy this classic instead.
+                ''')
+    st.image(austria_erick)
+    st.markdown('''
+                But Brently on the other hand put on a masterclass. Even Mad Max hasn't shown this kind of comeback in a long time. From last place, Brently became the smoothest operator of all time and torched the field on new hards, landing himself just a few seconds shy of a podium finish in fourth. The GOAT Lightning McQueen called and said I had to use this meme for him.
+                ''')
+    st.image(austria_brently)
+    st.markdown('''
+                Up at the front we saw Joshua and Nick duking it out for the win. But it was too little too late for Joshua. Even with the win, Nick still gapped him in the championship standings and took home his third consecutive Driver’s World Championship. And with that I cede my keyboard to Patrick to close this one out.
+
+                With the Driver’s Champion crowned, and second place nearly locked for Joshua, the Ferrari and VCARB saga will be the focus of the final race of the season. Both teams could end up in third in the Constructor’s Championship, and all four drivers could end up in third in the Driver’s Championship. Alpine and McLaren will also need to finish their bout on the track to find out who will win the Constructor’s Championship. Stay tuned for a special post from McLaren and the final Race Week Update focused on COTA.
                 ''')
     st.markdown('''
-                <p style="color:lightgray;">Thursday 2/6/2025 - The Intern</p>
+                <p style="color:lightgray;">Monday 2/10/2025 - A Joint Patrick & The Intern Production</p>
                 ''',
                 unsafe_allow_html=True,)
     st.divider()
@@ -99,6 +140,30 @@ def Tab0():
             st.rerun()
 
     if st.session_state.show_all_content:
+        #region Abu Dhabi Race Recap
+        st.subheader("Abu Dhabi Recap: No, Erick, No, No, Erick, That Was So Not Right!")
+        st.markdown('''
+                    At this point I think I am the real employee here and Patrick is just the note taking intern. That’s right, I am back yet again. The notes kinda suck (shocker) so I’ll do my best. There apparently was a heaping mess of absolute garbage strategy and driving during quali. Like, the notes say hotshot Joshua didn’t even set a time in Q2? I kinda think Patrick just wrote the notes wrong…but after reviewing the quali results Joshua straight up fumbled the bag, giving Nick a golden opportunity to secure the championship under the lights in Abu Dhabi Max Verstappen style. I heard y’all loved the map of Erick’s mistakes so I decided to give you a variant of that, I call it Joshua’s quali line:
+                    ''')
+        st.image(abu_dhabi_joshua_line)
+        st.markdown('''
+                    I also heard that Eddie biffed it during quali. Something about not knowing how to do the simplest of racing activities, a drag race. Apparently he earned himself a 5-place grid penalty for sucking so much at drag racing. His brother Erick also had a moment during quali where he was a bit too extra out of a corner and almost missed putting a time in during Q1.
+
+                    High-key seems a little over the top for just a quali, but with it closed out it looked like VCARB and Nick had incredible opportunities to close in or even close out the championships. But y’all just can’t have a simple race, can you? As you are very aware at this point, I am low-key a huge fan of memes. So, Imma just recap the rest in my preferred art form.
+                    ''')
+        st.image(abu_dhabi_memes)
+        st.markdown('''
+                    Yep, that’s right, Joshua came back from 15th, McLaren kept their lead alive with help from Travis and Nick even though Logan Sargeant tried to screw that up, Del and Erick went through a horror show with Ferrari, Boz cooked his tires, Eddie continued to be delulu, Brently and Erick battled like real F1 drivers, Patrick really screwed the pooch, and Fetty Wap kept bopping on the JBL speaker all night long.
+
+                    With only two races left, Aston Martin has been eliminated from the Constructor’s Championship contention, and realistically it's a 2.5 horse race between McLaren, Alpine, and sorta VCARB. The Driver’s Championship eliminated everyone but Nick and Joshua. However, while I brushed off the battle for third place last week, it's really heated up. Erick, Patrick, Brently, and Del are within one race win’s swing for third. Who knows, it could come down to quick math and team orders between the VCARB or Ferrari teammates depending on how the next two races and Sprints unfold. Buckle up for an exciting penultimate race in Austria.
+                    ''')
+        st.markdown('''
+                    <p style="color:lightgray;">Thursday 2/6/2025 - The Intern</p>
+                    ''',
+                    unsafe_allow_html=True,)
+        st.divider()
+        #endregion
+        
         #region Standings Update
         st.subheader("Standings Update")
         st.markdown('''

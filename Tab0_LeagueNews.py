@@ -83,9 +83,9 @@ def Tab0():
                     Deep in the heart of Texas
                     The track’s finish line
                     Chequered by design
-                    Deep in the heart of Texas
+                    Deep in the heart of Texas_
 
-                    The season ready to close
+                    _The season ready to close
                     With standings froze
                     Deep in the heart of Texas
                     A final race tonight

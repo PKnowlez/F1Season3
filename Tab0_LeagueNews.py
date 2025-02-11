@@ -64,11 +64,25 @@ austria_erick_airborne = Image.open("./Images/Austria_Erick_Airborne.png")
 austria_kamikaze = Image.open("./Images/Austria_Kamikaze.png")
 austria_erick = Image.open("./Images/Austria_Erick.png")
 austria_brently = Image.open("./Images/Austria_Brently.png")
+nick_championship = Image.open("./Images/Nick_Championship.png")
 
 def Tab0():
     if 'show_all_content' not in st.session_state:
         st.session_state.show_all_content = False
     
+    #region McLaren Post
+    st.subheader("Congratulations Nick")
+    st.image()
+    st.markdown('''
+                The team at McLaren wants to express our sincerest congratulations to our champion. Nick’s commitment to this team, to the league, and to the sport have shown through as he battled from behind and overtook his competitor midway through the season. It has been an absolute pleasure having him on the team for three straight World Driver’s Championship victories, and we look forward to what is still to come.
+                ''')
+    st.markdown('''
+                <p style="color:lightgray;">Monday 2/10/2025 - McLaren Racing</p>
+                ''',
+                unsafe_allow_html=True,)
+    st.divider()
+    #endregion
+
     #region Austria Race Recap
     st.subheader("Austria Recap: Absolute Cinema")
     st.image(austria_cover)

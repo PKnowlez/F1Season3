@@ -71,6 +71,36 @@ cota_charles = Image.open("./Images/COTA_Charles.png")
 def Tab0():
     if 'show_all_content' not in st.session_state:
         st.session_state.show_all_content = False
+
+    #region Insider Scoop - Red Bull
+    st.subheader("INSIDER SCOOP: ***Alpine's Plight***")
+    st.markdown('''
+                It comes at no surprise to those that have followed the league this season that Alpine has fumbled one championship and depending on how COTA pans out, potentially two. Our reporters were able to catch up with team officials and both drivers about the future of the team.
+
+                Alpine's future in Formula 1 may face significant uncertainty if they fail to secure a top spot in the Constructors' Championship this season. Their main driver, Joshua Rosario, has expressed concerns that the team’s lack of progress could force him to seek opportunities elsewhere. With aspirations of competing at the front of the grid, Joshua’s loyalty to Alpine is tied to their ability to improve their performance, making it clear that a poor showing in the Constructors' standings could lead to a departure as he looks for a team with better championship prospects. In reference to the Constructor’s Championship, Joshua directly responded with:
+
+                > _**If we lose, I’m gone.**_
+
+                But beyond the championship, it appears that tensions are at their highest with the talented young duo at each other's throats. An exchange between the two drivers was recently overheard by our reporting team and has been transcribed here.
+
+                > _**Are you staying on the team?**_ - Joshua
+
+                > _**What team?**_ - Eddie
+
+                > _**Alpine!**_ - Joshua
+
+                > _**I don’t know...**_ - Eddie
+
+                > _**You’re useless to me.**_ - Joshua
+
+                The duo’s bickering has been a point of contention throughout the final races of the season. However, it has never appeared this likely that the duo would break up. With the impending offseason and silly season around the corner, it's likely we see many exits from discontent drivers and teammates.
+                ''')
+    st.markdown('''
+                <p style="color:lightgray;">Tuesday 2/11/2025 - Insiders: Joshua, Eddie, & Patrick</p>
+                ''',
+                unsafe_allow_html=True,)
+    st.divider()
+    #endregion
     
     #region Race Week - COTA
     st.subheader("The Final Race Week - COTA")

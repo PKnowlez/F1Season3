@@ -64,11 +64,11 @@ def Calculations():
     for i in range(len(race_place)):
         if df.loc[0,race_points[i]] == 0:
             index = i
-            index_x = index
+            index_x = index-0.5
             break
         elif race_place[i] == 'COTAPlace':
-            index = i
-            index_x = index
+            index = i+1
+            index_x = index-0.5
         else:
             x = 0
 

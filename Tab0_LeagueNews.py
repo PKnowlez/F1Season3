@@ -67,80 +67,51 @@ austria_brently = Image.open("./Images/Austria_Brently.png")
 nick_championship = Image.open("./Images/Nick_Championship.png")
 cota_circuit = Image.open("./Images/COTA_Circuit.png")
 cota_charles = Image.open("./Images/COTA_Charles.png")
+cota_MM = Image.open("./Images/COTA_MM.png")
+cota_BLB = Image.open("./Images/COTA_BLB.png")
+cota_eddie = Image.open("./Images/COTA_Eddie.png")
+cota_erick = Image.open("./Images/COTA_Erick.png")
+cota_eddie2 = Image.open("./Images/COTA_Eddie2.png")
 
 def Tab0():
     if 'show_all_content' not in st.session_state:
         st.session_state.show_all_content = False
-
-    #region Insider Scoop - Red Bull
-    st.subheader("INSIDER SCOOP: ***Alpine's Plight***")
-    st.markdown('''
-                It comes at no surprise to those that have followed the league this season that Alpine has fumbled one championship and depending on how COTA pans out, potentially two. Our reporters were able to catch up with team officials and both drivers about the future of the team.
-
-                Alpine's future in Formula 1 may face significant uncertainty if they fail to secure a top spot in the Constructors' Championship this season. Their main driver, Joshua Rosario, has expressed concerns that the team’s lack of progress could force him to seek opportunities elsewhere. With aspirations of competing at the front of the grid, Joshua’s loyalty to Alpine is tied to their ability to improve their performance, making it clear that a poor showing in the Constructors' standings could lead to a departure as he looks for a team with better championship prospects. In reference to the Constructor’s Championship, Joshua directly responded with:
-
-                > _**If we lose, I’m gone.**_
-
-                But beyond the championship, it appears that tensions are at their highest with the talented young duo at each other's throats. An exchange between the two drivers was recently overheard by our reporting team and has been transcribed here.
-
-                > _**Are you staying on the team?**_ - Joshua
-
-                > _**What team?**_ - Eddie
-
-                > _**Alpine!**_ - Joshua
-
-                > _**I don’t know...**_ - Eddie
-
-                > _**You’re useless to me.**_ - Joshua
-
-                The duo’s bickering has been a point of contention throughout the final races of the season. However, it has never appeared this likely that the duo would break up. With the impending offseason and silly season around the corner, it's likely we see many exits from discontent drivers and teammates.
-                ''')
-    st.markdown('''
-                <p style="color:lightgray;">Tuesday 2/11/2025 - Insiders: Joshua, Eddie, & Patrick</p>
-                ''',
-                unsafe_allow_html=True,)
-    st.divider()
-    #endregion
     
-    #region Race Week - COTA
-    st.subheader("The Final Race Week - COTA")
-    st.image(cota_charles)
-    st.markdown("""
-                <div style>
-                </style>
-                <center>
-
-                _The cars all lined up<br>
-                Are ready to be fired up<br>
-                Deep in the heart of Texas<br>
-                The track’s finish line<br>
-                Chequered by design<br>
-                Deep in the heart of Texas<br>
-                The season ready to close<br>
-                With standings froze<br>
-                Deep in the heart of Texas<br>
-                A final race tonight<br>
-                Every driver ready to fight<br>
-                Deep in the heart of Texas<br>_
-
-                </center>                
-                </div>
-                """, unsafe_allow_html=True)
+    #region COTA Recap
+    st.subheader("COTA Recap: Alpine’s Exes Live in Texas")
     st.markdown('''
-                Ya heard right folks. The league has made it to its final circuit of the year in the grand ole U S of A, where the red, white, and blue run thicker than molasses, deep in the heart of Texas. In the state’s capital lies a hallowed track known as the Circuit of the Americas or COTA for short. In the famed state, infamous for its cowboys, guns, and outlaws, our drivers will face a track shaped like a rifle while staring down the barrel of the end of the season. One last chance to taste glory. One last lap with their current teams. One last chance to step one rung higher in the standings.
+                Shouts of “Remember the Circuit of the Americas” could be heard around the track as Alpine clinched the World Constructor’s Championship. McLaren fans everywhere saw their season goals crushed by a convincing victory from Alpine’s Joshua in the main race. But all was not as simple as it seemed.
 
-                Beyond just being a tricky track with some incredible elevation changes, high speed turns, and lengthy straights, COTA is the home race of McLaren’s Travis and nearly a home race for Ferrari’s Erick, VCARB’s Patrick, and Aston Martin’s Zane. Which means added pressure for them all to perform. Whether it is the steep elevation change up to Turn 1, or down into the esses to follow, every driver is going to be right on the limit of what they and their car can handle. Sector 1 at COTA is no joke. An incredibly steep uphill battle from the starting grid up to Turn 1, followed by high speed thrills down into Sector 2 where the drivers are treated to an incredibly long straight perfect for jockeying for position. From there the battle will continue as the drivers navigate additional high speed twists and turns around an amphitheater and famed 500 foot tall viewing platform. Just as the drivers exit some incredible fast turns they are met with the decision to lift or throttle back into a harrowing corner just before the twentieth and final corner of the lap. Each of these moments will test the entire field and could cause some crazy moments.
+                When the drivers arrived it was a torrential downpour, requiring full wets for both qualifying and the Sprint race. The talent of the drivers in the league was on full display as every driver that entered the Sprint finished despite the incredibly challenging conditions. Ferrari’s Erick and VCARB’s Patrick had a solid cold war throughout the Sprint where Erick remained on top at the chequered flag. Further up the field Ferrari’s Del took home a lonely fourth place after keeping it clean throughout the race, and the podium saw a new driver with Alpine’s Eddie securing his first podium of the season in third place. Joshua and McLaren’s Nick battled it out up front for first place, where we saw Nick hang on for the win, giving McLaren fans hope that they could still clinch the Constructor’s Championship at the end of the main race. McLaren’s Travis, VCARB’s Brently, and Red Bull’s Boz chased each other down in the midfield, bringing home needed points for each of their outfits.
+
+                After reviewing the race notes, it is clear that our intern will be more adept at providing a strong recap of what occurred. The chaos they bring to the office each day may have met its match with this one. Buckle up and enjoy their take on the incredible event’s of the race.
                 ''')
-    st.image(cota_circuit)
+    st.image(cota_MM)
     st.markdown('''
-                All signs now point to a rainy Sprint and a potentially drier race. But until the drivers have passed the final finish line, we won’t know for certain. Rumor has it that many teams are already beginning their search for what is next. Driver line ups are bound to change and rumblings of rookie drivers are all over the media pen. This week will no doubt be a thrilling conclusion to an exciting season. Alpine and McLaren still have a chance at glory in the World Constructor’s Championship, and as previously mentioned, four drivers have a shot at third place in the World Driver’s Championship.
+                Nothing pleases me more than when Patrick’s notes are delivered in a crumpled up ball. Brother was completely tilted after that race and I hope to be able to express why via a short set of memes, jokes, and real talk. 
+
+                But really where do I start? This race was a cluster. Turn 1 saw drivers go absolutely blind, overtaking on the outside…cough Joshua…other drivers bumping and grinding, and others shooting gaps that even prime Senna would have avoided. Somehow, everyone managed to survive the first lap…barely…
                 ''')
+    st.image(cota_BLB)
     st.markdown('''
-                    <p style="color:lightgray;">Tuesday 2/11/2025 - Patrick</p>
-                    ''',
-                    unsafe_allow_html=True,)
-    st.divider()
-    #endregion
+                After “surviving” the first lap things got even crazier. Lap 4 saw some brilliant driving from Eddie right into the diffuser of Patrick, and then right back onto track perpendicular to the flow of traffic. 
+                ''')
+    st.image(cota_eddie)
+    st.markdown('''
+                But that wasn’t even the worst of it. We saw a VSC that handed Travis a driver through penalty for no reason and later a full safety car that handed his teammate Nick a drive through penalty as well. All things were going seemed to be doing Alpine’s way. That is until under that same safety car Eddie was handed a penalty for overtaking off track under safety car. 
+
+                Fam, with the field bunched up, penalties everywhere, it seemed like that race restart was about to shake things up like crazy. And, not gonna lie, it did. Erick backed up Eddie and Patrick lap after lap trying to bring Del into the grips of their penalties.
+                ''')
+    st.image(cota_erick)
+    st.markdown('''
+                But just as that battle heated up, Erick disconnected. For some reason, the league voted to reinstate his time even though he has dial-up internet and caused lag throughout the race, which might have been the reason Brently saw his first DNF of the season, but whatever these guys were being nice I guess.
+
+                Just as the race seemed to finally be settling down and finishing up Eddie simply forgot how to drive coming out of the last turn, binning it into the wall and limping across the finish behind Del after nearly ending that man’s life.
+                ''')
+    st.image(cota_eddie2)
+    st.markdown('''
+                The race finished and Alpine took the lead in the Constructor’s Championship for the first time since Canada. But, I have some tea for y’all. Some FIA bloke came by today and told us we weren’t allowed to say anything about this. But fr, I couldn’t care less, what are they gonna do, fire me? Nick and Travis’ drive throughs are under investigation because of the lag, Eddie’s erratic driving is also under investigation, and there’s a chance the standings make a big flippity flop some time soon. I’m sure some official news will come sometime but for now, Alpine is the victor, so I guess Joshua and Eddie are staying teammates!
+                ''')
     
     # ----------------------------------------------------------------------------------------------------------
     # "Show More/Less" button 
@@ -154,6 +125,76 @@ def Tab0():
             st.rerun()
 
     if st.session_state.show_all_content:
+        #region Insider Scoop - Red Bull
+        st.subheader("INSIDER SCOOP: ***Alpine's Plight***")
+        st.markdown('''
+                    It comes at no surprise to those that have followed the league this season that Alpine has fumbled one championship and depending on how COTA pans out, potentially two. Our reporters were able to catch up with team officials and both drivers about the future of the team.
+
+                    Alpine's future in Formula 1 may face significant uncertainty if they fail to secure a top spot in the Constructors' Championship this season. Their main driver, Joshua Rosario, has expressed concerns that the team’s lack of progress could force him to seek opportunities elsewhere. With aspirations of competing at the front of the grid, Joshua’s loyalty to Alpine is tied to their ability to improve their performance, making it clear that a poor showing in the Constructors' standings could lead to a departure as he looks for a team with better championship prospects. In reference to the Constructor’s Championship, Joshua directly responded with:
+
+                    > _**If we lose, I’m gone.**_
+
+                    But beyond the championship, it appears that tensions are at their highest with the talented young duo at each other's throats. An exchange between the two drivers was recently overheard by our reporting team and has been transcribed here.
+
+                    > _**Are you staying on the team?**_ - Joshua
+
+                    > _**What team?**_ - Eddie
+
+                    > _**Alpine!**_ - Joshua
+
+                    > _**I don’t know...**_ - Eddie
+
+                    > _**You’re useless to me.**_ - Joshua
+
+                    The duo’s bickering has been a point of contention throughout the final races of the season. However, it has never appeared this likely that the duo would break up. With the impending offseason and silly season around the corner, it's likely we see many exits from discontent drivers and teammates.
+                    ''')
+        st.markdown('''
+                    <p style="color:lightgray;">Tuesday 2/11/2025 - Insiders: Joshua, Eddie, & Patrick</p>
+                    ''',
+                    unsafe_allow_html=True,)
+        st.divider()
+        #endregion
+        
+        #region Race Week - COTA
+        st.subheader("The Final Race Week - COTA")
+        st.image(cota_charles)
+        st.markdown("""
+                    <div style>
+                    </style>
+                    <center>
+
+                    _The cars all lined up<br>
+                    Are ready to be fired up<br>
+                    Deep in the heart of Texas<br>
+                    The track’s finish line<br>
+                    Chequered by design<br>
+                    Deep in the heart of Texas<br>
+                    The season ready to close<br>
+                    With standings froze<br>
+                    Deep in the heart of Texas<br>
+                    A final race tonight<br>
+                    Every driver ready to fight<br>
+                    Deep in the heart of Texas<br>_
+
+                    </center>                
+                    </div>
+                    """, unsafe_allow_html=True)
+        st.markdown('''
+                    Ya heard right folks. The league has made it to its final circuit of the year in the grand ole U S of A, where the red, white, and blue run thicker than molasses, deep in the heart of Texas. In the state’s capital lies a hallowed track known as the Circuit of the Americas or COTA for short. In the famed state, infamous for its cowboys, guns, and outlaws, our drivers will face a track shaped like a rifle while staring down the barrel of the end of the season. One last chance to taste glory. One last lap with their current teams. One last chance to step one rung higher in the standings.
+
+                    Beyond just being a tricky track with some incredible elevation changes, high speed turns, and lengthy straights, COTA is the home race of McLaren’s Travis and nearly a home race for Ferrari’s Erick, VCARB’s Patrick, and Aston Martin’s Zane. Which means added pressure for them all to perform. Whether it is the steep elevation change up to Turn 1, or down into the esses to follow, every driver is going to be right on the limit of what they and their car can handle. Sector 1 at COTA is no joke. An incredibly steep uphill battle from the starting grid up to Turn 1, followed by high speed thrills down into Sector 2 where the drivers are treated to an incredibly long straight perfect for jockeying for position. From there the battle will continue as the drivers navigate additional high speed twists and turns around an amphitheater and famed 500 foot tall viewing platform. Just as the drivers exit some incredible fast turns they are met with the decision to lift or throttle back into a harrowing corner just before the twentieth and final corner of the lap. Each of these moments will test the entire field and could cause some crazy moments.
+                    ''')
+        st.image(cota_circuit)
+        st.markdown('''
+                    All signs now point to a rainy Sprint and a potentially drier race. But until the drivers have passed the final finish line, we won’t know for certain. Rumor has it that many teams are already beginning their search for what is next. Driver line ups are bound to change and rumblings of rookie drivers are all over the media pen. This week will no doubt be a thrilling conclusion to an exciting season. Alpine and McLaren still have a chance at glory in the World Constructor’s Championship, and as previously mentioned, four drivers have a shot at third place in the World Driver’s Championship.
+                    ''')
+        st.markdown('''
+                        <p style="color:lightgray;">Tuesday 2/11/2025 - Patrick</p>
+                        ''',
+                        unsafe_allow_html=True,)
+        st.divider()
+        #endregion
+
         #region McLaren Post
         st.subheader("Congratulations Nick")
         st.image(nick_championship)

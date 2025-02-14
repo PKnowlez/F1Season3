@@ -112,6 +112,12 @@ def Tab0():
     st.markdown('''
                 The race finished and Alpine took the lead in the Constructor’s Championship for the first time since Canada. But, I have some tea for y’all. Some FIA bloke came by today and told us we weren’t allowed to say anything about this. But fr, I couldn’t care less, what are they gonna do, fire me? Nick and Travis’ drive throughs are under investigation because of the lag, Eddie’s erratic driving is also under investigation, and there’s a chance the standings make a big flippity flop some time soon. I’m sure some official news will come sometime but for now, Alpine is the victor, so I guess Joshua and Eddie are staying teammates!
                 ''')
+    st.markdown('''
+                    <p style="color:lightgray;">Thursday 2/13/2025 - Patrick</p>
+                    ''',
+                    unsafe_allow_html=True,)
+    st.divider()
+    #endregion
     
     # ----------------------------------------------------------------------------------------------------------
     # "Show More/Less" button 

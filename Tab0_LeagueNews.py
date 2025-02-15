@@ -77,6 +77,18 @@ def Tab0():
     if 'show_all_content' not in st.session_state:
         st.session_state.show_all_content = False
     
+    #region Alpine Statement
+    st.subheader("ALPINE OFFICIAL STATEMENT")
+    st.markdown('''
+                If Alpine is going to be declared champions, we want to win by dominance, no controversy, plain and simple, without any dispute left on the table. The last race of the season has made that difficult to do, but the entire season has to be taken into account. Alpine was ready to challenge McLaren, but McLaren has made it clear they are not interested in that opportunity. There are so many what ifs throughout this entire season and the Alpine team believes they left everything on the table. Alpine knows there is no result here that will not disappoint, or even piss off, one side of the equation. However, the Constructor’s Championship symbolizes teamwork. Both Joshua and Nick carried their teammates, while Eddie out drove Travis throughout most of the season. Our team knows that our duo did an outstanding job and wants to lean on the consistency seen throughout the season to claim this championship. Alpine is confident knowing the difference was made by Eddie throughout the entire season. If McLaren wants to change their stance on a final race, the Alpine team is willing to consider this opportunity, but if not, our team stands behind the results of the final race as they stand with the perspective of the entire season.
+                ''')
+    st.markdown('''
+                    <p style="color:lightgray;">Friday 2/14/2025 - Alpine F1</p>
+                    ''',
+                    unsafe_allow_html=True,)
+    st.divider()
+    #endregion
+    
     #region COTA Recap
     st.subheader("COTA Recap: Alpine’s Exes Live in Texas")
     st.markdown('''

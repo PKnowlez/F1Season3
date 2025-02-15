@@ -81,9 +81,11 @@ def Tab0():
     st.subheader("McLAREN OFFICIAL STATEMENT")
     st.markdown('''
                 With our culture of integrity, McLaren is disappointed by Alpine claiming the championship based on results that include such incredible desynchronization and technical issues. If the roles were reversed the team believes it would cede the championship to Alpine. However, throughout the season this level of character was common from Alpine, and McLaren hopes for growth for both drivers in the coming season. With all this said, we are here ready to celebrate Alpine’s championship as they did compete at a high level throughout the season. The rest of the grid will always know the controversy surrounding this final result, and McLaren vows to be back stronger than ever next season.
+                
+                P.S. Happy birthday Boz
                 ''')
     st.markdown('''
-                    <p style="color:lightgray;">Friday 2/14/2025 - McLaren Racing</p>
+                    <p style="color:lightgray;">Saturday 2/15/2025 - McLaren Racing</p>
                     ''',
                     unsafe_allow_html=True,)
     st.divider()

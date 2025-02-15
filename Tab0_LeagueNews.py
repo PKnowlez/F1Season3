@@ -110,7 +110,7 @@ def Tab0():
                 ''')
     st.image(cota_eddie)
     st.markdown('''
-                But that wasn’t even the worst of it. We saw a VSC that handed Travis a driver through penalty for no reason and later a full safety car that handed his teammate Nick a drive through penalty as well. All things were going seemed to be doing Alpine’s way. That is until under that same safety car Eddie was handed a penalty for overtaking off track under safety car. 
+                But that wasn’t even the worst of it. We saw a VSC that handed Travis a driver through penalty for no reason and later a full safety car that handed his teammate Nick a drive through penalty as well. All things seemed to be going Alpine’s way. That is until under that same safety car Eddie was handed a penalty for overtaking off track under safety car. 
 
                 Fam, with the field bunched up, penalties everywhere, it seemed like that race restart was about to shake things up like crazy. And, not gonna lie, it did. Erick backed up Eddie and Patrick lap after lap trying to bring Del into the grips of their penalties.
                 ''')

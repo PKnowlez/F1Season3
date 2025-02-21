@@ -109,7 +109,7 @@ def Tab0():
                 Until next season folks…
                 ''')
     st.markdown('''
-                <p style="color:lightgray;">Thursday 2/20/2025 - A Joint Patrick & The Intern Production/p>
+                <p style="color:lightgray;">Thursday 2/20/2025 - A Joint Patrick & The Intern Production</p>
                 ''',
                 unsafe_allow_html=True,)
     st.divider()

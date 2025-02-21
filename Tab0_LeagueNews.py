@@ -85,7 +85,7 @@ def Tab0():
                 Through battles, controversy, penalties, and determination, Joshua and Eddie brought home the season’s prize for our whole team. Our team, our championship, our way. Alpine is ecstatic with the results of this season and cannot congratulate Joshua and Eddie enough. It will be a pleasure to watch these two drive in the future, and we hope this team can defend its title together next season.
                 ''')
     st.markdown('''
-                <p style="color:lightgray;">Saturday 2/20/2025 - Alpine F1 Team</p>
+                <p style="color:lightgray;">Thursday 2/20/2025 - Alpine F1 Team</p>
                 ''',
                 unsafe_allow_html=True,)
     st.divider()

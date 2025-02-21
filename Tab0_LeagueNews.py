@@ -72,10 +72,24 @@ cota_BLB = Image.open("./Images/COTA_BLB.png")
 cota_eddie = Image.open("./Images/COTA_Eddie.png")
 cota_erick = Image.open("./Images/COTA_Erick.png")
 cota_eddie2 = Image.open("./Images/COTA_Eddie2.png")
+alpine_champs = Image.open("./Images/Alpine_Champions.png")
 
 def Tab0():
     if 'show_all_content' not in st.session_state:
         st.session_state.show_all_content = False
+    
+    #region Congratulations Alpine
+    st.subheader("Congratulations Joshua & Eddie - Constructor’s World Champions")
+    st.image(alpine_champs)
+    st.markdown('''
+                Through battles, controversy, penalties, and determination, Joshua and Eddie brought home the season’s prize for our whole team. Our team, our championship, our way. Alpine is ecstatic with the results of this season and cannot congratulate Joshua and Eddie enough. It will be a pleasure to watch these two drive in the future, and we hope this team can defend its title together next season.
+                ''')
+    st.markdown('''
+                    <p style="color:lightgray;">Saturday 2/15/2025 - McLaren Racing</p>
+                    ''',
+                    unsafe_allow_html=True,)
+    st.divider()
+    #endregion
 
     #region McLaren Statement
     st.subheader("McLAREN OFFICIAL STATEMENT")

@@ -11,7 +11,7 @@ def Tab2(races,df,race_place,race_points):
         st.subheader("Winner: Joshua")
         MiamiResults = pd.DataFrame({
             'Place': ['1','2','3','4','16','17','18','19'],
-            'Driver': ['Joshua','Nick**','Patrick','Erick','Yeti','Boz','Del','Gary'],
+            'Driver': ['Joshua','Nick','Patrick','Erick','Yeti','Boz','Del','Gary'],
         })
         # Removes the index column from the markdown st.table
         hide_table_row_index = """
@@ -64,3 +64,19 @@ def Tab2(races,df,race_place,race_points):
                     st.table(race_results_df)
             else:
                 x = 0
+    with st.expander("Postseason: Monaco"):
+        st.subheader("Winner: Brently")
+        MiamiResults = pd.DataFrame({
+            'Place': ['1','10','17','DNF','DNF','DNF'],
+            'Driver': ['Brently','Joshua','Boz','Nick','Del','Eddie'],
+            'Qualifying': ['3','15','19','2','1','18']
+        })
+        # Removes the index column from the markdown st.table
+        hide_table_row_index = """
+        <style>
+        thead tr th:first-child {display:none}
+        tbody th {display:none}
+        </style>
+        """
+        st.markdown(hide_table_row_index, unsafe_allow_html=True)
+        st.table(MiamiResults)

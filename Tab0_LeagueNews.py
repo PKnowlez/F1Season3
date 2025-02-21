@@ -85,77 +85,9 @@ def Tab0():
                 Through battles, controversy, penalties, and determination, Joshua and Eddie brought home the season’s prize for our whole team. Our team, our championship, our way. Alpine is ecstatic with the results of this season and cannot congratulate Joshua and Eddie enough. It will be a pleasure to watch these two drive in the future, and we hope this team can defend its title together next season.
                 ''')
     st.markdown('''
-                    <p style="color:lightgray;">Saturday 2/15/2025 - McLaren Racing</p>
-                    ''',
-                    unsafe_allow_html=True,)
-    st.divider()
-    #endregion
-
-    #region McLaren Statement
-    st.subheader("McLAREN OFFICIAL STATEMENT")
-    st.markdown('''
-                With our culture of integrity, McLaren is disappointed by Alpine claiming the championship based on results that include such incredible desynchronization and technical issues. If the roles were reversed the team believes it would cede the championship to Alpine. However, throughout the season this level of character was common from Alpine, and McLaren hopes for growth for both drivers in the coming season. With all this said, we are here ready to celebrate Alpine’s championship as they did compete at a high level throughout the season. The rest of the grid will always know the controversy surrounding this final result, and McLaren vows to be back stronger than ever next season.
-                
-                P.S. Happy birthday Boz
-                ''')
-    st.markdown('''
-                    <p style="color:lightgray;">Saturday 2/15/2025 - McLaren Racing</p>
-                    ''',
-                    unsafe_allow_html=True,)
-    st.divider()
-    #endregion
-    
-    #region Alpine Statement
-    st.subheader("ALPINE OFFICIAL STATEMENT")
-    st.markdown('''
-                If Alpine is going to be declared champions, we want to win by dominance, no controversy, plain and simple, without any dispute left on the table. The last race of the season has made that difficult to do, but the entire season has to be taken into account. Alpine was ready to challenge McLaren, but McLaren has made it clear they are not interested in that opportunity. There are so many what ifs throughout this entire season and the Alpine team believes they left everything on the table. Alpine knows there is no result here that will not disappoint, or even piss off, one side of the equation. However, the Constructor’s Championship symbolizes teamwork. Both Joshua and Nick carried their teammates, while Eddie out drove Travis throughout most of the season. Our team knows that our duo did an outstanding job and wants to lean on the consistency seen throughout the season to claim this championship. Alpine is confident knowing the difference was made by Eddie throughout the entire season. If McLaren wants to change their stance on a final race, the Alpine team is willing to consider this opportunity, but if not, our team stands behind the results of the final race as they stand with the perspective of the entire season.
-                ''')
-    st.markdown('''
-                    <p style="color:lightgray;">Friday 2/14/2025 - Alpine F1</p>
-                    ''',
-                    unsafe_allow_html=True,)
-    st.divider()
-    #endregion
-    
-    #region COTA Recap
-    st.subheader("COTA Recap: Alpine’s Exes Live in Texas")
-    st.markdown('''
-                Shouts of “Remember the Circuit of the Americas” could be heard around the track as Alpine clinched the World Constructor’s Championship. McLaren fans everywhere saw their season goals crushed by a convincing victory from Alpine’s Joshua in the main race. But all was not as simple as it seemed.
-
-                When the drivers arrived it was a torrential downpour, requiring full wets for both qualifying and the Sprint race. The talent of the drivers in the league was on full display as every driver that entered the Sprint finished despite the incredibly challenging conditions. Ferrari’s Erick and VCARB’s Patrick had a solid cold war throughout the Sprint where Erick remained on top at the chequered flag. Further up the field Ferrari’s Del took home a lonely fourth place after keeping it clean throughout the race, and the podium saw a new driver with Alpine’s Eddie securing his first podium of the season in third place. Joshua and McLaren’s Nick battled it out up front for first place, where we saw Nick hang on for the win, giving McLaren fans hope that they could still clinch the Constructor’s Championship at the end of the main race. McLaren’s Travis, VCARB’s Brently, and Red Bull’s Boz chased each other down in the midfield, bringing home needed points for each of their outfits.
-
-                After reviewing the race notes, it is clear that our intern will be more adept at providing a strong recap of what occurred. The chaos they bring to the office each day may have met its match with this one. Buckle up and enjoy their take on the incredible event’s of the race.
-                ''')
-    st.image(cota_MM)
-    st.markdown('''
-                Nothing pleases me more than when Patrick’s notes are delivered in a crumpled up ball. Brother was completely tilted after that race and I hope to be able to express why via a short set of memes, jokes, and real talk. 
-
-                But really where do I start? This race was a cluster. Turn 1 saw drivers go absolutely blind, overtaking on the outside…cough Joshua…other drivers bumping and grinding, and others shooting gaps that even prime Senna would have avoided. Somehow, everyone managed to survive the first lap…barely…
-                ''')
-    st.image(cota_BLB)
-    st.markdown('''
-                After “surviving” the first lap things got even crazier. Lap 4 saw some brilliant driving from Eddie right into the diffuser of Patrick, and then right back onto track perpendicular to the flow of traffic. 
-                ''')
-    st.image(cota_eddie)
-    st.markdown('''
-                But that wasn’t even the worst of it. We saw a VSC that handed Travis a driver through penalty for no reason and later a full safety car that handed his teammate Nick a drive through penalty as well. All things seemed to be going Alpine’s way. That is until under that same safety car Eddie was handed a penalty for overtaking off track under safety car. 
-
-                Fam, with the field bunched up, penalties everywhere, it seemed like that race restart was about to shake things up like crazy. And, not gonna lie, it did. Erick backed up Eddie and Patrick lap after lap trying to bring Del into the grips of their penalties.
-                ''')
-    st.image(cota_erick)
-    st.markdown('''
-                But just as that battle heated up, Erick disconnected. For some reason, the league voted to reinstate his time even though he has dial-up internet and caused lag throughout the race, which might have been the reason Brently saw his first DNF of the season, but whatever these guys were being nice I guess.
-
-                Just as the race seemed to finally be settling down and finishing up Eddie simply forgot how to drive coming out of the last turn, binning it into the wall and limping across the finish behind Del after nearly ending that man’s life.
-                ''')
-    st.image(cota_eddie2)
-    st.markdown('''
-                The race finished and Alpine took the lead in the Constructor’s Championship for the first time since Canada. But, I have some tea for y’all. Some FIA bloke came by today and told us we weren’t allowed to say anything about this. But fr, I couldn’t care less, what are they gonna do, fire me? Nick and Travis’ drive throughs are under investigation because of the lag, Eddie’s erratic driving is also under investigation, and there’s a chance the standings make a big flippity flop some time soon. I’m sure some official news will come sometime but for now, Alpine is the victor, so I guess Joshua and Eddie are staying teammates!
-                ''')
-    st.markdown('''
-                    <p style="color:lightgray;">Thursday 2/13/2025 - Patrick</p>
-                    ''',
-                    unsafe_allow_html=True,)
+                <p style="color:lightgray;">Saturday 2/20/2025 - Alpine F1 Team</p>
+                ''',
+                unsafe_allow_html=True,)
     st.divider()
     #endregion
     
@@ -171,6 +103,74 @@ def Tab0():
             st.rerun()
 
     if st.session_state.show_all_content:
+        #region McLaren Statement
+        st.subheader("McLAREN OFFICIAL STATEMENT")
+        st.markdown('''
+                    With our culture of integrity, McLaren is disappointed by Alpine claiming the championship based on results that include such incredible desynchronization and technical issues. If the roles were reversed the team believes it would cede the championship to Alpine. However, throughout the season this level of character was common from Alpine, and McLaren hopes for growth for both drivers in the coming season. With all this said, we are here ready to celebrate Alpine’s championship as they did compete at a high level throughout the season. The rest of the grid will always know the controversy surrounding this final result, and McLaren vows to be back stronger than ever next season.
+                    
+                    P.S. Happy birthday Boz
+                    ''')
+        st.markdown('''
+                        <p style="color:lightgray;">Saturday 2/15/2025 - McLaren Racing</p>
+                        ''',
+                        unsafe_allow_html=True,)
+        st.divider()
+        #endregion
+        
+        #region Alpine Statement
+        st.subheader("ALPINE OFFICIAL STATEMENT")
+        st.markdown('''
+                    If Alpine is going to be declared champions, we want to win by dominance, no controversy, plain and simple, without any dispute left on the table. The last race of the season has made that difficult to do, but the entire season has to be taken into account. Alpine was ready to challenge McLaren, but McLaren has made it clear they are not interested in that opportunity. There are so many what ifs throughout this entire season and the Alpine team believes they left everything on the table. Alpine knows there is no result here that will not disappoint, or even piss off, one side of the equation. However, the Constructor’s Championship symbolizes teamwork. Both Joshua and Nick carried their teammates, while Eddie out drove Travis throughout most of the season. Our team knows that our duo did an outstanding job and wants to lean on the consistency seen throughout the season to claim this championship. Alpine is confident knowing the difference was made by Eddie throughout the entire season. If McLaren wants to change their stance on a final race, the Alpine team is willing to consider this opportunity, but if not, our team stands behind the results of the final race as they stand with the perspective of the entire season.
+                    ''')
+        st.markdown('''
+                        <p style="color:lightgray;">Friday 2/14/2025 - Alpine F1</p>
+                        ''',
+                        unsafe_allow_html=True,)
+        st.divider()
+        #endregion
+        
+        #region COTA Recap
+        st.subheader("COTA Recap: Alpine’s Exes Live in Texas")
+        st.markdown('''
+                    Shouts of “Remember the Circuit of the Americas” could be heard around the track as Alpine clinched the World Constructor’s Championship. McLaren fans everywhere saw their season goals crushed by a convincing victory from Alpine’s Joshua in the main race. But all was not as simple as it seemed.
+
+                    When the drivers arrived it was a torrential downpour, requiring full wets for both qualifying and the Sprint race. The talent of the drivers in the league was on full display as every driver that entered the Sprint finished despite the incredibly challenging conditions. Ferrari’s Erick and VCARB’s Patrick had a solid cold war throughout the Sprint where Erick remained on top at the chequered flag. Further up the field Ferrari’s Del took home a lonely fourth place after keeping it clean throughout the race, and the podium saw a new driver with Alpine’s Eddie securing his first podium of the season in third place. Joshua and McLaren’s Nick battled it out up front for first place, where we saw Nick hang on for the win, giving McLaren fans hope that they could still clinch the Constructor’s Championship at the end of the main race. McLaren’s Travis, VCARB’s Brently, and Red Bull’s Boz chased each other down in the midfield, bringing home needed points for each of their outfits.
+
+                    After reviewing the race notes, it is clear that our intern will be more adept at providing a strong recap of what occurred. The chaos they bring to the office each day may have met its match with this one. Buckle up and enjoy their take on the incredible event’s of the race.
+                    ''')
+        st.image(cota_MM)
+        st.markdown('''
+                    Nothing pleases me more than when Patrick’s notes are delivered in a crumpled up ball. Brother was completely tilted after that race and I hope to be able to express why via a short set of memes, jokes, and real talk. 
+
+                    But really where do I start? This race was a cluster. Turn 1 saw drivers go absolutely blind, overtaking on the outside…cough Joshua…other drivers bumping and grinding, and others shooting gaps that even prime Senna would have avoided. Somehow, everyone managed to survive the first lap…barely…
+                    ''')
+        st.image(cota_BLB)
+        st.markdown('''
+                    After “surviving” the first lap things got even crazier. Lap 4 saw some brilliant driving from Eddie right into the diffuser of Patrick, and then right back onto track perpendicular to the flow of traffic. 
+                    ''')
+        st.image(cota_eddie)
+        st.markdown('''
+                    But that wasn’t even the worst of it. We saw a VSC that handed Travis a driver through penalty for no reason and later a full safety car that handed his teammate Nick a drive through penalty as well. All things seemed to be going Alpine’s way. That is until under that same safety car Eddie was handed a penalty for overtaking off track under safety car. 
+
+                    Fam, with the field bunched up, penalties everywhere, it seemed like that race restart was about to shake things up like crazy. And, not gonna lie, it did. Erick backed up Eddie and Patrick lap after lap trying to bring Del into the grips of their penalties.
+                    ''')
+        st.image(cota_erick)
+        st.markdown('''
+                    But just as that battle heated up, Erick disconnected. For some reason, the league voted to reinstate his time even though he has dial-up internet and caused lag throughout the race, which might have been the reason Brently saw his first DNF of the season, but whatever these guys were being nice I guess.
+
+                    Just as the race seemed to finally be settling down and finishing up Eddie simply forgot how to drive coming out of the last turn, binning it into the wall and limping across the finish behind Del after nearly ending that man’s life.
+                    ''')
+        st.image(cota_eddie2)
+        st.markdown('''
+                    The race finished and Alpine took the lead in the Constructor’s Championship for the first time since Canada. But, I have some tea for y’all. Some FIA bloke came by today and told us we weren’t allowed to say anything about this. But fr, I couldn’t care less, what are they gonna do, fire me? Nick and Travis’ drive throughs are under investigation because of the lag, Eddie’s erratic driving is also under investigation, and there’s a chance the standings make a big flippity flop some time soon. I’m sure some official news will come sometime but for now, Alpine is the victor, so I guess Joshua and Eddie are staying teammates!
+                    ''')
+        st.markdown('''
+                        <p style="color:lightgray;">Thursday 2/13/2025 - Patrick</p>
+                        ''',
+                        unsafe_allow_html=True,)
+        st.divider()
+        #endregion
+
         #region Insider Scoop - Red Bull
         st.subheader("INSIDER SCOOP: ***Alpine's Plight***")
         st.markdown('''

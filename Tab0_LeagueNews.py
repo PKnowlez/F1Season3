@@ -86,36 +86,6 @@ def Tab0():
         st.session_state.show_all_content = False
 
     #region Postseason
-    st.subheader("Postseason Testing - The Monaco Massacre")
-    st.markdown('''
-                A new tradition was born this week. Many of the drivers and teams assembled for a joint postseason testing session. But it was not simply a friendly practice session, it was a competitive race around the famous streets of Monaco. The league agreed to let bygones be bygones and rip it around a circuit together one more time. Drivers voted for the race to even be at night, and regulators introduced some of the new rules for next season, which all increased the spiciness of the race. The results were something next to no one predicted, and the racing throughout was incredible. To wrap up this season, our intern is going to take it away. ONE. LAST. TIME.
-
-                What the hell was that race? Chaos, chaos, chaos. Some WWE, some rally driving, some crash outs (both physical and metaphysical), and carnage everywhere. I loved it. It was perfect. Please do it again. I never want to see another boring regular season race again. During qualifying we had wrecks, drivers miss the cut for Q3, and some of the most…intriguing…commentary ever heard. It even rained during qualifying. And if you thought the drivers were caught lacking during qualifying, you were right, but it's not like they actually figured it out in the race. The first fricking lap saw the world’s first ever formula car suplex. 
-                ''')
-    st.markdown(f'<img src="data:image/gif;base64,{data_url_monaco}" alt="Your GIF">', unsafe_allow_html=True)
-    st.markdown('''
-                Sir Isaac Newton left the chat after that one. With physics, gravity, and any remaining common sense out the window, the stewards had to restart the race. And guess what? For once, the drivers kept it moderately clean through the first couple of laps. But the real story of the race was damage. Wings here, sidepods there, egos bruised everywhere. It was incredible. We lost drivers throughout the race and as remaining laps whittled down a few safety cars helped front runners conserve their tires. But, dark knight Joshua, running in a Red Bull, began to find his groove. His teammate Eddie was long forgotten by these streets, but was providing commentary as Joshua chased down front runners Nick and Brently. Del and Boz meanwhile were holding down the back like a trustworthy caboose. 
-                ''')
-    st.image(monaco_polar_express)
-    st.markdown('''
-                But one can only hold it down for so long…as Nick and Brently caught up to Boz, disaster struck. With good intentions Boz pulls out of the way to allow the duo past, but does so in an unpredictable way. This is where a double whammy crashout occurs. Nick’s McLaren and Nick both CRASHED the F out. 
-                ''')
-    st.image(monaco_nick)
-    st.markdown('''
-                It was gnarly, but it left Brently in position to win it all, as long as Joshua choked. And boy did Joshua deliver. Brother lost it, demolishing his front wing and even earning some penalties along the way. And so, rookie driver Brently took home his first win, in true Lightning McQueen style.
-                ''')
-    st.image(monaco_brently)
-    st.markdown('''
-                Until next season folks…
-                ''')
-    st.markdown('''
-                <p style="color:lightgray;">Thursday 2/20/2025 - A Joint Patrick & The Intern Production</p>
-                ''',
-                unsafe_allow_html=True,)
-    st.divider()
-    #endregion
-    
-    #region Congratulations Alpine
     st.subheader("Congratulations Joshua & Eddie - Constructor’s World Champions")
     st.image(alpine_champs)
     st.markdown('''
@@ -140,6 +110,49 @@ def Tab0():
             st.rerun()
 
     if st.session_state.show_all_content:
+        #region Postseason
+        st.subheader("Postseason Testing - The Monaco Massacre")
+        st.markdown('''
+                    A new tradition was born this week. Many of the drivers and teams assembled for a joint postseason testing session. But it was not simply a friendly practice session, it was a competitive race around the famous streets of Monaco. The league agreed to let bygones be bygones and rip it around a circuit together one more time. Drivers voted for the race to even be at night, and regulators introduced some of the new rules for next season, which all increased the spiciness of the race. The results were something next to no one predicted, and the racing throughout was incredible. To wrap up this season, our intern is going to take it away. ONE. LAST. TIME.
+
+                    What the hell was that race? Chaos, chaos, chaos. Some WWE, some rally driving, some crash outs (both physical and metaphysical), and carnage everywhere. I loved it. It was perfect. Please do it again. I never want to see another boring regular season race again. During qualifying we had wrecks, drivers miss the cut for Q3, and some of the most…intriguing…commentary ever heard. It even rained during qualifying. And if you thought the drivers were caught lacking during qualifying, you were right, but it's not like they actually figured it out in the race. The first fricking lap saw the world’s first ever formula car suplex. 
+                    ''')
+        st.markdown(f'<img src="data:image/gif;base64,{data_url_monaco}" alt="Your GIF">', unsafe_allow_html=True)
+        st.markdown('''
+                    Sir Isaac Newton left the chat after that one. With physics, gravity, and any remaining common sense out the window, the stewards had to restart the race. And guess what? For once, the drivers kept it moderately clean through the first couple of laps. But the real story of the race was damage. Wings here, sidepods there, egos bruised everywhere. It was incredible. We lost drivers throughout the race and as remaining laps whittled down a few safety cars helped front runners conserve their tires. But, dark knight Joshua, running in a Red Bull, began to find his groove. His teammate Eddie was long forgotten by these streets, but was providing commentary as Joshua chased down front runners Nick and Brently. Del and Boz meanwhile were holding down the back like a trustworthy caboose. 
+                    ''')
+        st.image(monaco_polar_express)
+        st.markdown('''
+                    But one can only hold it down for so long…as Nick and Brently caught up to Boz, disaster struck. With good intentions Boz pulls out of the way to allow the duo past, but does so in an unpredictable way. This is where a double whammy crashout occurs. Nick’s McLaren and Nick both CRASHED the F out. 
+                    ''')
+        st.image(monaco_nick)
+        st.markdown('''
+                    It was gnarly, but it left Brently in position to win it all, as long as Joshua choked. And boy did Joshua deliver. Brother lost it, demolishing his front wing and even earning some penalties along the way. And so, rookie driver Brently took home his first win, in true Lightning McQueen style.
+                    ''')
+        st.image(monaco_brently)
+        st.markdown('''
+                    Until next season folks…
+                    ''')
+        st.markdown('''
+                    <p style="color:lightgray;">Thursday 2/20/2025 - A Joint Patrick & The Intern Production</p>
+                    ''',
+                    unsafe_allow_html=True,)
+        st.divider()
+        #endregion
+    
+        #region Congratulations Alpine
+        st.subheader("Congratulations Joshua & Eddie - Constructor’s World Champions")
+        st.image(alpine_champs)
+        st.markdown('''
+                    Through battles, controversy, penalties, and determination, Joshua and Eddie brought home the season’s prize for our whole team. Our team, our championship, our way. Alpine is ecstatic with the results of this season and cannot congratulate Joshua and Eddie enough. It will be a pleasure to watch these two drive in the future, and we hope this team can defend its title together next season.
+                    ''')
+        st.markdown('''
+                    <p style="color:lightgray;">Thursday 2/20/2025 - Alpine F1 Team</p>
+                    ''',
+                    unsafe_allow_html=True,)
+        st.divider()
+        #endregion
+
         #region McLaren Statement
         st.subheader("McLAREN OFFICIAL STATEMENT")
         st.markdown('''

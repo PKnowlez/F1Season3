@@ -86,9 +86,12 @@ def Tab0():
         st.session_state.show_all_content = False
 
     #region Postseason
+    st.subheader("Season 3 Historical Archive")
     st.markdown('''
                 This is the historical record of The Alternative's 3rd season (2024-2025).
+                
                 ***Driver's Champion:*** Nick - McLaren
+                
                 ***Constructor's Champion:*** Alpine - Joshua & Eddie
                 ''')
     st.divider()

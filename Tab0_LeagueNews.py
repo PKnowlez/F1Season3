@@ -86,15 +86,11 @@ def Tab0():
         st.session_state.show_all_content = False
 
     #region Postseason
-    st.subheader("Congratulations Joshua & Eddie - Constructor’s World Champions")
-    st.image(alpine_champs)
     st.markdown('''
-                Through battles, controversy, penalties, and determination, Joshua and Eddie brought home the season’s prize for our whole team. Our team, our championship, our way. Alpine is ecstatic with the results of this season and cannot congratulate Joshua and Eddie enough. It will be a pleasure to watch these two drive in the future, and we hope this team can defend its title together next season.
+                This is the historical record of The Alternative's 3rd season (2024-2025).
+                ***Driver's Champion:*** Nick - McLaren
+                ***Constructor's Champion:*** Alpine - Joshua & Eddie
                 ''')
-    st.markdown('''
-                <p style="color:lightgray;">Thursday 2/20/2025 - Alpine F1 Team</p>
-                ''',
-                unsafe_allow_html=True,)
     st.divider()
     #endregion
     
